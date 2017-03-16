@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # jhipsterSampleApplication
 This application was generated using JHipster 4.0.8, you can find documentation and help at [https://jhipster.github.io/documentation-archive/v4.0.8](https://jhipster.github.io/documentation-archive/v4.0.8).
 
@@ -115,3 +116,6 @@ To configure CI for your project, run the ci-cd sub-generator (`yo jhipster:ci-c
 [Protractor]: https://angular.github.io/protractor/
 [Leaflet]: http://leafletjs.com/
 [DefinitelyTyped]: http://definitelytyped.org/
+=======
+# Sciitsbb
+>>>>>>> branch 'master' of https://github.com/pgdhar2000/Sciitsbb.git
