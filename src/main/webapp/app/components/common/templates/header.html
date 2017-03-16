@@ -1,0 +1,201 @@
+<div class="container">
+	<div class="row header-top">
+		<div class="col-sm-2 logo">
+		<a ui-sref="registered-agent-dashboard" id="fsc_logo" ng-show="roleId == 3"><img src="assets/images/BVIFSC-Logo.png" alt="FSClogo" class="img-responsive" style="width:120px;" /></a>
+		<a ui-sref="roca-dashboard" id="fsc_logo" ng-show="roleId == 2"><img src="assets/images/BVIFSC-Logo.png" alt="FSClogo" class="img-responsive" style="width:120px;" /></a>
+		<a ui-sref="ip-dashboard" id="fsc_logo" ng-show="roleId == 4"><img src="assets/images/BVIFSC-Logo.png" alt="FSClogo" class="img-responsive" style="width:120px;" /></a>
+		<a ui-sref="super-user" id="fsc_logo" ng-show="roleId == 1"><img src="assets/images/BVIFSC-Logo.png" alt="FSClogo" class="img-responsive" style="width:120px;" /></a>
+		</div>
+
+		<div class="col-sm-10 header-right">
+			<div class="dropdown pull-right">
+				<button class="header-btn2 dropdown-toggle" type="button" data-toggle="dropdown" id="user_name">
+					<i class="fa fa-user" aria-hidden="true"></i> Welcome <b>{{firstName}} {{middleName}} {{lastName}}</b>
+					<span class="caret"></span>
+				</button>
+
+				<ul class="dropdown-menu">
+					<!-- Add header here -->
+					<li>
+						<a style="padding:3px 10px;" ui-sref="editProfile" ui-sref-opts="{reload:true}" id="edit_profile_btn"><i class="fa fa-user"
+						aria-hidden="true"></i> Edit Profile
+						</a>
+					</li>
+					<li>
+						<a style="padding:3px 10px;" ui-sref="{{currentUrl}}" ui-sref-opts="{reload:true}" id="change_password_btn"><i class="fa fa-gear"
+						aria-hidden="true"></i> Change Password
+						</a>
+					</li>
+					<li>
+						<a style="padding:3px 10px;" ng-click="logout()" id="logout_btn">
+						<i class="fa fa-sign-out" aria-hidden="true"></i> Log out
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<nav class="navbar navbar-inverse">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-controls="navbar">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			</button>
+		</div>
+
+		<div id="navbar" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+
+				<li class="dropdown" ng-class="{active:incorporationDD}" ng-show="roleId == 3">
+					<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="incorporation_tab">Incorporation <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a ui-sref="incorporation" ui-sref-opts="{reload:true}" id="incorporation_dd">Incorporation</a></li>
+						<li><a ui-sref="charter" ui-sref-opts="{reload:true}" id="charter_dd">Charter</a></li>
+						<li><a ui-sref="mbc-names" ui-sref-opts="{reload:true}" id="mbc_names_dd">MBC Names</a></li>
+						<li><a ui-sref="capacity-powers" ui-sref-opts="{reload:true}" id="capacity_and_powers_dd">Capacity and Powers</a></li>
+					</ul>
+				</li>
+
+				<li class="dropdown" ng-class="{active:sharesDD}" ng-show="roleId == 3">
+					<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="shares_tab">Shares <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a ui-sref="shares" ui-sref-opts="{reload:true}" id="gen_info_on_shares_dd">General Information on Shares</a></li>
+						<li><a ui-sref="disposition-shares" ui-sref-opts="{reload:true}" id="disposition_of_shares_dd">Disposition of Shares</a></li>
+						<li><a ui-sref="distribution-of-shares" ui-sref-opts="{reload:true}" id="distributon_of_shares_dd">Distribution of Shares</a></li>
+						<li><a ui-sref="information-on-shareholders" ui-sref-opts="{reload:true}" id="information_on_shareholders_dd">Information on Shareholders</a></li>
+					</ul>
+				</li>
+
+				<li class="dropdown" ng-class="{active:mbcAdministrationDD}" ng-show="roleId == 3">
+					<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"  id="mbc_admin_tab">MBC Administration <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a ui-sref="reg-off-admin" ui-sref-opts="{reload:true}" id="reg_off_and_ra_info_dd">Registered Office and Registered Agent Information</a></li>
+						<li><a ui-sref="ra-volun-liquid-offi-and-volun-liquidator" ui-sref-opts="{reload:true}" id="voluntary_liquidator_office_dd">Voluntary Liquidator Office and Voluntary Liquidator</a></li>
+						<li><a ui-sref="ra-offl-recer-off-and-off-recer" ui-sref-opts="{reload:true}" id="official_receiver_dd">Official Receiver Office and Official Receiver</a></li>
+						<li><a ui-sref="{{currentUrl}}" ui-sref-opts="{reload:true}" id="mbc_records_dd">MBC Records and Operational Address</a></li>
+						<li><a ui-sref="{{currentUrl}}" ui-sref-opts="{reload:true}" id="gen_provisions_dd">General Provisions</a></li>
+					</ul>
+				</li>
+
+
+				<li class="dropdown" ng-class="{active:mbcManagementDD}" ng-show="roleId == 3">
+					<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="mbc_mgmt_tab">MBC Management <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a ui-sref="{{currentUrl}}" ui-sref-opts="{reload:true}" id="info_on_company_principal_dd">Information on Company Principal</a></li>
+						<li><a ui-sref="{{currentUrl}}" ui-sref-opts="{reload:true}" id="duties_responsibilities_dd">Duties Responsibilities and Obligations of Principal</a></li>
+						<li><a ui-sref="ra-annual-returns" ui-sref-opts="{reload:true}" id="info_on_annual_return_dd">Information on Annual Return</a></li>
+					</ul>
+				</li>
+
+				<li class="dropdown" ng-class="{active:transformBVIDD}" ng-show="roleId == 3">
+					<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="transform_to_bvi_tab">Transform to BVI <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a ui-sref="request-for-transformation" ui-sref-opts="{reload:true}" id="transform_to_bvi_dd">Transform to BVI</a></li>
+						<li><a ui-sref="{{currentUrl}}" ui-sref-opts="{reload:true}" id="disable_mbc_dd">Disable Micro Business Company</a></li>
+					</ul>
+				</li>
+
+
+				<li class="dropdown" ng-class="{active:registerInspectionDD}" ng-show="roleId == 3">
+					<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="ri_tab">Register Inspection <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a ui-sref="ra-register-inspection" ui-sref-opts="{reload:true}" id="ri_dd">Register Inspection</a></li>
+						<li><a ui-sref="ra-issuance-of-certificates" ui-sref-opts="{reload:true}" id="issuance_of_certificates_dd">Issuance of certificates</a></li>
+					</ul>
+				</li>
+
+				<!--<li class="dropdown" ng-class="{active:liquidationDD}">
+					<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Liquidation <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a ui-sref="ra-liquidation" ui-sref-opts="{reload:true}">Liquidation</a></li>
+						<li><a ui-sref="ra-voluntary-liquidator" ui-sref-opts="{reload:true}">Voluntary Liquidator Appointment</a></li>
+						<li><a ui-sref="ra-voluntary-liquidatory-approval" ui-sref-opts="{reload:true}">Voluntary Liquidators Approval Notice</a></li>
+						<li><a ui-sref="ra-declaration-of-solvency" ui-sref-opts="{reload:true}">Declaration Of Solvency</a></li>
+					</ul>
+				</li>-->
+
+				<li class="dropdown" ng-class="{active:strikingOffDD}" ng-show="roleId == 3">
+					<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="restoration_tab">Restoration <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a ui-sref="ra-restoration-strike-off-mbc" ui-sref-opts="{reload:true}" id="restore_strike_off_dd">Restore Strike Off MBC</a></li>
+						<li><a ui-sref="ra-restoration-dissolved-mbc" ui-sref-opts="{reload:true}" id="restore_dissolved_dd">Restore Dissolved MBC</a></li>
+						<li><a ui-sref="ra-appeal-to-the-court" ui-sref-opts="{reload:true}" id="appeal_to_court_dd">Appeal to the Court</a></li>
+					</ul>
+				</li>
+
+			<li class="dropdown" ng-class="{active:rocaOrdersDD}" ng-show="roleId == 2">
+              <a ui-sref="roca-dashboard" ui-sref-opts="{reload:true}" class="dropdown-toggle" id="orders_tab">Orders</a>
+            </li>
+
+
+		<li class="dropdown" ng-class="{active:rocaRegisterDD}" ng-show="roleId == 2">
+              <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="register_tab">Register <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a ui-sref="roca-business-charter" ui-sref-opts="{reload:true}" id="cbc_dd">Certified Business Charter</a></li>
+				<li><a ui-sref="roca-certificate-of-restoration" ui-sref-opts="{reload:true}" id="cert_of_restoration_dd">Certificate of Restoration</a></li>
+				<li><a ui-sref="roca-certificate-of-dissolution" ui-sref-opts="{reload:true}" id="cert_of_diss_dd">Certificate of Dissolution</a></li>
+				<li><a ui-sref="roca-certificate-of-restoration-of-dissolution" ui-sref-opts="{reload:true}" id="cert_of_rest_of_diss_dd">Certificate of Restoration of Dissolution</a></li>
+				<li><a ui-sref="roca-certificate-of-good-standing" ui-sref-opts="{reload:true}" id="cert_of_good_standing_dd">Certificate of Good Standing</a></li>
+				<li><a ui-sref="roca-certificate-of-mbc-status" ui-sref-opts="{reload:true}" id="cert_of_mbc_status_dd">Certificate of Micro Business Company Status</a></li>
+			   </ul>
+			 </li>
+
+			 <li class="dropdown" ng-class="{active:rocaRegistrarDD}" ng-show="roleId == 2">
+             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="rm_tab">Registrar Management <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a ui-sref="roca-registrar-list" ui-sref-opts="{reload:true}" id="rca_dd">Registrar of Corporate Affairs (ROCA)</a></li>
+				</ul>
+			 </li>
+
+			 <li class="dropdown" ng-class="{active:rocaStrikingOffDD}" ng-show="roleId == 2">
+             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="striking_off_tab">Striking Off and Dissolution<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a ui-sref="roca-strike-off" ui-sref-opts="{reload:true}" id="strike_off_dd">Strike Off </a></li>
+					<li><a ui-sref="roca-remove-strike-off" ui-sref-opts="{reload:true}" id="remove_strike_off_dd">Remove From Strike Off </a></li>
+				</ul>
+			 </li>
+
+			 <li class="dropdown" ng-class="{active:rocaLiquidatorDD}" ng-show="roleId == 2">
+             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="liquidation_tab">Liquidation<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a ui-sref="roca-voluntary-liquidator-approval" ui-sref-opts="{reload:true}" id="vol_liq_app_dd">Voluntary Liquidator Approval </a></li>
+					<li><a ui-sref="roca-completion-of-liquidation" ui-sref-opts="{reload:true}" id="comp_of_liq_dd">Completion Of Liquidation </a></li>
+					<li><a ui-sref="roca-approval-of-court-resignation" ui-sref-opts="{reload:true}" id="appr_of_court_resign_dd">Approval Of Court Resignation </a></li>
+					<li><a ui-sref="roca-approval-of-liquidation-resignation" ui-sref-opts="{reload:true}" id="approval_of_liq_resign_dd">Approval Of Liquidator Resignation </a></li>
+				</ul>
+			 </li>
+
+			 <li class="dropdown" ng-class="{active:ipLiquidatorDD}" ng-show="roleId == 4">
+             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="liquidation_tab">Liquidation <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a ui-sref="ip-liquidation" ui-sref-opts="{reload:true}" id="liquidation_dd">Liquidation</a></li>
+					<li><a ui-sref="ip-voluntary-liquidator" ui-sref-opts="{reload:true}" id="vla_dd">Voluntary Liquidator Appointment</a></li>
+					<li><a ui-sref="ip-voluntary-liquidatory-approval" ui-sref-opts="{reload:true}" id="vlan_dd">Voluntary Liquidators Approval Notice</a></li>
+					<li><a ui-sref="ip-declaration-of-solvency" ui-sref-opts="{reload:true}" id="dos_dd">Declaration Of Solvency</a></li>
+					<li><a ui-sref="ip-liq-completion-of-liquidation" ui-sref-opts="{reload:true}" id="col_dd">Completion of Liquidation</a></li>
+					<li><a ui-sref="ip-liq-application-of-resignation" ui-sref-opts="{reload:true}" id="resignation_ra_dd">Application Of Resignation To RA</a></li>
+					<li><a ui-sref="ip-liq-filing-notice-of-resignation" ui-sref-opts="{reload:true}" id="resignation_roca_dd">Filing Notice Of Resignation To ROCA</a></li>
+					<li><a ui-sref="ip-liq-court-removal" ui-sref-opts="{reload:true}" id="court_resignation_dd">Application Of Court Resignation</a></li>
+					<li><a ui-sref="ip-filing-notice-of-mbc-insolvency" ui-sref-opts="{reload:true}" id="liquidation_insolvent_dd">Liquidation Where MBC Becomes Insolvent</a></li>
+				</ul>
+			 </li>
+
+			 <li class="dropdown" ng-class="{active:superUserDD}" ng-show="roleId == 1">
+              <a ui-sref="super-user" class="dropdown-toggle" id="users_tab">Users</a>
+            </li>
+
+			 <li class="dropdown" ng-class="{active:superRegistrarDD}" ng-show="roleId == 1">
+             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="rm_tab">Registrar Management <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a ui-sref="super-registrar-list" id="rca_dd">Registrar of Corporate Affairs (ROCA)</a></li>
+				</ul>
+			 </li>
+			</ul>
+		</div><!--/.nav-collapse -->
+	</div>
+</nav>

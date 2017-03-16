@@ -1,0 +1,73 @@
+<div ng-include="'app/components/common/templates/header.html'" ng-controller="headerController"></div>
+
+    <div class="container theme-showcase" role="main">
+
+
+			<div class="row">
+				<div class="page-heading">
+					<h3 class="page-title" style="font-size: 28px;">Pending
+						approvals for Filing Notice of MBC Insolvency</h3>
+				</div>
+			</div>
+
+			<div class="row">
+
+				<div class="col-sm-8">
+
+
+					<div class="charter-content">
+						<ul>
+							<li><span class="w-300"><i class="fa fa-check-circle"
+									aria-hidden="true"></i> RA Name :</span> <span> RA Name :</span></li>
+
+							<li><span class="w-300"><i class="fa fa-check-circle"
+									aria-hidden="true"></i> Name :</span> <span>MBC Name</span></li>
+
+							<li><span class="w-300"><i class="fa fa-check-circle"
+									aria-hidden="true"></i> Assets :</span> <span>50</span></li>
+
+							<li><span class="w-300"><i class="fa fa-check-circle"
+									aria-hidden="true"></i> Liabilites:</span> <span>100</span></li>
+
+							<li><span class="w-300"><i class="fa fa-check-circle"
+									aria-hidden="true"></i>Date of Insolvency:</span> <span>dd/mm/yy</span></li>
+
+
+
+						</ul>
+					</div>
+
+					<div class="cleaner h20"></div>
+					<a ui-sref="roca-filing-notice-of-mbc-insolvency-approved" class="btn btn-success" id="accept_btn">Accept</a>
+					<a ui-sref="roca-filing-notice-of-mbc-insolvency-rejected" class="btn btn-danger" id="reject_btn">Reject</a>
+
+
+
+
+				</div>
+
+			</div>
+
+		</div> <!-- /container -->
+	
+		
+<script>
+
+$(document).ready(function(){
+    $("#search").click(function(){
+        $("#avail").css("display", "block");
+    });
+});
+
+$(document).ready(function(){
+    $('.sendButton').attr('disabled',true);
+    $('#message').keyup(function(){
+        if($(this).val().length !=0)
+            $('.sendButton').attr('disabled', false);   
+        else
+            $('.sendButton').attr('disabled',true);
+			$("#avail").css("display", "none");
+    });
+});
+
+</script>

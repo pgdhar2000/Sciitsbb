@@ -1,0 +1,149 @@
+<div ng-include="'app/components/common/templates/header.html'" ng-controller="headerController"></div>
+ <div class="container theme-showcase" role="main">
+	
+	
+	
+			<div class="row">	
+				<div class="page-heading">
+					<h3 class="page-title">Users</h3>
+				</div>
+			</div>
+	
+	
+			<div class="ra-db-panel">
+			
+				<div class="row">
+					<div class="col-sm-4 col-sm-offset-4">
+						<label>User Type</label>
+						<div class="form-group">
+							<select class="form-control" id="user_type">
+								<option value="">select</option>
+								<option value="ra">Register Agent</option>
+								<option value="roca">ROCA</option>
+								<option value="ip">Insolvency Practioner</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				
+				<div class="cleaner h20"></div>
+				
+				<div class="row" id="ra_user" style="display:none;">
+					<div class="col-sm-4 col-sm-offset-4">
+						<label>User Names</label>
+						<div class="form-group">
+							<select class="form-control" id="select_ra_user">
+								<option value="">select</option>
+								<option value="ra1">Register Agent1</option>
+								<option value="ra2">Register Agent2</option>
+								<option value="ra3">Register Agent3</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				
+				<div class="row" id="roca_user" style="display:none;">
+					<div class="col-sm-4 col-sm-offset-4">
+						<label>User Names</label>
+						<div class="form-group">
+							<select class="form-control" id="select_roca_user">
+								<option value="">select</option>
+								<option value="roca1">ROCA 1</option>
+								<option value="roca2">ROCA 2</option>
+								<option value="roca3">ROCA 3</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				
+				<div class="row" id="ip_user" style="display:none;">
+					<div class="col-sm-4 col-sm-offset-4">
+						<label>User Names</label>
+						<div class="form-group">
+							<select class="form-control" id="select_ip_user">
+								<option value="">select</option>
+								<option value="ip1">Insolvency Practioner 1</option>
+								<option value="ip2">Insolvency Practioner 2</option>
+								<option value="ip3">Insolvency Practioner 3</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				
+				<div class="cleaner h20"></div>
+				<div class="row" id="enable_disable" style="display:none;">
+					<div class="col-sm-4 col-sm-offset-4">
+						<a ui-sref="user-enable-status" class="btn btn-success" id="enable_btn">Enable</a>
+						<a ui-sref="user-disable-status" class="btn btn-danger" id="disable_btn">Disable</a>
+					</div>
+				</div>
+			
+			
+				
+				
+			
+				<div class="cleaner h80"></div>
+		
+			</div>
+	
+
+
+    </div> <!-- /container -->
+	
+	
+	<script>
+
+$(document).ready(function(){
+    $("#search").click(function(){
+        $("#avail").css("display", "block");
+    });
+});
+
+$(document).ready(function(){
+    $('.sendButton').attr('disabled',true);
+    $('#message').keyup(function(){
+        if($(this).val().length !=0)
+            $('.sendButton').attr('disabled', false);   
+        else
+            $('.sendButton').attr('disabled',true);
+			$("#avail").css("display", "none");
+    });
+});
+
+function handleSelect(elm)
+{
+		window.location = elm.value+".html";
+}
+
+$(document).ready(function(){
+	
+	$("#user_type").change(function(){
+		console.log($(this).val());
+		$("#enable_disable").css("display", "none");
+		if($(this).val() == "ra"){
+			$("#ra_user").css("display", "block");
+			$("#roca_user").css("display", "none");
+			$("#ip_user").css("display", "none");
+		}else if($(this).val() == "roca"){
+			$("#roca_user").css("display", "block");
+			$("#ra_user").css("display", "none");
+			$("#ip_user").css("display", "none");
+		}else if($(this).val() == "ip"){
+			$("#ip_user").css("display", "block");
+			$("#ra_user").css("display", "none");
+			$("#roca_user").css("display", "none");
+		}
+	});
+	
+	$("#select_ra_user").change(function(){
+		$("#enable_disable").css("display", "block");
+	});
+	$("#select_roca_user").change(function(){
+		$("#enable_disable").css("display", "block");
+	});
+	$("#select_ip_user").change(function(){
+		$("#enable_disable").css("display", "block");
+	});
+});
+
+</script>

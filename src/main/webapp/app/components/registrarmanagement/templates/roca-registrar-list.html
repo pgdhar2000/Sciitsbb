@@ -1,0 +1,120 @@
+<div ng-include="'app/components/common/templates/header.html'" ng-controller="headerController"></div>
+
+    <div class="container theme-showcase" role="main">
+
+
+			
+		<div class="row">	
+			<div class="page-heading">
+				<h3 class="page-title" style="font-size:24px;">Registrar Details </h3>
+			</div>
+		</div>
+				
+		<!--<div class="row">	
+				 <div class="col-sm-8">
+				
+				<div> 
+				<ul>
+					
+									
+					<li><span><a ui-sref="roca-registrar-of-corporate-affairs-edit"><b>Registrar Details1:</b></a> </span>
+					<span style="width:250px;"><a ui-sref="roca-registrar-of-corporate-affairs-delete">Delete</a></span></li>
+					
+					<li><span><a ui-sref="roca-registrar-of-corporate-affairs-edit"><b>Registrar Details2:</b></a> </span>
+					<span style="width:250px;"><a ui-sref="roca-registrar-of-corporate-affairs-delete">Delete</a></span></li>
+					
+					<li><span><a ui-sref="roca-registrar-of-corporate-affairs-edit"><b>Registrar Details3:</b></a> </span>
+					<span style="width:250px;"><a ui-sref="roca-registrar-of-corporate-affairs-delete">Delete</a></span></li>
+					
+					
+					</li>
+					
+					
+					
+				</ul>
+				</div> 
+				
+				<a ui-sref="ROCA-Registrar-of-Corporate-Affairs-new.html"  class="primary-btn">NEW Registrar</a>
+				
+			<div class="cleaner h30"></div>
+			 </div>
+		</div>-->
+		
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3" style="background-color:#dddee8;border-radius:5px;">
+				
+				<br/>
+				<div class="row">
+					<div class="col-sm-6">
+						<span><b>Registrar Details1:</b></span>
+					</div>
+					<div class="col-sm-3">
+						<a class="btn btn-success btn-xs" ui-sref="roca-registrar-of-corporate-affairs-edit" id="rd_edit_1">Edit</a>
+					</div>
+					<div class="col-sm-3">
+						<a class="btn btn-danger btn-xs" ui-sref="roca-registrar-of-corporate-affairs-delete" id="rd_delete_1">Delete</a>
+					</div>
+				</div>
+				<br/>
+				
+				<div class="row">
+					<div class="col-sm-6">
+						<span><b>Registrar Details2:</b></span>
+					</div>
+					<div class="col-sm-3">
+						<a class="btn btn-success btn-xs" ui-sref="roca-registrar-of-corporate-affairs-edit" id="rd_edit_2">Edit</a>
+					</div>
+					<div class="col-sm-3">
+						<a class="btn btn-danger btn-xs" ui-sref="roca-registrar-of-corporate-affairs-delete" id="rd_delete_2">Delete</a>
+					</div>
+				</div>
+				<br/>
+				
+				<div class="row">
+					<div class="col-sm-6">
+						<span><b>Registrar Details3:</b></span>
+					</div>
+					<div class="col-sm-3">
+						<a class="btn btn-success btn-xs" ui-sref="roca-registrar-of-corporate-affairs-edit" id="rd_edit_3">Edit</a>
+					</div>
+					<div class="col-sm-3">
+						<a class="btn btn-danger btn-xs" ui-sref="roca-registrar-of-corporate-affairs-delete" id="rd_delete_3">Delete</a>
+					</div>
+				</div>
+				<br/>
+				
+			</div>
+		</div>
+		
+		<br/>
+		<div class="row">
+			<div class="col-sm-4 col-sm-offset-4" style="text-align:center;">
+				<a ui-sref="roca-registrar-of-corporate-affairs-new"  class="primary-btn" id="new_registrar_btn">NEW Registrar</a>
+			</div>
+		</div>
+				
+			<div class="cleaner h30"></div>
+		
+    </div> <!-- /container -->
+	
+
+	<script>
+
+$(document).ready(function(){
+    $("#search").click(function(){
+        $("#avail").css("display", "block");
+    });
+});
+
+$(document).ready(function(){
+    $('.sendButton').attr('disabled',true);
+    $('#message').keyup(function(){
+        if($(this).val().length !=0)
+            $('.sendButton').attr('disabled', false);   
+        else
+            $('.sendButton').attr('disabled',true);
+			$("#avail").css("display", "none");
+    });
+});
+
+</script>

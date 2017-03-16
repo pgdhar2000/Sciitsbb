@@ -1,0 +1,172 @@
+
+
+  <div class="container">
+  <div class="row header-top">
+  <div class="col-sm-2 logo">
+	<img src="assets/images/BVIFSC-Logo.png" alt="FSClogo" class="img-responsive" style="width:120px;" />
+   </div>
+
+     <div class="col-sm-10 header-right">
+	   	   <!--<div class="dropdown pull-right" style="margin-right:10px;">
+
+			<button class="header-btn1 register-btn dropdown-toggle" type="button" data-toggle="dropdown" id="register">
+			<i class="fa fa-user-plus" aria-hidden="true"></i> REGISTER
+			<span class="caret"></span>
+		</button>
+
+		<ul class="dropdown-menu">
+
+			  <li><a ui-sref="ra-registration" ui-sref-opts="{reload: true}" id="reg_ra">Registered Agent</a></li>
+			  <li><a ui-sref="ip-registration" ui-sref-opts="{reload: true}" id="reg_ip">Insolvency Practioner</a></li>
+		</ul>
+
+		</div>-->
+
+    <div class="dropdown pull-right">
+  		<button class="header-btn1 margin-rt15 dropdown-toggle" type="button" data-toggle="dropdown" id="admin">
+  			<!--<i class="fa fa-sign-in" aria-hidden="true"></i> LOG IN-->
+  			<i class="fa fa-list" aria-hidden="true"></i> Admin
+  			<span class="caret"></span>
+  		</button>
+
+      <ul class="dropdown-menu">
+  			  <!-- Add header here -->
+  			  <li><a ui-sref="roca-login" ui-sref-opts="{reload: true}" id="login_roca">ROCA</a></li>
+  			  <li><a ui-sref="super-login" ui-sref-opts="{reload: true}" id="login_super">Super User</a></li>
+  		</ul>
+  	</div>
+
+    <div class="dropdown pull-right">
+  		<button class="header-btn2 dropdown-toggle" type="button" data-toggle="dropdown" id="service_portals">
+  			<!--<i class="fa fa-sign-in" aria-hidden="true"></i> LOG IN-->
+  			<i class="fa fa-list" aria-hidden="true"></i> Service Portals
+  			<span class="caret"></span>
+  		</button>
+
+      <ul class="dropdown-menu">
+  			  <!-- Add header here -->
+  			  <li><a ui-sref="ra-login" ui-sref-opts="{reload: true}" id="login_ra">Registered Agent</a></li>
+  			  <li><a ui-sref="ip-login" ui-sref-opts="{reload: true}" id="login_ip">Insolvency Practioner</a></li>
+  		</ul>
+  	</div>
+
+   </div>
+    </div>
+  </div>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container theme-showcase" role="main">
+			 <div class="row">
+				<div class="col-sm-8 col-sm-offset-2">
+
+				<div class="panel panel-default"> <div class="panel-heading">
+				<h3 class="panel-title"><i class="fa fa-search" aria-hidden="true"></i> Search</h3> </div>
+				<div class="panel-body">
+
+				                        <form role="form">
+                            <fieldset>
+						 <div class="row">
+							 <div class="col-sm-9">
+                                <div class="form-group">
+                                    <input id="message" class="form-control" placeholder="Search by MBC Company Number..." autofocus onclick="addText()">
+                                </div>
+							</div>
+
+
+                                <!-- Change this to a button or input when using this as a form -->
+                                <div class="col-sm-3" >
+									<div class="">
+										<a id="search" class="sendButton btn-block primary-btn">Search</a>
+									</div>
+								</div>
+
+
+								</div>
+
+				<div class="row">
+					<div class="col-sm-12" id="avail" style="display:none;">
+						 <div class="alert alert-success Issuance-true-div" style="display: block;">
+						 <span class="available">
+
+						<!-- <i class="fa fa-check" aria-hidden="true"></i> -->
+						<span class="headline">MBC Name:</span>  <span id="myText"></span> <div class="cleaner h10"></div>
+						<span class="headline">Registerd Agent:</span> <span>Registered Agent1</span> <div class="cleaner h10"></div>
+						<span class="headline">Prinicipal:</span> <span>Prinicpal1</span><div class="cleaner h10"></div>
+						<span class="headline">Website:</span>  <span>www.testname.com</span>
+
+						 </span>
+
+						 </div>
+					</div>
+				</div>
+<br/>
+                            </fieldset>
+                        </form>
+
+				</div> </div>
+
+ </div>
+
+ </div>
+
+    </div> <!-- /container -->
+
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+
+	<style>
+		.navbar-inverse {
+		background-image: linear-gradient(to bottom, #586b92 0px, #586b92 100%);
+		background-repeat: repeat-x;
+		border: 0 none;
+		border-radius: 0;
+		margin-top:5px;
+		margin-bottom:60px;
+		}
+		.header-top{padding-top:5px;}
+
+	</style>
+
+	<script>
+
+	function addText()
+{
+    document.getElementById('message').innerHTML = document.getElementById('myText').value;
+}
+		$(document).ready(function(){
+			$("#search").click(function(){
+		      var getval = $('#message').val();
+			var html = '<span id="myText">'+getval+'</span>';
+			$('#myText').html(html);
+				$("#avail").css("display", "block");
+			});
+		});
+		$(document).ready(function(){
+			$('.sendButton').attr('disabled',true);
+			$('#message').keyup(function(){
+				if($(this).val().length !=0)
+					$('.sendButton').attr('disabled', false);
+				else
+					$('.sendButton').attr('disabled',true);
+					$("#avail").css("display", "none");
+			});
+		});
+</script>

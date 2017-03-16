@@ -1,0 +1,90 @@
+<div ng-include="'app/components/common/templates/header.html'" ng-controller="headerController"></div>
+
+    <div class="container theme-showcase" role="main">
+
+
+				<div class="row">	
+					<div class="page-heading">
+                        <h3 class="page-title" style="font-size:28px;">Register MBC Name1 - Details</h3>
+                    </div>
+				</div>
+				
+			 <div class="row">	
+				
+				 <div class="col-sm-8">
+				
+				
+				<div class="charter-content"> 
+				<ul>
+<li><span class="w-300"><i class="fa fa-check-circle" aria-hidden="true"></i> Full Legal Corporation Name :</span> 
+<span>MBC Name</span></li>
+
+
+<li><span class="w-300"><i class="fa fa-check-circle" aria-hidden="true"></i> Street Address :</span> 
+<span>Street Address</span></li>
+
+<li><span class="w-300"><i class="fa fa-check-circle" aria-hidden="true"></i> City :</span> 
+<span>City</span></li>
+
+
+<li><span class="w-300" ><i class="fa fa-check-circle" aria-hidden="true"></i> Country :</span> 
+<span>Country</span></li>
+
+<li><span class="w-300" ><i class="fa fa-check-circle" aria-hidden="true"></i> Telephone Number :</span> 
+<span>Telephone Number</span></li>
+
+<li><span class="w-300"><i class="fa fa-check-circle" aria-hidden="true"></i> Fax Number :</span> 
+<span>Fax Number</span></li>
+
+<li><span class="w-300" ><i class="fa fa-check-circle" aria-hidden="true"></i> Email :</span> 
+<span>Email</span></li>
+
+
+<li><span class="w-300"><i class="fa fa-check-circle" aria-hidden="true"></i> Website Address :</span> 
+<span>Website Address</span></li>
+
+<li><span class="w-300"><i class="fa fa-check-circle" aria-hidden="true"></i> Business purpose :</span> 
+<span>Business purpose</span></li>
+
+<li><span class="w-300"><i class="fa fa-check-circle" aria-hidden="true"></i> Name of Registered Agent :</span> 
+<span>Name of Registered Agent</span></li>
+
+				</ul>
+				</div> 
+			
+
+				
+
+ </div>
+
+ </div>
+
+    </div> <!-- /container -->
+	
+			<div class="cleaner h80"></div>
+	</div>
+	
+	
+	
+	<script>
+
+$(document).ready(function(){
+    $("#search").click(function(){
+        $("#avail").css("display", "block");
+    });
+});
+
+$(document).ready(function(){
+    $('.sendButton').attr('disabled',true);
+    $('#message').keyup(function(){
+        if($(this).val().length !=0)
+            $('.sendButton').attr('disabled', false);   
+        else
+            $('.sendButton').attr('disabled',true);
+			$("#avail").css("display", "none");
+    });
+});
+
+</script>
+
+    

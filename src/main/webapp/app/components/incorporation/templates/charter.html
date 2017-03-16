@@ -1,0 +1,105 @@
+<div ng-include="'app/components/common/templates/header.html'" ng-controller="headerController"></div>
+
+<div class="container theme-showcase" role="main">
+
+	<div class="row">	
+		<div class="page-heading">
+			<h3 class="page-title">Charter</h3>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-sm-4 col-sm-offset-4">
+			<label>MBC Name</label>
+			<div class="form-group">
+				<select class="form-control" ng-options="incorporation.legalName for incorporation in incorporations" name="incorporationsList" ng-model="selectedIncorporation" ng-change="changingIncorporations(selectedIncorporation)" required id="mbc_name_dd">
+					<option value="" label="Select" disabled selected="selected"></option>
+				</select>
+			</div>
+		</div>
+	</div>	
+				
+	<div class="row" id="generate_charter" ng-show="generateCharterButton">
+		<div class="col-sm-4 col-sm-offset-4">
+			<button class="primary-btn" ng-click="generateCharter()" id="gen_charter_btn"><i class="fa fa-spinner" aria-hidden="true"></i> Generate Charter</button>
+		</div>
+	</div>
+
+	<div class="row" id="registration_fee" ng-show="registrationBlock">
+		<div class="col-sm-4 col-sm-offset-4">
+			<label>Registration Fee</label>
+			
+			<div class="form-group input-group">
+			<span class="input-group-addon"><i class="fa fa-usd" aria-hidden="true"></i></span>
+			<input class="form-control" type="currency" value="50" readonly />
+			</div>
+									
+			<button class="primary-btn" ng-click="regFeePaid()" id="pay_btn"><i class="fa fa-credit-card" aria-hidden="true"></i> Pay</button>
+		</div>
+	</div>
+
+	<div class="row margin-bt80" id="charter_data" ng-show="charterDataBlock">
+		<div class="col-sm-8">
+			<div class="charter-content"> 
+				<ul>
+				<li><span><i class="fa fa-check-circle" aria-hidden="true"></i> MBC Name Limited by shares :</span> <span id="mbc_name_value">{{mbcData.legalName}}</span></li>
+				<li><span><i class="fa fa-check-circle" aria-hidden="true"></i> Registered Name of Agent :</span> <span id="agent_name_value">{{mbcData.webRegistredAgentDetails.registeredAgencyName}}</span></li>
+				<li><span><i class="fa fa-check-circle" aria-hidden="true"></i> Registered Office Address :</span> <span id="reg_office_addr_value">Address details</span></li>
+				<li><span><i class="fa fa-check-circle" aria-hidden="true"></i> Country :</span> <span id="country_value">{{mbcData.webAddressDetails.countryDetails.countryName}}</span></li>
+				<li><span><i class="fa fa-check-circle" aria-hidden="true"></i> Location :</span> <span id="location_value">{{mbcData.webAddressDetails.streetAddress}}</span></li>
+				<li><span><i class="fa fa-check-circle" aria-hidden="true"></i> Business Purpose :</span> <span id="bussiness_purpose_value">{{mbcData.businessPurpose}}</span></li>
+				<!--<li><span><i class="fa fa-check-circle" aria-hidden="true"></i> Name of Principal :</span> <span id="principal_name_value">Name of Principal</span></li>
+				<li><span><i class="fa fa-check-circle" aria-hidden="true"></i> Nationality of Principal :</span> <span id="principal_nationality_value">Nationality of Principal</span></li>
+				<li><span><i class="fa fa-check-circle" aria-hidden="true"></i> Name of Participant :</span> <span id="participant_name_value">Participant</span></li>
+				<li><span><i class="fa fa-check-circle" aria-hidden="true"></i> Nationality of Participant :</span> <span id="participant_nationality_value">Nationality</span></li>-->
+				<li><span><i class="fa fa-check-circle" aria-hidden="true"></i> Ammendment :</span> 
+				<input type="checkbox" ng-click="ammendment()" value="true" ng-model="ammendmentValue">
+				
+				</li>
+				</ul>
+			</div> 
+		</div>
+	</div>
+	
+	<div class="row" id="edit_charter_data" ng-show="editCharterDataBlock">
+		<div class="col-sm-8">
+			<div class="charter-content"> 
+				<ul>
+				<li><span><i class="fa fa-check-circle" aria-hidden="true"></i> MBC Name Limited by shares :</span> <input type="text" id="edit_mbc_name" ng-model="mbcData.legalName" /></li>
+				<li><span><i class="fa fa-check-circle" aria-hidden="true"></i> Registered Name of Agent :</span> <input type="text" id="edit_agent_name" ng-model="mbcData.webRegistredAgentDetails.registeredAgencyName" /></li>
+				<li><span><i class="fa fa-check-circle" aria-hidden="true"></i> Registered Office Address :</span> <input type="text" id="edit_reg_office_addr" value="Address details" /></li>
+				<li><span><i class="fa fa-check-circle" aria-hidden="true"></i> Country :</span> <input type="text" id="edit_country" ng-model="mbcData.webAddressDetails.countryDetails.countryName" /></li>
+				<li><span><i class="fa fa-check-circle" aria-hidden="true"></i> Location :</span> <input type="text" id="edit_location" ng-model="mbcData.webAddressDetails.streetAddress" /></li>
+				<li><span><i class="fa fa-check-circle" aria-hidden="true"></i> Business Purpose :</span> <input type="text" id="edit_business_purpose" ng-model="mbcData.businessPurpose" /></li>
+				<!--<li><span><i class="fa fa-check-circle" aria-hidden="true"></i> Name of Principal :</span> <span id="principal_name_value">Name of Principal</span></li>
+				<li><span><i class="fa fa-check-circle" aria-hidden="true"></i> Nationality of Principal :</span> <span id="principal_nationality_value">Nationality of Principal</span></li>
+				<li><span><i class="fa fa-check-circle" aria-hidden="true"></i> Name of Participant :</span> <span id="participant_name_value">Participant</span></li>
+				<li><span><i class="fa fa-check-circle" aria-hidden="true"></i> Nationality of Participant :</span> <span id="participant_nationality_value">Nationality</span></li>-->
+				</ul>
+			</div> 
+		</div>
+	</div>
+	
+	<div class="row margin-bt80" ng-show="editCharterDataBlock">
+		<div class="col-sm-8">
+		
+			<label>Application Fee:</label>
+			
+			<div class="form-group input-group">
+			<span class="input-group-addon"><i class="fa fa-usd" aria-hidden="true"></i></span>
+			<input class="form-control" type="currency" id="application_fee" value="25" readonly />
+			</div>
+		</div>
+		<div class="col-sm-4 col-sm-offset-4">	
+			<a class="primary-btn" ui-sref="confirmation-charter"><i class="fa fa-credit-card" aria-hidden="true"></i> Pay</a>
+		</div>
+	</div>
+</div> <!-- /container -->
+	
+	
+	
+			
+	
+
+
+    

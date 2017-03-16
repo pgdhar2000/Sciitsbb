@@ -1,0 +1,215 @@
+<div ng-include="'app/components/common/templates/header.html'" ng-controller="headerController"></div>
+
+    	<div class="container theme-showcase" role="main">
+	<div class="row">	
+		<div class="page-heading">
+			<h3 class="page-title">Declaration of solvency</h3>
+		</div>
+	</div>
+	<div class="row" id="charter_data" style="display:block;">	
+				
+				 <div class="col-sm-8">
+				
+				
+				<div class="charter-content"> 
+				<ul>
+<li><span><i class="fa fa-check-circle" aria-hidden="true"></i> MBC Name :</span> <span id="mbc_name_value">MBC Name1</span></li>
+<li><span><i class="fa fa-check-circle" aria-hidden="true"></i> RA  voluntary liquidator Name :</span> <span id="agent_name_value">Voluntary Liquidators Name1</span></li>
+<li><span><i class="fa fa-check-circle" aria-hidden="true"></i> Effective date:</span> <span id="reg_office_addr_value">Location 1</span></li>
+
+				</ul>
+				</div> 
+
+ </div>
+
+ 
+	
+    </div>
+	
+				<div class="row">
+					<div class="col-sm-4">
+						<label>Reasons</label>
+						<div class="form-group">
+							<select class="form-control" id="reasons_dd">
+								<option value="">select</option>
+								<option value="mbcname1">Reason 1</option>
+								<option value="mbcname2">Reason 2</option>
+								<option value="mbcname3">Reason 3</option>
+							</select>
+						</div>
+					</div>
+				</div>
+	
+				<div class="row">
+					<div class="col-sm-4 ">
+						<label>Estimate Time Required To Liquidate</label>
+						<div class="form-group input-group">
+							<span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+							<input class="form-control" placeholder="MM / DD / YYYY" type="text" id="estimate1_tb">
+						</div>
+					</div>
+				</div>
+	
+	
+				<div class="row">
+					<div class="col-sm-4 ">
+						<label>Estimated Time Required To Liquidate</label>
+						<div class="form-group input-group">
+							<span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+							<input class="form-control" placeholder="MM / DD / YYYY" type="text" id="estimate2_tb">
+						</div>
+						
+					</div>
+				</div>
+
+				<div class="cleaner h20"></div>
+				
+				<div class="row" style="display:block;" >
+					<div class="col-sm-4">
+						<a class="btn btn-success" id="estatement" data-toggle="modal" data-target="#myModal">Declaration of Solvency</a>
+						
+					</div>
+				</div>
+					
+				
+				<div class="modal fade" id="myModal" role="dialog">
+					<div class="modal-dialog">
+    
+				<!-- Modal content-->
+				<div class="modal-content modal-conformation">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" id="close_modal_btn">&times;</button>
+								<h4 class="modal-title">Declaration of Solvency E-Statement</h4>
+							</div>
+					<div class="modal-body">
+			
+			
+						<div class="row">
+							<div class="col-sm-6">
+								<label>Voluntary Liquidator Name:</label>
+								<span> Liquidator Name1</span>
+								<div class="form-group">
+									<span id="popup_person1_name"></span><br/>
+									<span id="popup_person2_name"></span>
+								</div>
+							</div>
+				
+						<div class="col-sm-6">
+							<label>MBC Name:</label>
+							<span> MBC Name1</span>
+							<div class="form-group">
+								<span id="popup_person1_share"></span><br/>
+								<span id="popup_person2_share"></span>
+							</div>
+						</div>
+				
+				
+						</div>
+						
+						<div class="row">
+							<div class="col-sm-6">
+								<label>Address</label>
+								<span> Line 1</span>
+								<div class="form-group">
+									<span id="popup_person1_name"></span><br/>
+									<span id="popup_person2_name"></span>
+								</div>
+							</div>
+				
+						<div class="col-sm-6">
+							<label>Assets:</label>
+							<span> 100</span>
+							<div class="form-group">
+								<span id="popup_person1_share"></span><br/>
+								<span id="popup_person2_share"></span>
+							</div>
+						</div>
+						</div>
+						
+						<div class="row">
+							<div class="col-sm-6">
+								<label>Literates</label>
+								<span> 50</span>
+								<div class="form-group">
+									<span id="popup_person1_name"></span><br/>
+									<span id="popup_person2_name"></span>
+								</div>
+							</div>
+				
+						</div>
+		
+					</div>
+				</div>
+      
+    </div></div>
+				
+			
+
+    <!-- /container -->
+
+	</div>
+	<div class="cleaner h80"></div>
+
+	<script>
+
+		$(document).ready(function(){
+		    $("#search").click(function(){
+				$("#avail").css("display", "block");
+			});
+		
+			$("#submit").click(function(){
+				window.location="confirmation.html";
+			});
+	});
+		function sendMail() {
+       var validator = $("#enquiry").validate({
+              rules: {
+ 
+              },
+             
+          });
+          if (validator.form()) {
+              alert('Thank you for contacting us. We will be in touch with you very soon.');
+          }
+
+    }
+
+	
+	
+	
+	
+	$(document).ready(function(){
+	
+							$("#estatement").click(function(){
+			
+			$("#popup_person1").text($("#person1").val());
+			$("#popup_person2").text($("#person2").val());
+			
+			$("#popup_person1_name").text($("#person1_name").val());
+			$("#popup_person2_name").text($("#person2_name").val());
+			
+			$("#popup_person1_share").text($("#person1_share").val());
+			$("#popup_person2_share").text($("#person2_share").val());
+			
+			$("#popup_legal_title").text($("#legal_title").val());
+			
+			$("#person1").prop("readonly","true");
+			$("#person2").prop("readonly","true");
+			
+			$("#person1_name").prop("readonly","true");
+			$("#person2_name").prop("readonly","true");
+			
+			$("#person1_share").prop("readonly","true");
+			$("#person2_share").prop("readonly","true");
+			
+			$("#legal_title").prop("readonly","true");
+			
+			
+		});
+		
+		});
+		
+	
+
+
+</script>

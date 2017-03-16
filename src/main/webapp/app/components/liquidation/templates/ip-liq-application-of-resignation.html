@@ -1,0 +1,170 @@
+<div ng-include="'app/components/common/templates/header.html'" ng-controller="headerController"></div>
+
+ 		<div class="container theme-showcase" role="main">
+	<div class="row">	
+		<div class="page-heading">
+			<h3 class="page-title">Application Of Resignation</h3>
+		</div>
+	</div>
+	
+	
+	<div class="row">	
+		<div class="col-sm-12">
+				
+		<div class="panel panel-default form-div">
+		<div class="panel-heading"> 
+			<h3 class="panel-title"><i class="fa fa-arrow-right" aria-hidden="true"></i> Application Of Resignation Form</h3> 
+		</div> 
+	
+	
+	
+	<div class="panel-body"> 
+	<form action="" id="enquiry">
+	
+	<div class="row">
+					<div class="col-sm-4 ">
+						<label>MBC Name</label>
+						<div class="form-group">
+							<select class="form-control" id="mbc_name">
+								<option value="">select</option>
+								<option value="mbcname1">MBC Name1</option>
+								<option value="mbcname2">MBC Name2</option>
+								<option value="mbcname3">MBC Name3</option>
+							</select>
+						</div>
+					</div>
+				</div>
+	
+	<div class="row">
+					<div class="col-sm-4 ">
+						<label>Voluntary Liquidator Names</label>
+						<div class="form-group">
+							<select class="form-control" id="vlname_dd">
+								<option value="">select</option>
+								<option value="mbcname1">Voluntary Liquidator Name1</option>
+								<option value="mbcname2">Voluntary Liquidator Name2</option>
+								<option value="mbcname3">Voluntary Liquidator Name3</option>
+							</select>
+						</div>
+					</div>
+				</div>
+	
+	
+	<div class="row">
+					<div class="col-sm-4 ">
+							<label>Current Date</label>
+						<div class="form-group input-group">
+							<span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+							<input class="form-control" placeholder="MM / DD / YYYY" type="text" id="current_date_tb" />
+						</div>
+						
+					</div>
+				</div>
+				
+				
+				
+				
+				<div class="row">
+					<div class="col-sm-4 ">
+					<label>Resignation Date </label>
+						<div class="form-group input-group">
+							<span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+							<input class="form-control" placeholder="MM / DD / YYYY" type="text" id="resignation_date_tb" />
+						</div>
+						
+					</div>
+				</div>
+				
+				
+				
+				<div class="row">
+					<div class="col-sm-4 ">
+							<label>Upload Summary of Liquidation Accounts e-Document</label>
+			<div class="form-group">
+				<input type="file" id="upload_summary_btn">
+            </div>
+						
+					</div>
+				</div>
+				
+				
+				<div class="row">
+					<div class="col-sm-4 ">
+							<label>Upload Report on the Conduct of the Liquidation e-Document</label>
+			<div class="form-group">
+				<input type="file" id="upload_report_btn">
+            </div>
+						
+					</div>
+				</div>
+				
+				
+				
+
+				<div class="cleaner h20"></div>
+				
+		<div class="form-group">
+				<div class="col-sm-4 ">
+					<div class="row">
+					<!--<input value="Submit" id="submit" type="submit" class="primary-btn" onclick="sendMail()"></input>-->
+					<a  class="primary-btn" ui-sref="ip-liq-application-of-resignation-success" id="submit_btn">Submit</a>
+					</div>	
+				</div>
+		</div>		
+				
+		
+				
+		</div>
+		</form>
+		</div>
+
+    </div> <!-- /container -->
+</div>
+</div>
+<div class="cleaner h80"></div>
+			
+	<script>
+
+		$(document).ready(function(){
+		    $("#search").click(function(){
+				$("#avail").css("display", "block");
+			});
+		
+			$("#submit").click(function(){
+				window.location="confirmation.html";
+			});
+	});
+		function sendMail() {
+       var validator = $("#enquiry").validate({
+              rules: {
+ 
+              },
+             
+          });
+          if (validator.form()) {
+              alert('Thank you for contacting us. We will be in touch with you very soon.');
+          }
+
+    }
+
+	
+	
+	
+	
+	$(document).ready(function(){
+	
+		$("#check_liquidate").click(function(){
+		
+			$("#eligible").css("display", "block");	
+					
+			$("#voluntary_liquidators").css("display", "block");			
+					
+					
+					});
+		
+		});
+		
+	
+
+
+</script>

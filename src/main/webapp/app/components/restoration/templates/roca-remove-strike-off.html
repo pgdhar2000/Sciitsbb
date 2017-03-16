@@ -1,0 +1,146 @@
+<div ng-include="'app/components/common/templates/header.html'" ng-controller="headerController"></div>
+
+		<div class="container theme-showcase" role="main">
+
+			<div class="row">
+				<div class="page-heading">
+					<h3 class="page-title fs28">Removing Strike Off	</h3>
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="col-sm-12">
+
+					<div class="panel panel-default form-div">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								<i class="fa fa-arrow-right" aria-hidden="true"></i>Removing from Strike Off
+							</h3>
+						</div>
+						<div class="panel-body">
+							<form action="" id="enquiry">
+
+								<hr />
+
+								<div class="row">
+									<div class="col-sm-4 col-sm-offset-4">
+										<label>Name of Registered Agent :</label>
+										<span>Agent xxyyzz</span>
+									</div>
+								</div>
+							</br>
+								
+								<div class="row">
+									<div class="col-sm-4 col-sm-offset-4">
+										<label>MBC Name</label>
+										<div class="form-group">
+											<select class="form-control" id="mbc_name">
+												<option value="">select</option>
+												<option value="mbcname1">MBC Name1</option>
+												<option value="mbcname2">MBC Name2</option>
+												<option value="mbcname3">MBC Name3</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								
+
+								<div class="row">
+								<div  class="col-sm-6 col-sm-offset-4"> Show Cause:</div>
+								
+									<div  class="col-sm-6 col-sm-offset-4" style="padding-left: 20px;">
+										<div class="checkbox">
+											<label> <input type="checkbox"
+												ng-model="financialServices" id="fin_ser_legislation"
+												checked="">ACTUAL DATE is equal to the Strike Off Date
+											</label>
+										</div>
+									</div>
+								</div>
+
+
+								<!-- <div class="row">
+									<div class="col-sm-6 col-sm-offset-4">
+										<label> officially effective Date</label>
+										<div class="form-group input-group">
+											<span class="input-group-addon"><i
+												class="fa fa-calendar" aria-hidden="true"></i></span> <input
+												class="form-control" placeholder="MM / DD / YYYY"
+												type="text">
+										</div>
+									</div>
+								</div> -->
+								<div class="row">
+									<div class="col-sm-4 col-sm-offset-4">
+										<label>Official Effective Date</label>
+										 <div class="form-group input-group">
+											<span class="input-group-addon"><i	class="fa fa-calendar" aria-hidden="false"></i></span>
+											<input class="form-control" placeholder="xx/xx/xxxx" name=""
+												autofocus="" required="required" type="text" id="date_tb" />
+										</div> 
+										</div>
+
+
+
+									<div class="col-sm-4 col-sm-offset-4">
+										<div class="row">
+											<div class="col-sm-6">
+												<a class="primary-btn" ui-sref="roca-remove-strike-off-submitted" id="submit_btn">Submit</a>
+											</div>
+											
+										</div>
+									</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /container -->
+	</div>
+	<div class="cleaner h80"></div>
+	
+	<script>
+		$(document).ready(function() {
+			$(".Issuance-false-div").hide();
+			$(".Issuance-true-div").hide();
+			$('input[type="radio"]').click(function() {
+				if ($(this).attr("value") == "Issuance-true") {
+					//$(".box").not(".red").hide();
+					$(".Issuance-false-div").hide();
+					$(".Issuance-true-div").show();
+				}
+				if ($(this).attr("value") == "Issuance-false") {
+					//$(".box").not(".green").hide();
+					$(".Issuance-true-div").hide();
+					$(".Issuance-false-div").show();
+				}
+
+			});
+		});
+
+		$(document).ready(function() {
+			$("#search").click(function() {
+				$("#avail").css("display", "block");
+			});
+
+			$("#submit").click(function() {
+				window.location = "ROCA-Strike-Off-submitted.html";
+			});
+
+		});
+		function sendMail() {
+			var validator = $("#enquiry").validate({
+				rules : {
+
+				},
+
+			});
+			if (validator.form()) {
+				alert('Thank you for contacting us. We will be in touch with you very soon.');
+			}
+
+		}
+	</script>
+

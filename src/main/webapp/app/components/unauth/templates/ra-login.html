@@ -1,0 +1,82 @@
+
+	<div ng-include="'app/components/unauth/templates/unauth-header.html'" ng-controller="unauthHeaderController"></div>
+
+    <!-- Page Content -->
+    <div class="container">
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4">
+				<div class="alert alert-success-login col-sm-12" ng-show="logoutMsg">
+					<b class="Response-message logout-font" id="user_logout_msg">You have been successfully logout</b>
+				</div>
+				<div class="alert alert-success-login col-sm-12" ng-show="sessionExpireMsg">
+					<b class="Response-message logout-font" id="session_expire_msg">Your session has been expired</b>
+				</div>
+			</div>
+		</div>
+        <div class="row">
+            <div class="col-md-4 col-md-offset-1">
+			<br/>
+				<div class="login-panel">
+                    <div class="panel-heading login-heading">
+                        <h3 class="ra-panel-title">Registered Agent Sign up</h3>
+                    </div>
+                    <div class="panel-body">
+						<div class="row">
+						<div class="col-md-6 col-md-offset-3">
+							<a class="btn btn-lg btn-primary btn-block" ui-sref="ra-registration" ui-sref-opts="{reload: true}" id="reg_ra"><i class="fa fa-hand-pointer-o"></i>  Sign Up</a>
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 col-md-offset-1">
+			<br/>
+                <div class="login-panel">
+                    <div class="panel-heading login-heading">
+                        <h3 class="ra-panel-title">Registered Agent Sign in</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form name="loginForm" role="form" novalidate>
+                            <fieldset>
+								<div class="alert alert-danger-login col-sm-12" ng-show="validCheck">
+									<i class="fa fa-exclamation-circle" aria-hidden="true"></i> <b class="Response-message logout-font" id="invalid_credentials_err_msg">Invalid Credentials</b>
+								</div>
+								<div class="alert alert-danger-login col-sm-12" ng-show="activeCheck">
+									<i class="fa fa-exclamation-circle" aria-hidden="true"></i> <b class="Response-message logout-font" id="inactive_account_err_msg">Your Account is Inactive. Please contact administrator</b>
+								</div>
+								<div class="cleaner"></div>
+								<label>Username</label>
+                                <div class="form-group">
+                                    <span style="color:red" ng-show="((loginForm.username.$touched)&&(loginForm.username.$invalid)) || (usernameMsg)" id="username_err_msg">Enter Username</span>
+									<input class="form-control" placeholder="Username" name="username" ng-model="user.username" ng-keyup="removeMsgs()" type="text" autofocus required id="username_tb">
+                                </div>
+								<label>Password</label>
+                                <div class="form-group">
+                                    <span style="color:red" ng-show="((loginForm.password.$touched)&&(loginForm.password.$invalid)) || (passwordMsg)" id="password_err_msg">Enter Password</span>
+									<input class="form-control" placeholder="Password" name="password" ng-model="user.password" type="password" ng-paste="$event.preventDefault()" required id="password_tb">
+                                </div>
+                                <div class="col-xs-6 col-xs-offset-3">
+									<div class="row">
+										<button class="btn btn-lg btn-primary btn-block margin-b80" ng-click="login()" id="signin_btn">
+										<i class="fa fa-sign-in"></i> Sign in</button>
+									</div>
+								</div>
+									<div class="col-xs-12">
+									  <div class="row margin-bt80">
+											<!--<a class="errMsg pull-right" href="#" id="forgot_pwd">Forgot Password?</a>-->
+										</div>
+									</div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- /.container -->

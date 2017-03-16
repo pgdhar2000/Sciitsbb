@@ -1,0 +1,186 @@
+<div ng-include="'app/components/common/templates/header.html'" ng-controller="headerController"></div>
+
+    <div class="container theme-showcase" role="main">
+
+		<div class="row">	
+			<div class="page-heading">
+				<h3 class="page-title">Request for Transformation</h3>
+			</div>
+		</div>
+
+		
+				
+		<div class="row">	
+				
+			<div class="col-sm-12">
+				
+			<div class="panel panel-default form-div"> <div class="panel-heading"> 
+				<h3 class="panel-title"><i class="fa fa-arrow-right" aria-hidden="true"></i> Request for Transformation Form</h3> </div> 
+				<div class="panel-body"> 
+				
+				
+	<form action="" id="enquiry">
+		<div class="row">	
+			<div class="col-sm-6">
+				<label>Name of the corporation</label>
+				<div class="form-group input-group">
+					<span class="input-group-addon"><i class="fa fa-search search-black" aria-hidden="true"></i></span>
+					<input class="form-control" placeholder="Incorporated company Name" type="text" id="name_tb" />
+				</div>
+			</div>
+		</div>
+												
+			<div class="row">	
+				<div class="col-sm-6">
+				<label>Address of the corporation</label>
+				<textarea class="form-control" placeholder="Written confirmation" rows="3" type="text" id="address_ta">			</textarea>
+				</div>
+				
+			</div>
+												
+												
+			<div class="row">	
+				<div class="col-sm-6">
+				<label>RA-Employee identification number</label>
+				<div class="form-group">
+					<input class="form-control" placeholder="RA-Employee identification number" name="5" type="text" id="ra_emp_id_num_tb" />
+				</div>
+				</div>
+			</div>
+				
+				
+			<div class="row">	
+			<div class="col-sm-6">
+					<label> Date of incorporation of the corporation</label>
+				<div class="form-group input-group">
+					<span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+					<input class="form-control" placeholder="MM / DD / YYYY" type="text" id="date_incorporation_tb" />
+				</div>
+			</div>
+			</div>
+				
+			<div class="row">	
+			<div class="col-sm-6">
+					<label> Total number of shares</label>
+					<div class="form-group">
+						<input class="form-control" placeholder="Enter the total number of shares" name="" autofocus=""  type="text" id="total_num_shares_tb" />
+					</div>
+			</div>
+			</div>
+			
+			<div class="row">	
+			<div class="col-sm-6">
+					<label> Annual turnover of the corporation</label>
+					<div class="form-group">
+						<input class="form-control" placeholder="Enter the annual turnover of the corporation" name="" autofocus=""  type="text" id="annual_turnover_tb" />
+					</div>
+			</div>
+			</div>
+			
+			<div class="row">	
+			<div class="col-sm-6">
+					<label>Gross asset value of the corporation</label>
+					<div class="form-group">
+						<input class="form-control" placeholder="Enter the gross asset value of the corporation" name="" autofocus="" type="text" id="gross_asset_tb" />
+					</div>
+			</div>
+			</div>
+			
+			<div class="row">	
+			<div class="col-sm-6">
+					<label>Number of employees of the corporation</label>
+					<div class="form-group">
+						<input class="form-control" placeholder="Enter the number of employees of the corporation" name=""  type="text" id="num_emp_tb" />
+					</div>
+			</div>
+			</div>
+			
+
+			<!--<div class="row">	
+				<div class="col-sm-6">
+					<label>MBC Number</label>
+					<div class="form-group">
+						<input type="text" class="form-control" name="fname" value="00548965588456" disabled="disabled" style="font-weight:bold;">
+					</div>
+				</div>
+			</div>	-->
+
+												
+			<div class="cleaner h20"></div>
+					<div class="form-group">
+							<div class="col-sm-3">
+								<div class="row">
+								<!--<input value="Submit"  class="primary-btn" ></input> -->
+								<a class="btn primary-btn" data-toggle="modal" id="submit_btn" data-target="#myModal">Submit</a> 
+								</div>	
+							</div>
+					</div>
+					
+					  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content modal-conformation">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" id="close_modal_btn">&times;</button>
+          <h4 class="modal-title">Transformation request submitted/Pending approval</h4>
+        </div>
+        <div class="modal-body" style="min-height:100px;padding-top:30px;"">
+		<div class="col-sm-4">
+         <button class="btn btn-info" data-dismiss="modal" id="print_btn">Print</button> 
+		 </div>
+		 <div class="col-sm-4">
+		<button class="btn btn-success" data-dismiss="modal" id="email_btn">Email</button>
+		</div>
+		<div class="col-sm-4">
+		<button class="btn btn-danger" data-dismiss="modal" id="cancel_btn">Cancel Request</button>  
+		</div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+																
+</form>
+
+				</div>
+			</div>
+			
+		<div class="cleaner h80"></div>
+		</div>
+
+		</div>
+
+    </div> <!-- /container -->
+
+	</div>
+	
+	
+	<script>
+
+		$(document).ready(function(){
+		    $("#search").click(function(){
+				$("#avail").css("display", "block");
+			});
+		
+			//$("#submit").click(function(){
+			//	window.location="confirmation.html";
+			//});
+	});
+		function sendMail() {
+       var validator = $("#enquiry").validate({
+              rules: {
+ 
+              },
+             
+          });
+          if (validator.form()) {
+              alert('Thank you for contacting us. We will be in touch with you very soon.');
+          }
+
+    }
+
+</script>
+
+    

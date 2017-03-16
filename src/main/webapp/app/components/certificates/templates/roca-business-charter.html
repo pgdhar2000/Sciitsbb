@@ -1,0 +1,57 @@
+<div ng-include="'app/components/common/templates/header.html'" ng-controller="headerController"></div>
+
+
+    <div class="container theme-showcase" role="main">
+
+
+		<div class="row">	
+			<div class="page-heading">
+				<h3 class="page-title" style="font-size:24px;">Certified Business Charter</h3>
+			</div>
+		</div>
+				
+		<div class="row">	
+				 <div class="col-sm-8">
+				
+				<div class="charter-content"> 
+				<ul>
+					<li><span style="width:250px;"><i class="fa fa-check-circle" aria-hidden="true"></i> MBC Number :</span> 
+					<span><a ui-sref="roca-business-charter-details" id="mbc_num1">MBC Number1</a></span></li>
+
+					<li><span style="width:250px;"><i class="fa fa-check-circle" aria-hidden="true"></i> MBC Number :</span> 
+					<span><a ui-sref="roca-business-charter-details" id="mbc_num2">MBC Number2</a></span></li>
+
+					<li><span style="width:250px;"><i class="fa fa-check-circle" aria-hidden="true"></i> MBC Number :</span> 
+					<span><a ui-sref="roca-business-charter-details" id="mbc_num3">MBC Number3</a></span></li>
+
+					<li><span style="width:250px;"><i class="fa fa-check-circle" aria-hidden="true"></i> MBC Number :</span> 
+					<span><a ui-sref="roca-business-charter-details" id="mbc_num4">MBC Number4</a></span></li>
+				</ul>
+				</div> 
+				
+			<div class="cleaner h30"></div>
+			 </div>
+		</div>
+		
+    </div> <!-- /container -->
+	
+	<script>
+
+$(document).ready(function(){
+    $("#search").click(function(){
+        $("#avail").css("display", "block");
+    });
+});
+
+$(document).ready(function(){
+    $('.sendButton').attr('disabled',true);
+    $('#message').keyup(function(){
+        if($(this).val().length !=0)
+            $('.sendButton').attr('disabled', false);   
+        else
+            $('.sendButton').attr('disabled',true);
+			$("#avail").css("display", "none");
+    });
+});
+
+</script>

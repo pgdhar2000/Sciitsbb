@@ -1,0 +1,143 @@
+<div ng-include="'app/components/common/templates/header.html'" ng-controller="headerController"></div>
+
+    <div class="container theme-showcase" role="main">
+
+		<div class="row">	
+					<div class="page-heading">
+                        <h3 class="page-title">Restore Strike Off MBC</h3>
+                    </div>
+		</div>
+
+		
+		
+		<div class="row">
+					<div class="col-sm-4 col-sm-offset-4">
+						<label>MBC Name</label>
+						<div class="form-group">
+							<select class="form-control" id="mbc_name">
+								<option value="">select</option>
+								<option value="mbcname1">MBC Name1</option>
+								<option value="mbcname2">MBC Name2</option>
+								<option value="mbcname3">MBC Name3</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				
+				
+				
+				<div class="row" id="mbc_details" style="display:none;">
+					<div class="col-sm-6 col-sm-offset-3" style="background-color:#dddee8;border-radius:5px;">
+						<br/>
+						<div class="row">
+							<div class="col-sm-6">
+								<label>MBC Name:</label>
+							</div>
+							<div class="col-sm-6">
+								<label>MBC Name</label>
+							</div>
+						</div>
+						<br/>
+						<div class="row">
+							<div class="col-sm-6">
+								<label>Registered Agent Name:</label>
+							</div>
+							<div class="col-sm-6">
+								<label>Registered Agent Name</label>
+							</div>
+						</div>
+						<br/>
+						<div class="row">
+							<div class="col-sm-6">
+								<label>Restoration Applying Date:</label>
+							</div>
+							<div class="col-sm-6 form-group input-group">
+								
+					<span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+					<input class="form-control" style="width:80%;" placeholder="MM / DD / YYYY" type="text" id="restoration_date_tb" />
+				
+							</div>
+						</div>
+						<br/>
+						<div class="row">
+							<div class="col-sm-6">
+								<label>Fee</label>
+							</div>
+							<div class="col-sm-6 form-group input-group">
+								<span class="input-group-addon"><i class="fa fa-usd" aria-hidden="true"></i></span>
+								<input type="number" class="form-control" style="width:80%;"  id = "strike_off_fee"  placeholder="250" required="required">
+							
+							<div class="tooltip-one" style="margin-right:20px;" id="fee_details_tt">
+							<i class="fa fa-fltgray fa-exclamation-circle"></i>
+							<span class="tooltiptext">
+								<p class="p-tooltip">Fees:</p>
+								<ul class="ul-tooltip">
+									<li><span> < 180 days:</span><span class="tooltip-text-alignment">$ 250</span></li>
+									<li><span> < 365 days:</span><span class="tooltip-text-alignment">$ 500</span></li>
+									<li><span> = 365 days:</span><span class="tooltip-text-alignment">$ 800</span></li>
+									<li><span> 366 to 730 days:</span><span class="tooltip-text-alignment">$ 1500</span></li>
+									<li><span> 731 to 1825 days:</span><span class="tooltip-text-alignment">$ 2500</span></li>
+								</ul>
+							</span>
+							</div>
+							</div>
+						</div>
+						<br/>
+						
+					</div>
+				</div>
+				
+				<div class="row" id="pay_button" style="display:none;">
+					<div class="col-sm-4 col-sm-offset-4" style="text-align: center;margin-top: 10px;">
+						<a class="primary-btn" ui-sref="ra-restoration-success" id="pay_btn">Pay</a>
+					</div>
+				</div>
+		
+
+    </div> <!-- /container -->
+
+	
+			<div class="cleaner h80"></div>
+	
+
+	<script>
+
+		$(document).ready(function(){
+		    $("#search").click(function(){
+				$("#avail").css("display", "block");
+			});
+		
+			$("#submit").click(function(){
+				window.location="confirmation.html";
+			});
+	});
+		function sendMail() {
+       var validator = $("#enquiry").validate({
+              rules: {
+ 
+              },
+             
+          });
+          if (validator.form()) {
+              alert('Thank you for contacting us. We will be in touch with you very soon.');
+          }
+
+    }
+
+	
+	
+	
+	
+	$(document).ready(function(){
+		$("#mbc_name").change(function(){
+			$("#mbc_details").css("display","block");
+			$("#pay_button").css("display","block");
+		
+		});
+		
+	});
+
+
+
+</script>
+

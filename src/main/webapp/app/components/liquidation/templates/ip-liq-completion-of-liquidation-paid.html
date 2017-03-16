@@ -1,0 +1,45 @@
+<div ng-include="'app/components/common/templates/header.html'" ng-controller="headerController"></div>
+
+    <div class="container theme-showcase" role="main">
+
+				
+		<div class="row">	
+			<div class="col-sm-12">
+			
+			
+			
+			<div class="alert alert-success Issuance-true-div" style="display: block; text-align: center; font-weight: bold;">
+				Paid successfully
+			</div>
+
+		</div>
+		</div>
+
+    </div> <!-- /container -->
+	
+	<script>
+
+		$(document).ready(function(){
+		    $("#search").click(function(){
+				$("#avail").css("display", "block");
+			});
+		
+			$("#submit").click(function(){
+				window.location="charter.html";
+			});
+	});
+		function sendMail() {
+       var validator = $("#enquiry").validate({
+              rules: {
+ 
+              },
+             
+          });
+          if (validator.form()) {
+              alert('Thank you for contacting us. We will be in touch with you very soon.');
+          }
+
+    }
+
+</script>
+  

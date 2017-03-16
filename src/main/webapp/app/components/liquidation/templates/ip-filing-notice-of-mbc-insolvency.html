@@ -1,0 +1,139 @@
+<div ng-include="'app/components/common/templates/header.html'" ng-controller="headerController"></div>
+
+    
+
+    	<div class="container theme-showcase" role="main">
+	<div class="row">	
+		<div class="page-heading">
+			<h3 class="page-title">Filing Notice of MBC Insolvency</h3>
+		</div>
+	</div>
+	
+	<div class="row">
+					<div class="col-sm-4 col-sm-offset-4">
+						<label>MBC Name</label>
+						<div class="form-group">
+							<select class="form-control" id="mbc_name">
+								<option value="">select</option>
+								<option value="mbcname1">MBC Name1</option>
+								<option value="mbcname2">MBC Name2</option>
+								<option value="mbcname3">MBC Name3</option>
+							</select>
+						</div>
+					</div>
+				</div>
+	
+	
+		<div class="row">	
+			<div class="col-sm-4 col-sm-offset-4">
+				<label>Insolvency FEE</label>
+					<div class="form-group input-group">
+						<span class="input-group-addon"><i class="fa fa-usd" aria-hidden="true"></i></span>
+						<input type="number" class="form-control"  id = "insolvency_fee"  placeholder="50" required="required">
+                    </div>
+			</div>
+	
+	<div class="row">
+					<div class="col-sm-4 col-sm-offset-4">
+							<label>Assets</label>
+						<div class="form-group">
+							<input class="form-control" placeholder=""  id = "Assets"  name="" autofocus="" required="required" type="number" value="100">
+						</div>
+					</div>
+				</div>
+	
+	
+	<div class="row">
+					<div class="col-sm-4 col-sm-offset-4">
+							<label>Liabilites</label>
+						<div class="form-group">
+							<input class="form-control" placeholder=""  id = "Liabilites"  name="" autofocus="" required="required" type="number" value="50">
+						</div>
+						<input value="Check  Insolvency" id="check_insolvency" type="submit" class="primary-btn" style="display:block;"></input>
+						
+						<h4 style="display:none;" id = "eligible"><i>MBC Becomes Insolvent </i></h4>
+					</div>
+				</div>
+
+				<div class="cleaner h20"></div>
+				
+				
+					<div  class="row" style="display:none;" id  = "solvency_date" >
+					<div class="col-sm-4 col-sm-offset-4 ">
+						<label>Date of Insolvency</label>
+						<div class="form-group input-group">
+							<span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+							<input class="form-control" placeholder="MM / DD / YY" type="text" id="date_tb">
+						</div>
+					</div>
+				</div>
+
+
+		<div class="row" style="display:none;" id  = "declaration_of_insolvency">
+			<div class="col-sm-4 col-sm-offset-4">
+				<label>Declaration of Insolvency e-Document</label>
+				<div class="form-group">
+					<input type="file" id="upload_btn" />
+				</div>
+			</div>
+		</div>
+
+
+		<div class="row" style="display: none;" id="voluntary_liquidators">
+			<div class="col-sm-4 col-sm-offset-4">
+				<a class="primary-btn" ui-sref="ip-filing-notice-of-mbc-insolvency-sucess" id="submit_btn">Submit</a>
+			</div>
+		</div>
+</div>	
+</div>
+<div class="cleaner h80"></div>
+	
+	<script>
+
+		$(document).ready(function(){
+		    $("#search").click(function(){
+				$("#avail").css("display", "block");
+			});
+		
+			$("#submit").click(function(){
+				window.location="ROCA-filing-notice-of-mbc-insolvency-sucess.html";
+			});
+	});
+		function sendMail() {
+       var validator = $("#enquiry").validate({
+              rules: {
+ 
+              },
+             
+          });
+          if (validator.form()) {
+              alert('Thank you for contacting us. We will be in touch with you very soon.');
+          }
+
+    }
+
+	
+	
+	
+	
+	$(document).ready(function(){
+	
+		$("#check_insolvency").click(function(){
+		
+			$("#eligible").css("display", "block");	
+					
+			$("#voluntary_liquidators").css("display", "block");	
+			
+			$("#solvency_date").css("display", "block");	
+			$("#declaration_of_insolvency").css("display", "block");	
+					
+					
+					});
+		
+		});
+		
+	
+
+
+</script>
+  

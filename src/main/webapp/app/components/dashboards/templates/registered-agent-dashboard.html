@@ -1,0 +1,508 @@
+<div ng-include="'app/components/common/templates/header.html'" ng-controller="headerController"></div>
+
+
+<div class="container theme-showcase" role="main">
+
+		<div class="row">
+			<div class="page-heading">
+				<h3 class="page-title">Registered Agent - Dashboard</h3>
+			</div>
+		</div>
+
+
+
+
+			<div class="ra-db-panel">
+			<div class="row">
+
+
+				<div class="col-sm-6">
+					<div class="panel panel-blue">
+                        <div class="panel-heading">
+                            <i class="fa fa-check fa-check-dbpabel" aria-hidden="true"></i> Incorporation
+                        </div>
+                        <div class="panel-body">
+                            <div class="db-content RA-db-panel">
+
+						<div class="row">
+							<div class="col-sm-3 col-xs-3">
+							<div><b>Application Number </b></div>
+							</div>
+							<div class="col-sm-3 col-xs-3">
+							<div><b>Status </b></div>
+							</div>
+							<div class="col-sm-3 col-xs-3">
+							<div><b>MBC Number </b></div>
+							</div>
+							<div class="col-sm-3 col-xs-3">
+							<div><b>REF Number </b></div>
+							</div>
+						</div>
+
+						<div class="row db-panel-content-row" >
+
+							<div class="col-sm-3 col-xs-3 pad-0" >
+							<div>0015468</div>
+							</div>
+							<div class="col-sm-3 col-xs-3">
+							<i class="fa fa-check-circle color-green" aria-hidden="true"></i>
+							Approved
+							</div>
+							<div class="col-sm-3 col-xs-3">
+							<a ui-sref="ra-register-details" id="incorporation_mbc_1">MBC Number</a>
+							</div>
+							<div class="col-sm-3 col-xs-3">
+							-----
+							</div>
+							</div>
+						<div class="row db-panel-content-row">
+							<div class="col-sm-3 col-xs-3 pad-0" >
+							<div>0019564</div>
+							</div>
+							<div class="col-sm-3 col-xs-3">
+							<i class="fa fa-times-circle" style="color:red;" aria-hidden="true"></i>
+							Rejected
+							</div>
+							<div class="col-sm-3 col-xs-3">
+							-----
+							</div>
+							<div class="col-sm-3 col-xs-3">
+							<div class="errMsg">00285465</div>
+							</div>
+							</div>
+						<div class="row" style="margin:0px;">
+							<div class="col-sm-3 col-xs-3 pad-0" >
+							<div>0051952</div>
+							</div>
+							<div class="col-sm-3 col-xs-3">
+							<i class="fa fa-check-circle color-green" aria-hidden="true"></i>
+							Approved
+							</div>
+							<div class="col-sm-3 col-xs-3">
+							<a ui-sref="ra-register-details" id="incorporation_mbc_2">MBC Number</a>
+							</div>
+							<div class="col-sm-3 col-xs-3">
+							-----
+							</div>
+							</div>
+						<div class="row">
+							<div class="col-sm-12 col-xs-12">
+								<a class="errMsg pull-right" id="incorporation_read_more">Read More >></a>
+							</div>
+						</div>
+						</div>
+                    </div>
+                    </div>
+
+</div>
+				<!--<div class="col-sm-6">
+					<div class="panel panel-danger">
+                        <div class="panel-heading">
+                          <i class="fa fa-times" aria-hidden="true"></i>  Rejected Incorporation
+                        </div>
+                        <div class="panel-body">
+                        <div class="db-content">
+
+
+						<div class="row">
+							<div class="col-sm-6 col-xs-6">
+							<div><b>REF Number </b></div>
+							</div>
+
+							<div class="col-sm-6 col-xs-6">
+							<div> <b>Reason for Denial </b></div>
+							</div>
+						</div>
+
+						<div class="row db-panel-content-row" >
+
+							<div class="col-sm-6 col-xs-6 pad-0" >
+							<i class="fa fa-check-circle fa-check-circle2" aria-hidden="true"></i> 00285465
+							</div>
+							<div class="col-sm-6 col-xs-6">
+							<div>--------</div>
+							</div>
+
+							</div>
+
+						<div class="row db-panel-content-row" >
+
+							<div class="col-sm-6 col-xs-6 pad-0" >
+							<i class="fa fa-check-circle fa-check-circle2" aria-hidden="true"></i> 00285466
+							</div>
+							<div class="col-sm-6 col-xs-6">
+							<div>--------</div>
+							</div>
+
+							</div>
+
+						<div class="row" >
+						   <div class="col-sm-6 col-xs-6" >
+							<i class="fa fa-check-circle fa-check-circle2" aria-hidden="true"></i> 00285468
+							</div>
+							<div class="col-sm-6 col-xs-6">
+							<div>--------</div>
+							</div>
+
+							</div>
+
+
+						</div>
+
+						<div class="db-content">
+
+						</div>
+
+                        </div>
+
+                    </div>
+				</div>-->
+
+				<div class="col-sm-6">
+					<div class="panel panel-blue">
+                        <div class="panel-heading">
+                            <i class="fa fa-check fa-check-dbpabel" aria-hidden="true"></i> Approved Restoration
+                        </div>
+                        <div class="panel-body">
+                            <div class="db-content RA-db-panel">
+
+						<div class="row">
+							<div class="col-sm-6 col-xs-6">
+							<div><b>MBC Name </b></div>
+							</div>
+
+							<div class="col-sm-6 col-xs-6">
+							<div> <b>MBC Number </b></div>
+							</div>
+						</div>
+
+						<div class="row db-panel-content-row" >
+
+							<div class="col-sm-6 col-xs-6 pad-0" >
+							<i class="fa fa-check-circle color-green" aria-hidden="true"></i>
+							<a ui-sref="ra-restoration-certificate" id="approved_restoration_mbc_1">MBC Name 1</a>
+							</div>
+							<div class="col-sm-6 col-xs-6">
+							<div>MBC Number</div>
+							</div>
+
+							</div>
+						<div class="row db-panel-content-row">
+							<div class="col-sm-6 col-xs-6 pad-0">
+							<div><i class="fa fa-check-circle color-green" aria-hidden="true"></i>
+							<a ui-sref="ra-restoration-certificate" id="approved_restoration_mbc_2">MBC Name 2</a>
+							</div>
+							</div>
+
+							<div class="col-sm-6 col-xs-6">
+							<div>MBC Number</div>
+							</div>
+							</div>
+
+						<div class="row">
+							<div class="col-sm-6 col-xs-6">
+							<div><i class="fa fa-check-circle color-green" aria-hidden="true"></i>
+							<a ui-sref="ra-restoration-certificate" id="approved_restoration_mbc_3">MBC Name 3</a></div>
+							</div>
+
+							<div class="col-sm-6 col-xs-6">
+							<div>MBC Number</div>
+							</div>
+							</div>
+							<div class="row">
+							<div class="col-sm-12 col-xs-12">
+								<a class="errMsg pull-right" id="approved_restoration_read_more">Read More >></a>
+							</div>
+						</div>
+						</div>
+                    </div>
+                    </div>
+
+</div>
+				</div>
+				<div class="cleaner h10"></div>
+				<div class="row">
+				<div class="col-sm-6">
+					<div class="panel panel-blue">
+                        <div class="panel-heading">
+                            <i class="fa fa-check fa-check-dbpabel" aria-hidden="true"></i> Approved Certificates
+                        </div>
+                        <div class="panel-body">
+                            <div class="db-content RA-db-panel">
+
+						<div class="row">
+							<div class="col-sm-6 col-xs-6">
+							<div><b>Certificate Name </b></div>
+							</div>
+
+							<div class="col-sm-6 col-xs-6">
+							<div> <b>Certificate Number </b></div>
+							</div>
+						</div>
+
+						<div class="row db-panel-content-row" >
+
+							<div class="col-sm-6 col-xs-6 pad-0" >
+							<i class="fa fa-check-circle color-green" aria-hidden="true"></i> Certificate of Good Standing
+							</div>
+							<div class="col-sm-6 col-xs-6">
+							<div>123456</div>
+							</div>
+
+							</div>
+
+						<div class="row db-panel-content-row" >
+
+							<div class="col-sm-6 col-xs-6 pad-0" >
+							<i class="fa fa-check-circle color-green" aria-hidden="true"></i> Certificate of Restoration
+							</div>
+							<div class="col-sm-6 col-xs-6">
+							<div>654378</div>
+							</div>
+
+							</div>
+
+						<div class="row" >
+						   <div class="col-sm-6 col-xs-6" >
+							<i class="fa fa-check-circle color-green" aria-hidden="true"></i> Certificate of Dissolution
+							</div>
+							<div class="col-sm-6 col-xs-6">
+							<div>987123</div>
+							</div>
+
+							</div>
+						<div class="row">
+							<div class="col-sm-12 col-xs-12">
+								<a class="errMsg pull-right" id="approved_certificates_read_more">Read More >></a>
+							</div>
+						</div>
+						</div>
+                    </div>
+                    </div>
+
+</div>
+
+	<div class="col-sm-6">
+					<div class="panel panel-danger">
+                        <div class="panel-heading">
+                          <i class="fa fa-times" aria-hidden="true"></i>  Rejected Certificates
+                        </div>
+                        <div class="panel-body">
+                        <div class="db-content">
+
+
+						<div class="row">
+							<div class="col-sm-6 col-xs-6">
+							<div><b>Certificate Name </b></div>
+							</div>
+
+							<div class="col-sm-6 col-xs-6">
+							<div> <b>Reason for Denial </b></div>
+							</div>
+						</div>
+
+						<div class="row db-panel-content-row" >
+
+							<div class="col-sm-6 col-xs-6 pad-0" >
+							<i class="fa fa-check-circle fa-check-circle2" aria-hidden="true"></i> Certificate of Good Standing
+							</div>
+							<div class="col-sm-6 col-xs-6">
+							<div>--------</div>
+							</div>
+
+							</div>
+
+						<div class="row db-panel-content-row" >
+
+							<div class="col-sm-6 col-xs-6 pad-0" >
+							<i class="fa fa-check-circle fa-check-circle2" aria-hidden="true"></i> Certificate of Restoration
+							</div>
+							<div class="col-sm-6 col-xs-6">
+							<div>--------</div>
+							</div>
+
+							</div>
+
+						<div class="row" >
+						   <div class="col-sm-6 col-xs-6" >
+							<i class="fa fa-check-circle fa-check-circle2" aria-hidden="true"></i> Certificate of Dissolution
+							</div>
+							<div class="col-sm-6 col-xs-6">
+							<div>--------</div>
+							</div>
+
+							</div>
+
+
+						</div>
+
+						<div class="row">
+							<div class="col-sm-12 col-xs-12">
+								<a class="errMsg pull-right" id="rejected_certificates_read_more">Read More >></a>
+							</div>
+						</div>
+
+                        </div>
+
+                    </div>
+				</div>
+
+			</div>
+								<div class="cleaner h10"></div>
+								<div class="row">
+
+
+
+<div class="col-sm-6">
+				<div class="panel panel-blue">
+                        <div class="panel-heading">
+                            <i class="fa fa-check fa-check-dbpabel" aria-hidden="true"></i> Approved Register Inspection
+                        </div>
+                        <div class="panel-body">
+                            <div class="db-content RA-db-panel">
+
+						<div class="row">
+							<div class="col-sm-6 col-xs-6">
+							<div><b>MBC Name </b></div>
+							</div>
+
+							<div class="col-sm-6 col-xs-6">
+							<div> <b>MBC Number </b></div>
+							</div>
+						</div>
+
+						<div class="row db-panel-content-row" >
+
+							<div class="col-sm-6 col-xs-6 pad-0" >
+							<i class="fa fa-check-circle color-green" aria-hidden="true"></i> MBC Name 1
+							</div>
+							<div class="col-sm-6 col-xs-6">
+							<div>MBC Number</div>
+							</div>
+
+							</div>
+						<div class="row db-panel-content-row">
+							<div class="col-sm-6 col-xs-6 pad-0">
+							<div><i class="fa fa-check-circle color-green" aria-hidden="true"></i> MBC Name 2</div>
+							</div>
+
+							<div class="col-sm-6 col-xs-6">
+							<div>MBC Number</div>
+							</div>
+							</div>
+
+						<div class="row">
+							<div class="col-sm-6 col-xs-6">
+							<div><i class="fa fa-check-circle color-green" aria-hidden="true"></i> MBC Name 3</div>
+							</div>
+
+							<div class="col-sm-6 col-xs-6">
+							<div>MBC Number</div>
+							</div>
+							</div>
+						<div class="row">
+							<div class="col-sm-12 col-xs-12">
+								<a class="errMsg pull-right" id="approved_ri_read_more">Read More >></a>
+							</div>
+						</div>
+						</div>
+                    </div>
+                    </div>
+
+				</div>
+
+
+<div class="col-sm-6">
+					<div class="panel panel-blue">
+                        <div class="panel-heading">
+                            <i class="fa fa-check fa-check-dbpabel" aria-hidden="true"></i> Transformation to BVI Business Company
+                        </div>
+                        <div class="panel-body">
+                            <div class="db-content RA-db-panel">
+
+						<div class="row">
+							<div class="col-sm-6 col-xs-6">
+							<div><b> </b></div>
+							</div>
+
+							<div class="col-sm-6 col-xs-6">
+							<div> <b>MBC Name</b></div>
+							</div>
+						</div>
+
+						<div class="row db-panel-content-row trans-bvi-pnl-cls" >
+
+							<div class="col-sm-6 col-xs-6 pad-0" >
+							<i class="fa fa-check-circle color-green" aria-hidden="true"></i>
+							Filing
+							</div>
+							<div class="col-sm-6 col-xs-6">
+							<div class="form-group">
+							<select class="form-control" ng-model="filing" ng-change="changeFiling()" id="transform_change_filing_dd">
+								<option value="">select</option>
+								<option value="1" id="mbc_name_1">MBC Name1</option>
+								<option value="2" id="mbc_name_2">MBC Name2</option>
+								<option value="3" id="mbc_name_3">MBC Name3</option>
+							</select>
+						</div>
+							</div>
+
+							</div>
+						<div class="row db-panel-content-row trans-bvi-pnl-cls">
+							 <div class="col-sm-6 col-xs-6 pad-0">
+							<div><i class="fa fa-check-circle color-green" aria-hidden="true"></i>
+							Registration
+							</div>
+					</div>
+
+					<div class="col-sm-6 col-xs-6">
+
+							<select class="form-control" ng-model="registration" ng-change="changeRegistration()" id="transform_change_reg_dd">
+								<option value="">select</option>
+								<option value="4" id="mbc_name_4">MBC Name1</option>
+								<option value="5" id="mbc_name_5">MBC Name2</option>
+								<option value="6" id="mbc_name_6">MBC Name3</option>
+							</select>
+
+							</div>
+							</div>
+
+
+
+						<div class="row db-panel-content-row-bottom">
+
+							<div class="col-sm-6 col-xs-6 pad-0">
+							<div><i class="fa fa-check-circle color-green" aria-hidden="true"></i>
+							Completion of Transformation</div>
+							</div>
+
+							<div class="col-sm-6 col-xs-6">
+
+							<select class="form-control" ng-model="transformation" ng-change="changeTransformation()" id="transform_change_transformation_dd">
+								<option value="">select</option>
+								<option value="7" id="mbc_name_7"> MBC Name1</option>
+								<option value="8" id="mbc_name_8">MBC Name2</option>
+								<option value="9" id="mbc_name_9">MBC Name3</option>
+							</select>
+
+							</div>
+
+						</div>
+						<div class="row">
+							<div class="col-sm-12 col-xs-12">
+								<a class="errMsg pull-right" id="transform_read_more">Read More >></a>
+							</div>
+						</div>
+						</div>
+                    </div>
+                    </div>
+
+</div>
+</div>
+
+
+				<div class="cleaner h80"></div>
+
+		</div>
+
+    </div> <!-- /container -->

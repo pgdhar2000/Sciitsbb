@@ -1,0 +1,280 @@
+<div ng-include="'app/components/common/templates/header.html'" ng-controller="headerController"></div>
+
+    <div class="container theme-showcase" role="main">
+
+		<div class="row">	
+			<div class="page-heading">
+				<h3 class="page-title fs28">Voluntary Liquidator Office and Voluntary Liquidator</h3>
+			</div>
+		</div>
+
+		
+	<div class="row">	
+		<div class="col-sm-12">
+				
+		<div class="panel panel-default form-div">
+		<div class="panel-heading"> 
+			<h3 class="panel-title"><i class="fa fa-arrow-right" aria-hidden="true"></i> Voluntary Liquidator Office and Voluntary Liquidator</h3> 
+		</div> 
+	<div class="panel-body"> 
+	<form action="" id="enquiry">
+	
+	<div class="row">
+		<div class="col-sm-6">
+		<h2>Voluntary Liquidator Office</h2>
+		</div>
+	</div>
+	<hr/>
+
+	<div class="row">	
+		<div class="col-sm-6">
+		<label>Geographic Location</label>
+		<div class="form-group">
+			<input class="form-control" placeholder="Geographic Location"  autofocus="" required="required" type="text" id="geographic_loc_tb" />
+		</div>
+		</div>
+		
+		<div class="col-sm-6">
+		<label>Street Address</label>
+			<div class="form-group">
+				<input class="form-control" placeholder="Street Address" required="required" type="text" id="street_addr_tb" />
+			</div>
+
+		</div>
+	</div>
+	
+	
+	<div class="row">	
+		<div class="col-sm-6">
+		<label>City</label>
+		<div class="form-group">
+			<input class="form-control" placeholder="City"  required="required" type="text" id="city_tb" />
+		</div>
+		</div>
+		
+		<div class="col-sm-6">
+		<label>Country</label>
+			<div class="form-group">
+				<input class="form-control" placeholder="Country" required="required" type="text" id="country_tb" />
+			</div>
+
+		</div>
+	</div>
+	
+	<div class="row">	
+		<div class="col-sm-6">
+		<label>Telephone Number</label>
+		<div class="form-group">
+			<input class="form-control" placeholder="Telephone Number"  required="required" type="text" id="tel_num_tb" />
+		</div>
+		</div>
+		
+		<div class="col-sm-6">
+		<label>Fax Number</label>
+			<div class="form-group">
+				<input class="form-control" placeholder="Fax Number" required="required" type="text" id="fax_num_tb" />
+			</div>
+
+		</div>
+	</div>
+	
+	
+			
+	<hr/>
+	
+	<div class="row">
+		<div class="col-sm-6">
+		<h2>Voluntary Liquidator</h2>
+		</div>
+	</div>
+	
+	<hr/>
+	
+	<div class="row">	
+			<div class="col-sm-6">
+					<label>Full Legal Name of the Voluntary Liquidator</label>
+					<div class="form-group">
+						<input class="form-control" placeholder="Full Legal Name of the Voluntary Liquidator" name="" autofocus="" required="required" type="text" id="voluntary_liquidator_name_tb" />
+					</div>
+			</div>
+			
+			<div class="col-sm-6">
+			<label>Voluntary Liquidator E-Mail Address</label>
+			<div class="form-group">
+				<input class="form-control" placeholder="Voluntary Liquidator E-Mail Address"  required="required" type="text" id="email_tb" />
+			</div>
+		</div>
+		</div>
+	
+	
+	<div class="row">	
+		<div class="col-sm-6">
+		<label>Upload legally approved “Voluntary Liquidator License” e-Document</label>
+			<div class="form-group">
+				<input type="file" id="upload_btn" />
+            </div>
+			<a class="btn btn-success" id="review_btn">Review "Voluntary Liquidator License" </a>
+		</div>
+	</div>
+	
+	<hr/>
+			
+		<div class="row">	
+			<div class="col-sm-12">
+				<div class="form-group">
+					<label>Is Voluntary Liquidator authorized to represent a MBC in the BVI </label>
+					<label class="radio-inline" style="margin-left:20px;">
+						<input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="Issuance-true" >True
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="Issuance-false">False
+					</label>
+				</div>
+				
+				
+				
+				<div class="alert alert-success Issuance-true-div">
+     
+                     Entry will be Accepted.
+                </div>
+	
+				<div class="alert alert-success Issuance-false-div">
+					<a style="cursor:pointer;">Not Authorized to Conduct Business in the Virgin Islands</a>
+				</div>
+			</div>
+		</div>
+		
+		<hr/>
+								
+		<div class="row">	
+			<div class="col-sm-6">
+				<label>Annual Payment</label>
+				<div class="form-group input-group">
+				<span class="input-group-addon"><i class="fa fa-usd" aria-hidden="true"></i></span>
+					<input class="form-control" id="annual_payment" placeholder="50"  autofocus="" required="required" type="text" id="annual_payment_tb" />
+				</div>
+			</div>
+		</div>
+					
+					<hr/>
+					
+		<div class="row">	
+			<div class="col-sm-6">
+				<label>Notice Fee</label>
+				<div class="form-group">
+					<input class="form-control" id="notice_fee" placeholder="50"  autofocus="" required="required" type="text" id="notice_fee_tb">
+				</div>
+			</div>
+		</div>
+				
+
+		<div class="row">	
+			<div class="col-sm-6">
+				<label>Date of Notice Appointment</label>
+				<div class="form-group">
+					<input class="form-control" placeholder="Date of Notice Appointment" name="" autofocus="" required="required" type="text" id="notice_date_tb" />
+				</div>
+			</div>
+		
+			<div class="col-sm-6">
+			<label>"Notice of Appointment" e-Document</label>
+			<div style="clear:both;height:10px;"></div>
+				<div class="form-group">
+					<input type="file" id="noa_upload_btn" />
+				</div>
+			</div>
+		</div>
+
+			<hr/>
+												
+												
+		
+				
+				
+
+												
+			<div class="cleaner h30"></div><div class="cleaner h10"></div>
+		<div class="form-group">
+				<div class="col-sm-3">
+					<div class="row">
+					<!--<input value="Submit" id="submit" type="submit" class="primary-btn" onclick="sendMail()"></input>-->
+					<a class="primary-btn" ui-sref="mbc-reg-off-admin-confirmation" id="submit_btn">Submit</a>
+					</div>	
+				</div>
+		</div>
+	</form>
+				
+					</div>
+				</div>
+			</div>
+		</div>
+    </div> <!-- /container -->
+
+			<div class="cleaner h80"></div>
+	
+
+    <script>
+	
+
+$(document).ready(function(){
+			$(".Issuance-false-div").hide();
+            $(".Issuance-true-div").hide();
+    $('input[type="radio"]').click(function(){
+        if($(this).attr("value")=="Issuance-true"){
+            //$(".box").not(".red").hide();
+			$(".Issuance-false-div").hide();
+            $(".Issuance-true-div").show();
+        }
+        if($(this).attr("value")=="Issuance-false"){
+            //$(".box").not(".green").hide();
+           	$(".Issuance-true-div").hide();
+            $(".Issuance-false-div").show();
+        }
+
+    });
+});
+
+
+		$(document).ready(function(){
+		    $("#search").click(function(){
+				$("#avail").css("display", "block");
+			});
+			
+			$("#submit").click(function(){
+				window.location="MBC-reg-off-admin-conformation.html";
+			});
+	
+
+	});
+		function sendMail() {
+       var validator = $("#enquiry").validate({
+              rules: {
+ 
+              },
+             
+          });
+          if (validator.form()) {
+              alert('Thank you for contacting us. We will be in touch with you very soon.');
+          }
+
+    }
+	
+	$(document).ready(function(){
+	
+		$("#annual_payment").blur(function(){
+			if($(this).val() != "100"){
+				$(this).val("");
+			}
+		});
+		
+		$("#notice_fee").blur(function(){
+			if($(this).val() != "75"){
+				$(this).val("");
+			}
+		});
+	})
+
+</script>
+
+</body>
+</html>

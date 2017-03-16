@@ -1,0 +1,106 @@
+<div ng-include="'app/components/common/templates/header.html'" ng-controller="headerController"></div>
+
+    <div class="container theme-showcase" role="main">
+
+				
+		<div class="row">	
+			<div class="col-sm-12">
+			
+			
+			
+			<div class="alert alert-success Issuance-true-div" style="display: block; text-align: center; font-weight: bold;">
+		Request for Registration as BVI Business Company will be processed Ref Number 0015468
+		     
+			</div>
+		<center><button value="Submit" id="submit_modified" type="submit" class="btn btn-success" data-toggle="modal" data-target="#myModal">Generate Transformation Memorandum</button></center>	
+
+		</div>
+		</div>
+		<div class="modal fade" id="myModal" role="dialog">
+		<div class="modal-content modal-conformation">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" id="close_modal_btn">&times;</button>
+          <h4 class="modal-title">Transformation Memorandum e-document</h4>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-sm-6">
+                    <label>Registered Agent Name</label>
+                    <div class="form-group">
+                    <span >Agent Name</span><br/>
+                    </div>
+                </div>
+				
+				<div class="col-sm-6">
+                    <label>MBC Name</label>
+                    <div class="form-group">
+                    <span id="profit_of_mvc"></span><br/>
+                    </div>
+                </div>
+				
+				
+            </div>
+           
+		   
+            <div class="row">
+                <div class="col-sm-6">
+                    <label>Registered Office Address</label>
+                    <div class="form-group">
+                    <span id="popup_person1_name"></span><br/>
+                    <span id="popup_person2_name"></span>
+                    </div>
+                </div>
+                
+                <div class="col-sm-6">
+                    <label>Transformation Notification  Date</label>
+                    <div class="form-group">
+                    <span id="popup_person1_share"></span><br/>
+                    <span id="popup_person2_share"></span>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+      </div>
+
+    </div> 
+	
+	<div class="cleaner h80"></div>
+
+	<!-- /container -->
+	</div>
+			<div class="cleaner h80"></div>
+			<div class="cleaner h80"></div>
+			<div class="cleaner h80"></div>
+			<div class="cleaner h80"></div>
+			<div class="cleaner h80"></div>
+			<div class="cleaner h80"></div>
+			<div class="cleaner h50"></div>
+	
+	<script>
+
+		$(document).ready(function(){
+		    $("#search").click(function(){
+				$("#avail").css("display", "block");
+			});
+		
+			$("#submit").click(function(){
+				window.location="charter.html";
+			});
+	});
+		function sendMail() {
+       var validator = $("#enquiry").validate({
+              rules: {
+ 
+              },
+             
+          });
+          if (validator.form()) {
+              alert('Thank you for contacting us. We will be in touch with you very soon.');
+          }
+
+    }
+
+</script>
+
+   

@@ -1,0 +1,136 @@
+<div ng-include="'app/components/common/templates/header.html'" ng-controller="headerController"></div>
+		<div class="container theme-showcase" role="main">
+	<div class="row">	
+		<div class="page-heading">
+			<h3 class="page-title">Voluntary Liquidators Approval Notice  </h3>
+		</div>
+	</div>
+	
+	<!--<div class="row">
+					<div class="col-sm-4 col-sm-offset-4">
+						<label>MBC Name</label>
+						<div class="form-group">
+							<select class="form-control" id="mbc_name">
+								<option value="">select</option>
+								<option value="mbcname1">MBC Name1</option>
+								<option value="mbcname2">MBC Name2</option>
+								<option value="mbcname3">MBC Name3</option>
+							</select>
+						</div>
+					</div>
+				</div>
+	
+				
+				<div class="row" style="display:block;" id  = "voluntary_liquidators">
+					<div class="col-sm-4 col-sm-offset-4">
+						<label>RA voluntary liquidators Name </label>
+						<div class="form-group">
+							<select class="form-control" id="mbc_name">
+								<option value="">select</option>
+								<option value="mbcname1">Voluntary Liquidators Name1</option>
+								<option value="mbcname2">Voluntary Liquidators Name2</option>
+								<option value="mbcname3">Voluntary Liquidators Name3</option>
+							</select>
+						</div>
+						
+					</div>
+				</div>-->
+				
+				<div class="row">
+					<div class="col-sm-6 col-sm-offset-3" style="background-color:#dddee8;border-radius:5px;">
+						<br/>
+						<div class="row">
+							<div class="col-sm-6">
+								<label>MBC Name:</label>
+							</div>
+							<div class="col-sm-6">
+								<label>MBC Name</label>
+							</div>
+						</div>
+						<br/>
+						<div class="row">
+							<div class="col-sm-6">
+								<label>RA Voluntary Liquidators Name:</label>
+							</div>
+							<div class="col-sm-6">
+								<label>RA Voluntary Liquidators Name</label>
+							</div>
+						</div>
+						<br/>
+						
+						<div class="row">
+					<div class="col-sm-6">
+						
+						<label>RA voluntary liquidators Name : </label>
+						</div>
+						<div class="col-sm-6">
+						<input type="radio" name="ammendment" value="true" id="true_rb">True &nbsp;
+						<input type="radio" name="ammendment" value="false" id="false_rb">False
+	
+					</div>
+				</div>
+				<br/>
+						
+					</div>
+				</div>
+				<br/>
+				
+				
+				
+				
+			<div class="row">
+					<div class="col-sm-4 col-sm-offset-4">
+						
+						<div class="form-group">
+							
+					<!--<input value="Submit" id="submit" type="submit" class="primary-btn" onclick="sendMail()"></input>-->
+					<a class="primary-btn" ui-sref="ip-voluntary-liquidatory-approval-confirmation" id="submit_btn">Submit</a>
+					
+						</div>
+					</div>
+				</div>
+				
+	
+    </div> <!-- /container -->
+	
+	<script>
+
+		$(document).ready(function(){
+		    $("#search").click(function(){
+				$("#avail").css("display", "block");
+			});
+		
+			$("#submit").click(function(){
+				window.location="confirmation.html";
+			});
+	});
+		function sendMail() {
+       var validator = $("#enquiry").validate({
+              rules: {
+ 
+              },
+             
+          });
+          if (validator.form()) {
+              alert('Thank you for contacting us. We will be in touch with you very soon.');
+          }
+
+    }
+
+	
+	
+	
+	
+	$(document).ready(function(){
+	
+		$("#check_liquidate").click(function(){
+		
+			$("#eligible").css("display", "block");	
+					
+			$("#voluntary_liquidators").css("display", "block");			
+					
+					
+					});
+		
+		});
+</script>

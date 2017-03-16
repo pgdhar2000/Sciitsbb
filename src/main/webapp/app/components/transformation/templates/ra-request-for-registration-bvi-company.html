@@ -1,0 +1,263 @@
+<div ng-include="'app/components/common/templates/header.html'" ng-controller="headerController"></div>
+
+    <div class="container theme-showcase" role="main">
+
+		<div class="row">	
+					<div class="page-heading">
+                        <h3 class="page-title">Request for  Registration as BVI Business Company</h3>
+                    </div>
+		</div>
+
+		
+		
+		<div class="row">
+					<div class="col-sm-4 col-sm-offset-4">
+						<label>MBC Name</label>
+						<div class="form-group">
+							<select class="form-control" id="mbc_name_dd">
+								<option value="">select</option>
+								<option value="mbcname1" id="mbc_name_1">MBC Name1</option>
+								<option value="mbcname2" id="mbc_name_2">MBC Name2</option>
+								<option value="mbcname3" id="mbc_name_3">MBC Name3</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				
+				
+				
+				<div class="row" >
+					<div class="col-sm-4 col-sm-offset-4">
+						<label>Registration Fee</label>
+						<div class="form-group input-group">
+						<span class="input-group-addon"><i class="fa fa-usd" aria-hidden="true"></i></span>
+						<input type="text" class="form-control" placeholder="Registration Fee" required="required" id="reg_fee_tb" />
+						</div>
+						
+				<div class="row">	
+			<div class="col-sm-6">
+					<label>Officially Effective Date</label>
+				<div class="form-group input-group">
+					<span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+					<input class="form-control" placeholder="MM / DD / YYYY" type="text" id="date_tb">
+				</div>
+			</div>
+			<div class="cleaner h20"></div>
+					<div class="form-group" >
+							<div class="col-sm-3">
+								<div class="row" >
+								<!--<a href="RA-Req-Register-BVI-Company-Confrmation.html" value="Submit" id="submit" type="submit" class="primary-btn" >Submit</a>-->
+								
+								<a class="primary-btn" ui-sref="ra-req-register-bvi-company-confirmation" id="submit_btn">Submit</a>
+								</div>	
+							</div>
+					</div>
+
+			
+		
+		
+		
+		
+				
+		<div class="row" id = "MBC_Names" style="display:none;">	
+				
+			<div class="col-sm-12">
+				
+			<div class="panel panel-default form-div"> <div class="panel-heading"> 
+				<h3 class="panel-title"><i class="fa fa-arrow-right" aria-hidden="true"></i> MBC Names Form</h3> </div> 
+				<div class="panel-body"> 
+				
+				
+	<form action="" id="enquiry"   >
+		<div class="row" >	
+			<div class="col-sm-6">
+			
+				<label>Full Legal Corporation Name</label>
+				<div class="form-group">
+					<input class="form-control" placeholder="Full Legal Corporation Name" id = "Micro_Business_Company" name="2" autofocus="" required="required" type="text" value="Micro Business Company 1">
+				</div>
+			</div>
+				
+			<div class="col-sm-6">
+				<label>Total shares of MBC</label>
+				<div class="form-group">
+					<input class="form-control" placeholder="Total shares of MBC" id = "Total_shares_of_MBC" name="1" autofocus="" required="required" type="text" value="Total shares of MBC">
+				</div>
+			</div>
+		</div>
+												
+			
+		<hr/>
+												
+			<div class="row"   >	
+				<div class="col-sm-6">
+				<label>Street Address</label>
+				<div class="form-group">
+					<input class="form-control" placeholder="Street Address" id = "Street_Number" name="5" autofocus="" required="required" 
+					type="text" value="Street Number 1 ">
+				</div>
+				</div>
+				
+				<div class="col-sm-6">
+				<label>City</label>
+					<div class="form-group">
+						<input class="form-control" placeholder="City" id = "City" name="6" autofocus="" required="required" type="text"
+						value="City ">
+					</div>
+				</div>
+			</div>
+												
+												
+			<div class="row"  >	
+				<div class="col-sm-6">
+						<label>Country</label>
+						<div class="form-group">
+							<select class="form-control">
+							<option value="role 1" selected>USA</option>
+							<option value="role 2">UK</option>
+							<option value="role 3">Canada</option>
+							</select>
+						</div>
+				</div>
+				
+				<div class="col-sm-6">
+						<label>Telephone Number</label>
+						<div class="form-group">
+							<input class="form-control" placeholder="Telephone Number"  id = "Telephone_Number" name="" autofocus="" required="required" type="text" value="1-999-999-9999">
+						</div>
+				</div>
+				</div>
+				
+				
+				<div class="row"  >	
+				<div class="col-sm-6">
+						<label>Fax Number</label>
+						<div class="form-group">
+							<input class="form-control" placeholder="1-999-999-9999"  id = "Fax_Number"  name="" autofocus="" required="required" type="text" value="1-999-999-9999">
+						</div>
+				</div>
+				
+				<div class="col-sm-6">
+						<label>Email</label>
+						<div class="form-group">
+							<input class="form-control" placeholder="Email" id = "Email"   name="" autofocus="" required="required" type="text"
+							value="mail@gmail.com">
+						</div>
+				</div>
+				</div>
+				
+				<div class="row"  >	
+				<div class="col-sm-6">
+						<label>Website Address</label>
+						<div class="form-group">
+							<input class="form-control" placeholder="Website Address"  id = "Website_Address" name="" autofocus="" required="required" type="text" value="www.test.com">
+						</div>
+				</div>
+				
+				</div>
+												
+						<hr/>
+
+
+				<div class="row"  >	
+				<div class="col-sm-6">
+						<label>Business purpose</label>
+						<div class="form-group">
+							<input class="form-control" placeholder="Business purpose"  id = "Business_Purpose" name="" autofocus="" required="required" type="text" value="Business purpose">
+						</div>
+				</div>
+				
+
+				</div>	
+				
+
+				
+				
+	<hr/>
+				
+				
+<!-- 	<div class="row"  >	
+				<div class="col-sm-6">
+					<label>MBC Number</label>
+					<div class="form-group">
+						<input type="text" class="form-control"  id = "MBC_Number" name="fname" value="00548965588456" disabled="disabled" style="font-weight:bold;">
+					</div>
+				</div>
+			</div>	
+
+												
+			<div class="cleaner h20"></div>
+					<div class="form-group" >
+							<div class="col-sm-3">
+								<div class="row" >
+								<a href="Req-Register-BVI-Company-Confrmation.html" value="Submit" id="submit" type="submit" class="primary-btn" >Submit</a>
+								</div>	
+							</div>
+					</div> -->
+																
+</form>
+
+				
+				</div>
+			</div>
+
+		</div>
+
+		</div>
+
+    </div> <!-- /container -->
+
+	</div>
+			<div class="cleaner h80"></div>
+	
+	<script>
+
+		$(document).ready(function(){
+		    $("#search").click(function(){
+				$("#avail").css("display", "block");
+			});
+		
+			$("#submit").click(function(){
+				window.location="Register-Transf-BVI-Company-conformation.html";
+			});
+	});
+		function sendMail() {
+       var validator = $("#enquiry").validate({
+              rules: {
+ 
+              },
+             
+          });
+          if (validator.form()) {
+              alert('Thank you for contacting us. We will be in touch with you very soon.');
+          }
+
+    }
+
+	
+	
+	
+	
+	$(document).ready(function(){
+	$("#mbc_name").change(function(){
+	
+		$("#generate_charter").css("display", "block");
+		
+		
+		$("#registration_fee_button").click(function(){
+				
+					if($("#registration_fee_val").val() == "50"){
+						$("#MBC_Names").css("display", "block");
+					}
+					
+					});
+		
+		});
+		
+	});
+
+
+
+</script>
+
+

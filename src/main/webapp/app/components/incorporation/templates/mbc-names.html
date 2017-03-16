@@ -1,0 +1,257 @@
+<div ng-include="'app/components/common/templates/header.html'" ng-controller="headerController"></div>
+
+    <div class="container theme-showcase" role="main">
+
+		<div class="row">	
+					<div class="page-heading">
+                        <h3 class="page-title">Micro Business Company Names</h3>
+                    </div>
+		</div>
+
+		
+		
+		<div class="row">
+					<div class="col-sm-4 col-sm-offset-4">
+						<label>MBC Name</label>
+						<div class="form-group">
+							<select class="form-control" id="mbc_name">
+								<option value="">select</option>
+								<option value="mbcname1">MBC Name1</option>
+								<option value="mbcname2">MBC Name2</option>
+								<option value="mbcname3">MBC Name3</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				
+				
+				
+				<div class="row" >
+					<div class="col-sm-4 col-sm-offset-4">
+						<label>Registration Fee</label>
+						<div class="form-group input-group">
+						<span class="input-group-addon"><i class="fa fa-usd" aria-hidden="true"></i></span>
+							<input class="form-control" id="registration_fee_val" placeholder="Registration fee" name="" autofocus="" required="required" type="currency">
+						</div>
+						
+						<button class="primary-btn"  id="registration_fee_button"><i class="fa fa-credit-card" aria-hidden="true"></i> Pay</button>
+					</div>
+				</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="row" id = "MBC_Names" style="display:none;">	
+				
+			<div class="col-sm-12">
+				
+			<div class="panel panel-default form-div"> <div class="panel-heading"> 
+				<h3 class="panel-title"><i class="fa fa-arrow-right" aria-hidden="true"></i> MBC Names Form</h3> </div> 
+				<div class="panel-body"> 
+				
+				
+	<form action="" id="enquiry"   >
+		<div class="row" >	
+			<div class="col-sm-6">
+			
+				<label>Full Legal Corporation Name</label>
+				<div class="form-group">
+					<input class="form-control" placeholder="Full Legal Corporation Name" id = "mbc_name_tb" name="2" autofocus="" required="required" type="text" value="Micro Business Company 1">
+				</div>
+			</div>
+				
+			<div class="col-sm-6">
+				<label>Total shares of MBC</label>
+				<div class="form-group">
+					<input class="form-control" placeholder="Total shares of MBC" id = "total_shares_tb" name="1" autofocus="" required="required" type="text" value="Total shares of MBC">
+				</div>
+			</div>
+		</div>
+												
+			
+		<hr/>
+												
+			<div class="row"   >	
+				<div class="col-sm-6">
+				<label>Street Address</label>
+				<div class="form-group">
+					<input class="form-control" placeholder="Street Address" id = "street_addr_tb" name="5" autofocus="" required="required" 
+					type="text" value="Street Number 1 ">
+				</div>
+				</div>
+				
+				<div class="col-sm-6">
+				<label>City</label>
+					<div class="form-group">
+						<input class="form-control" placeholder="City" id = "city_tb" name="6" autofocus="" required="required" type="text"
+						value="City ">
+					</div>
+				</div>
+			</div>
+												
+												
+			<div class="row"  >	
+				<div class="col-sm-6">
+						<label>Country</label>
+						<div class="form-group">
+							<select class="form-control" id="country_dd">
+							<option value="USA" selected id="usa_dd">USA</option>
+							<option value="UK" id="uk_dd">UK</option>
+							<option value="canada" id="canada_dd">Canada</option>
+							</select>
+						</div>
+				</div>
+				
+				<div class="col-sm-6">
+						<label>Telephone Number</label>
+						<div class="form-group">
+							<input class="form-control" placeholder="Telephone Number"  id = "tel_num_tb" name="" autofocus="" required="required" type="text" value="1-999-999-9999">
+						</div>
+				</div>
+				</div>
+				
+				
+				<div class="row"  >	
+				<div class="col-sm-6">
+						<label>Fax Number</label>
+						<div class="form-group">
+							<input class="form-control" placeholder="1-999-999-9999"  id = "fax_num_tb"  name="" autofocus="" required="required" type="text" value="1-999-999-9999">
+						</div>
+				</div>
+				
+				<div class="col-sm-6">
+						<label>Email</label>
+						<div class="form-group">
+							<input class="form-control" placeholder="Email" id = "email_tb"   name="" autofocus="" required="required" type="text"
+							value="mail@gmail.com">
+						</div>
+				</div>
+				</div>
+				
+				<div class="row"  >	
+				<div class="col-sm-6">
+						<label>Website Address</label>
+						<div class="form-group">
+							<input class="form-control" placeholder="Website Address"  id = "website_addr_tb" name="" autofocus="" required="required" type="text" value="www.test.com">
+						</div>
+				</div>
+				
+				</div>
+												
+						<hr/>
+
+
+				<div class="row"  >	
+				<div class="col-sm-6">
+						<label>Business purpose</label>
+						<div class="form-group">
+							<input class="form-control" placeholder="Business purpose"  id = "business_purpose_tb" name="" autofocus="" required="required" type="text" value="Business purpose">
+						</div>
+				</div>
+				
+
+				</div>	
+				
+
+				
+				
+	<hr/>
+				
+				
+	<div class="row"  >	
+				<div class="col-sm-6">
+					<label>MBC Number</label>
+					<div class="form-group">
+						<input type="text" class="form-control"  id = "mbc_number_ro_tb" name="fname" value="00548965588456" disabled="disabled" style="font-weight:bold;">
+					</div>
+				</div>
+			</div>	
+
+												
+			<div class="cleaner h20"></div>
+					<div class="form-group" >
+							<div class="col-sm-3">
+								<div class="row" >
+								<a ui-sref="mbc-names-confirmation" class="primary-btn" id="submit_btn"><i class="fa fa-check-circle-o" aria-hidden="true"></i> Submit</a>
+								</div>	
+							</div>
+					</div>
+																
+</form>
+
+				
+				</div>
+			</div>
+
+		</div>
+
+		</div>
+
+    </div> <!-- /container -->
+
+	
+			<div class="cleaner h80"></div>
+	
+
+	<script>
+
+		$(document).ready(function(){
+		    $("#search").click(function(){
+				$("#avail").css("display", "block");
+			});
+		
+			$("#submit").click(function(){
+				window.location="confirmation.html";
+			});
+	});
+		function sendMail() {
+       var validator = $("#enquiry").validate({
+              rules: {
+ 
+              },
+             
+          });
+          if (validator.form()) {
+              alert('Thank you for contacting us. We will be in touch with you very soon.');
+          }
+
+    }
+
+	
+	
+	
+	
+	$(document).ready(function(){
+	$("#mbc_name").change(function(){
+	
+		$("#generate_charter").css("display", "block");
+		
+		
+		$("#registration_fee_button").click(function(){
+		console.log("entered");
+				
+					if($("#registration_fee_val").val() == "50"){
+					console.log("entered");
+						$("#MBC_Names").css("display", "block");
+					}
+					
+					});
+		
+		});
+		
+	});
+
+
+
+</script>
+
+
+
+
+   
+
+

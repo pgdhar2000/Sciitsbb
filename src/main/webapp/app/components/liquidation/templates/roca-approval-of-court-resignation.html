@@ -1,0 +1,124 @@
+<div ng-include="'app/components/common/templates/header.html'" ng-controller="headerController"></div>
+		<div class="container theme-showcase" role="main">
+	<div class="row">	
+		<div class="page-heading">
+			<h3 class="page-title">Approval of Liquidator Court Resignation</h3>
+		</div>
+	</div>
+	
+	
+	
+		
+	
+		
+	<div class="row" id="mbc_details" style="display:block;">
+					<div class="col-sm-6 col-sm-offset-3" style="background-color:#dddee8;border-radius:5px;">
+						<br/>
+						<div class="row">
+							<div class="col-sm-6">
+								<label>MBC Name :</label>
+							</div>
+							<div class="col-sm-6">
+								<label>MBC Name</label>
+							</div>
+						</div>
+						<br/>
+						<div class="row">
+							<div class="col-sm-6">
+								<label>Liquidator Name :</label>
+							</div>
+							<div class="col-sm-6">
+								<label>Liquidator Name</label>
+							</div>
+						</div>
+						<br/>
+						<div class="row">
+							<div class="col-sm-6">
+								<label>Reason For Removing :</label>
+							</div>
+							<div class="col-sm-6 ">
+							
+								<label>Liquidator fails to meet Professional Standards of Conduct</label>
+					
+				
+							</div>
+						</div>
+						
+						<br/>
+							
+						
+						<div class="row">
+							<div class="col-sm-6">
+								<label>Resignation Fee :</label>
+							</div>
+							<div class="col-sm-6 ">
+								
+								<label>$50</label>
+				
+							</div>
+							
+							<div class="cleaner h20"></div>	
+				
+					</div>
+						
+					
+				
+				<div class="cleaner h20"></div>
+				
+				
+			<a ui-sref="roca-completion-of-liquidation-success-msg" class="btn btn-success" id="accept_btn">Accept</a>
+			<a ui-sref="roca-completion-of-liquidation-reject-msg" class="btn btn-danger" id="reject_btn">Reject</a>
+				
+				<div class="cleaner h20"></div>
+		</div>
+		
+		</div>
+
+    </div> <!-- /container -->
+	
+	<script>
+
+		$(document).ready(function(){
+		    $("#search").click(function(){
+				$("#avail").css("display", "block");
+			});
+		
+			$("#submit").click(function(){
+				window.location="confirmation.html";
+			});
+	});
+		function sendMail() {
+       var validator = $("#enquiry").validate({
+              rules: {
+ 
+              },
+             
+          });
+          if (validator.form()) {
+              alert('Thank you for contacting us. We will be in touch with you very soon.');
+          }
+
+    }
+
+	
+	
+	
+	
+	$(document).ready(function(){
+	
+		$("#check_liquidate").click(function(){
+		
+			$("#eligible").css("display", "block");	
+					
+			$("#voluntary_liquidators").css("display", "block");			
+					
+					
+					});
+		
+		});
+		
+	
+
+
+</script>
+

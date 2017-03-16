@@ -1,0 +1,467 @@
+<div ng-include="'app/components/common/templates/header.html'" ng-controller="headerController"></div>
+
+    <div class="container theme-showcase" role="main">
+
+
+
+			<div class="row">
+			<div class="page-heading">
+				<h3 class="page-title">ROCA - Dashboard</h3>
+			</div>
+		</div>
+
+
+				<div class="ra-db-panel">
+			<div class="row">
+			<div class="col-sm-6">
+				<div class="panel panel-blue">
+                        <div class="panel-heading">
+                            Pending approvals for Incorporation
+                        </div>
+                        <div class="panel-body">
+                            <div class="db-content RA-db-panel">
+
+						<div class="row">
+							<div class="col-sm-12 col-xs-12">
+							<div><b>MBC Name </b></div>
+							</div>
+
+						</div>
+
+						<div class="row db-panel-content-row" >
+							<div class="col-sm-12 col-xs-12 pad-0" >
+							<i class="fa fa-check-circle color-green" aria-hidden="true"></i>
+							<a ui-sref="roca-mbc-details" id="pending_incorp_mbc_name_1">MBC Name 1</a>
+							</div>
+							</div>
+						<div class="row db-panel-content-row">
+							<div class="col-sm-12 col-xs-12 pad-0">
+							<div><i class="fa fa-check-circle color-green" aria-hidden="true"></i>
+							<a ui-sref="roca-mbc-details" id="pending_incorp_mbc_name_2">MBC Name 2</a></div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-sm-12 col-xs-12">
+							<div><i class="fa fa-check-circle color-green" aria-hidden="true"></i>
+							<a ui-sref="roca-mbc-details" id="pending_incorp_mbc_name_3">MBC Name 3</a></div>
+							</div>
+
+							</div>
+						<div class="row">
+							<div class="col-sm-12 col-xs-12">
+								<a class="errMsg pull-right" id="pending_incorporation_rm">Read More >></a>
+							</div>
+						</div>
+						</div>
+                    </div>
+                    </div>
+
+				</div>
+				<div class="col-sm-6">
+					<div class="panel panel-blue">
+                        <div class="panel-heading">
+                           Transformation to BVI Business Company
+                        </div>
+                        <div class="panel-body">
+                            <div class="db-content RA-db-panel">
+
+						<div class="row">
+							<div class="col-sm-6 col-xs-6">
+							<div><b>MBC Name </b></div>
+							</div>
+
+							<div class="col-sm-6 col-xs-6">
+							<div> <b>MBC Number </b></div>
+							</div>
+						</div>
+
+						<div class="row db-panel-content-row trans-bvi-pnl-cls" >
+
+							<div class="col-sm-6 col-xs-6 pad-0" >
+							<i class="fa fa-check-circle color-green" aria-hidden="true"></i>
+							Filing
+							</div>
+							<div class="col-sm-6 col-xs-6">
+							<div class="form-group">
+							<select class="form-control" ng-model="filing" ng-change="changeFiling()" id="filing_dd">
+								<option value="">select</option>
+								<option value="roca-mbc-details">MBC Name1</option>
+								<option value="roca-mbc-details">MBC Name2</option>
+								<option value="roca-mbc-details">MBC Name3</option>
+							</select>
+						</div>
+							</div>
+
+							</div>
+						<div class="row db-panel-content-row trans-bvi-pnl-cls">
+							 <div class="col-sm-6 col-xs-6 pad-0">
+							<div><i class="fa fa-check-circle color-green" aria-hidden="true"></i>
+							Registration
+							</div>
+					</div>
+
+					<div class="col-sm-6 col-xs-6">
+
+							<select class="form-control" ng-model="registration" ng-change="changeRegistration()" id="reg_dd">
+								<option value="">select</option>
+								<option value="roca-bvi-registration">MBC Name1</option>
+								<option value="roca-bvi-registration">MBC Name2</option>
+								<option value="roca-bvi-registration">MBC Name3</option>
+							</select>
+
+							</div>
+							</div>
+
+
+
+						<div class="row db-panel-content-row-bottom">
+
+							<div class="col-sm-6 col-xs-6 pad-0">
+							<div><i class="fa fa-check-circle color-green" aria-hidden="true"></i>
+							Completion of Transformation</div>
+							</div>
+
+							<div class="col-sm-6 col-xs-6">
+
+							<select class="form-control" ng-model="transformation" ng-change="changeTransformation()" id="comp_of_transf_dd">
+								<option value="">select</option>
+								<option value="roca-bvi-transformation"> MBC Name1</option>
+								<option value="roca-bvi-transformation">MBC Name2</option>
+								<option value="roca-bvi-transformation">MBC Name3</option>
+							</select>
+
+							</div>
+
+						</div>
+						<div class="row">
+							<div class="col-sm-12 col-xs-12">
+								<a class="errMsg pull-right" id="transformation_rm">Read More >></a>
+							</div>
+						</div>
+						</div>
+                    </div>
+                    </div>
+
+</div>
+				</div>
+				<div class="cleaner h10"></div>
+				<div class="row">
+				<div class="col-sm-6">
+					<div class="panel panel-blue">
+                        <div class="panel-heading">
+                            Change of MBC Name
+                        </div>
+                        <div class="panel-body">
+                            <div class="db-content RA-db-panel">
+
+						<div class="row">
+							<div class="col-sm-6 col-xs-6">
+							<div><b>MBC Name </b></div>
+							</div>
+
+						</div>
+
+						<div class="row db-panel-content-row" >
+
+							<div class="col-sm-12 col-xs-12 pad-0" >
+							<i class="fa fa-check-circle color-green" aria-hidden="true"></i>
+							<a ui-sref="roca-change-mbc-name" id="change_mbc_name_1">MBC Name 1</a>
+							</div>
+							</div>
+						<div class="row db-panel-content-row">
+							<div class="col-sm-12 col-xs-12 pad-0">
+							<div><i class="fa fa-check-circle color-green" aria-hidden="true"></i>
+							<a ui-sref="roca-change-mbc-name" id="change_mbc_name_2">MBC Name 2</a>
+							</div>
+							</div>
+							</div>
+
+						<div class="row">
+							<div class="col-sm-12 col-xs-12">
+							<div><i class="fa fa-check-circle color-green" aria-hidden="true"></i>
+							<a ui-sref="roca-change-mbc-name" id="change_mbc_name_3">MBC Name 3</a></div>
+							</div>
+							</div>
+						<div class="row">
+							<div class="col-sm-12 col-xs-12">
+								<a class="errMsg pull-right" id="change_mbc_name_rm">Read More >></a>
+							</div>
+						</div>
+						</div>
+                    </div>
+                    </div>
+				</div>
+
+								<div class="col-sm-6">
+					<div class="panel panel-blue">
+                        <div class="panel-heading">
+                            Register of MBC Name
+                        </div>
+                        <div class="panel-body">
+                            <div class="db-content RA-db-panel">
+
+						<div class="row">
+							<div class="col-sm-6 col-xs-6">
+							<div><b>MBC Name </b></div>
+							</div>
+					</div>
+
+						<div class="row db-panel-content-row" >
+
+							<div class="col-sm-12 col-xs-12 pad-0" >
+							<i class="fa fa-check-circle color-green" aria-hidden="true"></i>
+							<a ui-sref="roca-register-details" id="reg_mbc_name_1">MBC Name 1</a>
+							</div>
+							</div>
+						<div class="row db-panel-content-row">
+							<div class="col-sm-12 col-xs-12 pad-0">
+							<div><i class="fa fa-check-circle color-green" aria-hidden="true"></i>
+							<a ui-sref="roca-register-details" id="reg_mbc_name_2">MBC Name 2</a>
+							</div>
+							</div>
+							</div>
+
+						<div class="row">
+							<div class="col-sm-12 col-xs-12">
+							<div><i class="fa fa-check-circle color-green" aria-hidden="true"></i>
+							<a ui-sref="roca-register-details" id="reg_mbc_name_3">MBC Name 3</a></div>
+							</div>
+							</div>
+						<div class="row">
+							<div class="col-sm-12 col-xs-12">
+								<a class="errMsg pull-right" id="register_rm">Read More >></a>
+							</div>
+						</div>
+						</div>
+                    </div>
+                    </div>
+				</div>
+			</div>
+			<div class="cleaner h10"></div>
+
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="panel panel-blue">
+                        <div class="panel-heading">
+                            Pending approvals for Registered Agents Registration
+                        </div>
+                        <div class="panel-body">
+                            <div class="db-content RA-db-panel">
+
+						<div class="row">
+							<div class="col-sm-6 col-xs-6">
+							<div><b>Registered Agent Name </b></div>
+							</div>
+
+						</div>
+
+						<div class="row db-panel-content-row" >
+
+							<div class="col-sm-12 col-xs-12 pad-0" >
+							<i class="fa fa-check-circle color-green" aria-hidden="true"></i>
+							<a ui-sref="roca-ra-details" id="pending_ra_1">Registered Agent 1</a>
+							</div>
+							</div>
+						<div class="row db-panel-content-row">
+							<div class="col-sm-12 col-xs-12 pad-0">
+							<div><i class="fa fa-check-circle color-green" aria-hidden="true"></i>
+							<a ui-sref="roca-ra-details" id="pending_ra_2">Registered Agent 2</a>
+							</div>
+							</div>
+							</div>
+
+						<div class="row">
+							<div class="col-sm-12 col-xs-12">
+							<div><i class="fa fa-check-circle color-green" aria-hidden="true"></i>
+							<a ui-sref="roca-ra-details" id="pending_ra_3">Registered Agent 3</a></div>
+							</div>
+							</div>
+						<div class="row">
+							<div class="col-sm-12 col-xs-12">
+								<a class="errMsg pull-right" id="pending_ra_reg_rm">Read More >></a>
+							</div>
+						</div>
+						</div>
+                    </div>
+                    </div>
+				</div>
+
+								<div class="col-sm-6">
+					<div class="panel panel-blue">
+                        <div class="panel-heading">
+                            Pending approvals for Insolvency Practioner Registration
+                        </div>
+                        <div class="panel-body">
+                            <div class="db-content RA-db-panel">
+
+						<div class="row">
+							<div class="col-sm-6 col-xs-6">
+							<div><b>Insolvency Practioner Name </b></div>
+							</div>
+					</div>
+
+						<div class="row db-panel-content-row" >
+
+							<div class="col-sm-12 col-xs-12 pad-0" >
+							<i class="fa fa-check-circle color-green" aria-hidden="true"></i>
+							<a ui-sref="roca-ip-details" id="pending_ip_1">Insolvency Practioner 1</a>
+							</div>
+							</div>
+						<div class="row db-panel-content-row">
+							<div class="col-sm-12 col-xs-12 pad-0">
+							<div><i class="fa fa-check-circle color-green" aria-hidden="true"></i>
+							<a ui-sref="roca-ip-details" id="pending_ip_2">Insolvency Practioner 2</a>
+							</div>
+							</div>
+							</div>
+
+						<div class="row">
+							<div class="col-sm-12 col-xs-12">
+							<div><i class="fa fa-check-circle color-green" aria-hidden="true"></i>
+							<a ui-sref="roca-ip-details" id="pending_ip_3">Insolvency Practioner 3</a></div>
+							</div>
+							</div>
+						<div class="row">
+							<div class="col-sm-12 col-xs-12">
+								<a class="errMsg pull-right" id="pending_ip_reg_rm">Read More >></a>
+							</div>
+						</div>
+						</div>
+                    </div>
+                    </div>
+				</div>
+			</div>
+
+			<div class="cleaner h10"></div>
+			<div class="row">
+			<div class="col-sm-6">
+				<div class="panel panel-blue">
+                        <div class="panel-heading">
+                            Pending approvals for Restoration
+                        </div>
+                        <div class="panel-body">
+                            <div class="db-content RA-db-panel">
+
+						<div class="row">
+							<div class="col-sm-12 col-xs-12">
+							<div><b>MBC Name </b></div>
+							</div>
+
+						</div>
+
+						<div class="row db-panel-content-row" >
+							<div class="col-sm-12 col-xs-12 pad-0" >
+							<i class="fa fa-check-circle color-green" aria-hidden="true"></i>
+							<a ui-sref="roca-restoration-details" id="pending_res_mbc_name_1">MBC Name 1</a>
+							</div>
+							</div>
+						<div class="row db-panel-content-row">
+							<div class="col-sm-12 col-xs-12 pad-0">
+							<div><i class="fa fa-check-circle color-green" aria-hidden="true"></i>
+							<a ui-sref="roca-restoration-details" id="pending_res_mbc_name_2">MBC Name 2</a></div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-sm-12 col-xs-12">
+							<div><i class="fa fa-check-circle color-green" aria-hidden="true"></i>
+							<a ui-sref="roca-restoration-details" id="pending_res_mbc_name_3">MBC Name 3</a></div>
+							</div>
+
+							</div>
+						<div class="row">
+							<div class="col-sm-12 col-xs-12">
+								<a class="errMsg pull-right" id="pending_restoration_rm">Read More >></a>
+							</div>
+						</div>
+						</div>
+                    </div>
+                    </div>
+
+				</div>
+
+				<div class="col-sm-6">
+					<div class="panel panel-blue">
+                        <div class="panel-heading">
+                            Pending approvals for Filing Notice of MBC Insolvency
+                        </div>
+                        <div class="panel-body">
+                            <div class="db-content RA-db-panel">
+
+						<div class="row">
+							<div class="col-sm-6 col-xs-6">
+							<div><b>MBC Name </b></div>
+							</div>
+
+						</div>
+
+						<div class="row db-panel-content-row" >
+
+							<div class="col-sm-12 col-xs-12 pad-0" >
+							<i class="fa fa-check-circle color-green" aria-hidden="true"></i>
+							<a ui-sref="roca-mbc-insolveny-details" id="pending_filing_mbc_name_1">MBC Name 1</a>
+							</div>
+							</div>
+						<div class="row db-panel-content-row">
+							<div class="col-sm-12 col-xs-12 pad-0">
+							<div><i class="fa fa-check-circle color-green" aria-hidden="true"></i>
+							<a ui-sref="roca-mbc-insolveny-details" id="pending_filing_mbc_name_2">MBC Name 2</a>
+							</div>
+							</div>
+							</div>
+
+						<div class="row">
+							<div class="col-sm-12 col-xs-12">
+							<div><i class="fa fa-check-circle color-green" aria-hidden="true"></i>
+							<a ui-sref="roca-mbc-insolveny-details" id="pending_filing_mbc_name_3">MBC Name 3</a></div>
+							</div>
+							</div>
+						<div class="row">
+							<div class="col-sm-12 col-xs-12">
+								<a class="errMsg pull-right" id="pending_insolvency_rm">Read More >></a>
+							</div>
+						</div>
+						</div>
+                    </div>
+                    </div>
+				</div>
+
+				</div>
+
+
+
+				<div class="cleaner h80"></div>
+
+		</div>
+
+
+
+    </div> <!-- /container -->
+
+
+	<script>
+
+$(document).ready(function(){
+    $("#search").click(function(){
+        $("#avail").css("display", "block");
+    });
+});
+
+$(document).ready(function(){
+    $('.sendButton').attr('disabled',true);
+    $('#message').keyup(function(){
+        if($(this).val().length !=0)
+            $('.sendButton').attr('disabled', false);
+        else
+            $('.sendButton').attr('disabled',true);
+			$("#avail").css("display", "none");
+    });
+});
+
+function handleSelect(elm)
+{
+		window.location = elm.value+".html";
+}
+
+</script>

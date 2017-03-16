@@ -1,0 +1,200 @@
+<div ng-include="'app/components/common/templates/header.html'" ng-controller="headerController"></div>
+
+    <div class="container theme-showcase" role="main">
+
+
+
+			<div class="row">
+			<div class="page-heading">
+				<h3 class="page-title">IP - Dashboard</h3>
+			</div>
+		</div>
+
+
+				<div class="ra-db-panel">
+
+				<div class ="row">
+
+
+
+
+<div class="col-sm-6">
+<div class="panel panel-blue">
+                        <div class="panel-heading">
+                            <i class="fa fa-check fa-check-dbpabel" aria-hidden="true"></i> Voluntary Liquidation Process
+                        </div>
+                        <div class="panel-body">
+                            <div class="db-content RA-db-panel">
+
+<div class="row">
+<div class="col-sm-6 col-xs-6">
+<div><b> </b></div>
+</div>
+
+<div class="col-sm-6 col-xs-6">
+<div> <b>MBC Name</b></div>
+</div>
+</div>
+
+<div class="row db-panel-content-row trans-bvi-pnl-cls" >
+
+<div class="col-sm-6 col-xs-6 pad-0" >
+<i class="fa fa-check-circle color-green" aria-hidden="true"></i>
+Filing of VL
+</div>
+<div class="col-sm-6 col-xs-6">
+<div class="form-group">
+<select class="form-control" ng-model="filingVL" ng-change="changeFiling()" id="filing_dd">
+<option value="">select</option>
+<option value="ip-voluntary-liquidator">MBC Name1</option>
+<option value="ip-voluntary-liquidator">MBC Name2</option>
+<option value="ip-voluntary-liquidator">MBC Name3</option>
+</select>
+</div>
+</div>
+
+</div>
+<div class="row db-panel-content-row trans-bvi-pnl-cls">
+<div class="col-sm-6 col-xs-6 pad-0">
+<div><i class="fa fa-check-circle color-green" aria-hidden="true"></i>
+Approved MBC'S
+</div>
+</div>
+
+<div class="col-sm-6 col-xs-6">
+
+<select class="form-control" ng-model="approvedMbc" ng-change="changeApprovedMbcs()" id="approved_mbcs_dd">
+<option value="">select</option>
+<option value="ip-voluntary-liquidatory-approval">MBC Name1</option>
+<option value="ip-voluntary-liquidatory-approval">MBC Name2</option>
+<option value="ip-voluntary-liquidatory-approval">MBC Name3</option>
+</select>
+
+</div>
+</div>
+
+
+
+<div class="row db-panel-content-row-bottom">
+
+<div class="col-sm-6 col-xs-6 pad-0">
+<div><i class="fa fa-check-circle color-green" aria-hidden="true"></i>
+Declaration of solvency</div>
+</div>
+
+<div class="col-sm-6 col-xs-6">
+
+<select class="form-control" ng-model="solvency" ng-change="changeSolvency()" id="decl_of_solvency_dd">
+<option value="">select</option>
+<option value="ip-declaration-of-solvency"> MBC Name1</option>
+<option value="ip-declaration-of-solvency">MBC Name2</option>
+<option value="ip-declaration-of-solvency">MBC Name3</option>
+</select>
+
+</div>
+
+</div>
+<div class="row">
+	<div class="col-sm-12 col-xs-12">
+		<a class="errMsg pull-right" id="vol_liq_rm">Read More >></a>
+	</div>
+</div>
+</div>
+                    </div>
+                    </div>
+
+</div>
+
+<div class="col-sm-6">
+					<div class="panel panel-blue">
+                        <div class="panel-heading">
+                           Approved  Filing Notice of MBC Insolvency
+                        </div>
+                        <div class="panel-body">
+                            <div class="db-content RA-db-panel">
+
+						<div class="row">
+							<div class="col-sm-6 col-xs-6">
+							<div><b>MBC Name </b></div>
+							</div>
+
+						</div>
+
+						<div class="row db-panel-content-row" >
+							<div class="col-sm-6 col-xs-6 pad-0">
+					<div><i class="fa fa-check-circle color-green" aria-hidden="true"></i>
+					MBC Name 1</div>
+					</div>
+
+										<div class="col-sm-6 col-xs-6"></div>
+										<div>Commencement Date</div>
+
+									</div>
+						<div class="row db-panel-content-row" >
+							<div class="col-sm-6 col-xs-6 pad-0">
+					<div><i class="fa fa-check-circle color-green" aria-hidden="true"></i>
+					MBC Name 2</div>
+					</div>
+
+										<div class="col-sm-6 col-xs-6"></div>
+										<div>Commencement Date</div>
+
+									</div>
+
+						<div class="row" >
+							<div class="col-sm-6 col-xs-6">
+					<div><i class="fa fa-check-circle color-green" aria-hidden="true"></i>
+					MBC Name 3</div>
+					</div>
+
+										<div class="col-sm-6 col-xs-6"></div>
+										<div>Commencement Date</div>
+
+									</div>
+						<div class="row">
+							<div class="col-sm-12 col-xs-12">
+								<a class="errMsg pull-right" id="filing_notice_mbc_insolvency_rm">Read More >></a>
+							</div>
+						</div>
+						</div>
+                    </div>
+                    </div>
+				</div>
+
+
+</div>
+
+
+				<div class="cleaner h80"></div>
+
+		</div>
+
+
+
+    </div> <!-- /container -->
+
+	<script>
+
+$(document).ready(function(){
+    $("#search").click(function(){
+        $("#avail").css("display", "block");
+    });
+});
+
+$(document).ready(function(){
+    $('.sendButton').attr('disabled',true);
+    $('#message').keyup(function(){
+        if($(this).val().length !=0)
+            $('.sendButton').attr('disabled', false);
+        else
+            $('.sendButton').attr('disabled',true);
+			$("#avail").css("display", "none");
+    });
+});
+
+function handleSelect(elm)
+{
+		window.location = elm.value+".html";
+}
+
+</script>

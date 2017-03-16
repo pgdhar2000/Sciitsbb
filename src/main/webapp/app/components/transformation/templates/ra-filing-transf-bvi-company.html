@@ -1,0 +1,238 @@
+<div ng-include="'app/components/common/templates/header.html'" ng-controller="headerController"></div>
+
+    <div class="container theme-showcase" role="main">
+
+		<div class="row">	
+					<div class="page-heading">
+                        <h3 class="page-title">Filing Transformation as BVI Business Company</h3>
+                    </div>
+		</div>
+
+		
+				
+		<div class="row">	
+				
+			<div class="col-sm-12">
+				
+			<div class="panel panel-default form-div"> <div class="panel-heading"> 
+				<h3 class="panel-title"><i class="fa fa-arrow-right" aria-hidden="true"></i>Form</h3> </div> 
+				<div class="panel-body"> 
+				
+				
+	<form action="" id="enquiry">
+		<div class="row">	
+			<div class="col-sm-6">
+			
+				<label>Full Legal Corporation Name</label>
+				<div class="form-group">
+					<input class="form-control" placeholder="Full Legal Corporation Name" name="2" autofocus="" required="required" type="text" id="full_leg_corp_name_tb" />
+				</div>
+			</div>
+				
+			<div class="col-sm-6">
+				<label>Street Address</label>
+				<div class="form-group">
+					<input class="form-control" placeholder="Street Address" name="5" autofocus="" required="required" type="text" id="street_addr_tb" />
+				</div>
+				</div>
+												
+			
+			<hr/>
+												
+			<div class="row">	
+				<div class="col-sm-6">
+				<label>City</label>
+				<div class="form-group">
+					<input class="form-control" placeholder="Street Address" name="5" autofocus="" required="required" type="text" id="city_tb" />
+				</div>
+				</div>
+				
+				<div class="col-sm-6">
+						<label>Country</label>
+						<div class="form-group">
+							<select class="form-control" id="country_dd">
+								<option value="">select</option>
+								<option value="role 1" id="usa_dd">USA</option>
+								<option value="role 2" id="uk_dd">UK</option>
+								<option value="role 3" id="canada_dd">Canada</option>
+							</select>
+						</div>
+				</div>
+				</div>
+			</div>
+												
+												
+			<div class="row">	
+								
+				<div class="col-sm-6">
+						<label>Telephone Number</label>
+						<div class="form-group">
+							<input class="form-control" placeholder="Telephone Number" name="" autofocus="" required="required" type="text" id="tel_num_tb" />
+						</div>
+				</div>
+				
+				<div class="col-sm-6">
+						<label>Fax Number</label>
+						<div class="form-group">
+							<input class="form-control" placeholder="Fax Number" name="" autofocus="" required="required" type="text" id="fax_num_tb" />
+						</div>
+				</div>
+				
+				</div>
+				
+				
+				<div class="row">	
+				
+				
+				<div class="col-sm-6">
+						<label>Email</label>
+						<div class="form-group">
+							<input class="form-control" placeholder="Email" name="" autofocus="" required="required" type="text" id="email_tb" />
+						</div>
+				</div>
+				<div class="col-sm-6">
+						<label>Website Address</label>
+						<div class="form-group">
+							<input class="form-control" placeholder="Website Address" name="" autofocus="" required="required" type="text" id="website_addr_tb" />
+						</div>
+				</div>
+				
+				
+				</div>
+				
+				
+				
+				
+				
+														
+						<hr/>	
+
+
+				<div class="row">	
+				<div class="col-sm-6">
+						<label>Business purpose</label>
+						<div class="form-group">
+							<select class="form-control" id="business_purpose_dd">
+								<option value="">select</option>
+								<option value="role 1" id="bp1_dd">Business purpose1</option>
+								<option value="role 2" id="bp2_dd">Business purpose2</option>
+								<option value="role 3" id="bp3_dd">Business purpose3</option>
+							</select>
+						</div>
+				</div>
+				
+				<div class="col-sm-6">
+						<label>Employer Identification Number</label>
+						<div class="form-group">
+							<input class="form-control" placeholder="Name of Registered Agent" name="" autofocus="" required="required" type="text" id="employer_id_num_tb">
+						</div>
+						<a class="btn btn-success" id="validate_id_num_btn">Validate "Identification Number" </a>
+				</div>
+				</div>	
+				
+						
+				<hr/>
+				<div class="row">	
+			<div class="col-sm-12">
+				<div class="form-group">
+					<label>Is Employer Identification Number authorized to represent a MBC in the BVI </label>
+					<label class="radio-inline" style="margin-left:20px;">
+						<input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="Issuance-true" >True
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="Issuance-false">False
+					</label>
+				</div>
+				
+				
+				
+				<div class="alert alert-success Issuance-true-div">
+     
+                     Entry will be Accepted.
+                </div>
+	
+				<div class="alert alert-success Issuance-false-div">
+					<a style="cursor:pointer;">Not Authorized to Conduct Business in the Virgin Islands</a>
+				</div>
+			</div>
+		</div>
+				
+				
+				
+													
+			<div class="cleaner h20"></div>
+					<div class="form-group">
+							<div class="col-sm-3">
+								<div class="row">
+								<!--<input value="Submit" id="submit" type="submit" class="primary-btn" onclick="sendMail()"></input>-->
+								<a class="primary-btn" id="submit_btn" ui-sref="ra-filing-transf-bvi-company-confirmation">Submit</a>
+								</div>	
+							</div>
+					</div>
+																
+</form>
+
+				</div>
+			</div>
+			
+		<div class="cleaner h80"></div>
+		</div>
+
+		</div>
+
+    </div> <!-- /container -->
+
+	
+	
+	
+
+    
+	<script>
+
+		$(document).ready(function(){
+		    $("#search").click(function(){
+				$("#avail").css("display", "block");
+			});
+		
+			$("#submit").click(function(){
+				window.location="RA-Filing-Transf-BVI-Company-conformation.html";
+			});
+	});
+	
+	
+	$(document).ready(function(){
+			$(".Issuance-false-div").hide();
+            $(".Issuance-true-div").hide();
+    $('input[type="radio"]').click(function(){
+        if($(this).attr("value")=="Issuance-true"){
+            //$(".box").not(".red").hide();
+			$(".Issuance-false-div").hide();
+            $(".Issuance-true-div").show();
+        }
+        if($(this).attr("value")=="Issuance-false"){
+            //$(".box").not(".green").hide();
+           	$(".Issuance-true-div").hide();
+            $(".Issuance-false-div").show();
+        }
+
+    });
+});
+		function sendMail() {
+       var validator = $("#enquiry").validate({
+              rules: {
+ 
+              },
+             
+          });
+          if (validator.form()) {
+              alert('Thank you for contacting us. We will be in touch with you very soon.');
+          }
+
+    }
+
+</script>
+
+    
+
+  </body>
+</html>

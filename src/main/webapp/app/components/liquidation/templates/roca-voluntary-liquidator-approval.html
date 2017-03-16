@@ -1,0 +1,110 @@
+<div ng-include="'app/components/common/templates/header.html'" ng-controller="headerController"></div>
+
+    <div class="container theme-showcase" role="main">
+
+		<div class="row">	
+			<div class="page-heading">
+				<h3 class="page-title fs28">Voluntary Liquidator approval notification </h3>
+			</div>
+		</div>
+
+		<div class="row" id="charter_data" style="display:block;">	
+				
+				 <div class="col-sm-8">
+				
+				
+				<div class="charter-content"> 
+				<ul>
+<li><span><i class="fa fa-check-circle" aria-hidden="true"></i> MBC Name :</span> <span id="mbc_name_value">MBC Name1</span></li>
+<li><span><i class="fa fa-check-circle" aria-hidden="true"></i> RA employed voluntary liquidators :</span> <span id="agent_name_value">Voluntary Liquidators Name1</span></li>
+<li><span><i class="fa fa-check-circle" aria-hidden="true"></i> Geographic Location :</span> <span id="reg_office_addr_value">Location 1</span></li>
+<li><span><i class="fa fa-check-circle" aria-hidden="true"></i> Street Address :</span> <span id="country_value">Address</span></li>
+<li><span><i class="fa fa-check-circle" aria-hidden="true"></i> City :</span> <span id="location_value">City</span></li>
+
+<li><span><i class="fa fa-check-circle" aria-hidden="true"></i> Country :</span> <span id="bussiness_purpose_value">Country</span></li>
+
+
+<li><span><i class="fa fa-check-circle" aria-hidden="true"></i> Telephone Number :</span> <span id="principal_name_value">1-999-999-999</span></li>
+<li><span><i class="fa fa-check-circle" aria-hidden="true"></i> Fax Number:</span> <span id="principal_nationality_value">1-999-999</span></li>
+<li><span><i class="fa fa-check-circle" aria-hidden="true"></i> E-Mail :</span> <span id="participant_name_value">mbc123@gmail.com</span></li>
+<li><span><i class="fa fa-check-circle" aria-hidden="true"></i> Filing Fee :</span> <span id="participant_nationality_value"> <i class="fa fa-usd" aria-hidden="true"></i>50</span></li>
+
+
+				</ul>
+				</div>
+
+<div class="cleaner h20"></div>
+			<a ui-sref="roca-voluntary-liquidator-approval-success" class="btn btn-success" id="accept_btn">Accept</a>
+			<a ui-sref="roca-voluntary-liquidator-approval-reject" class="btn btn-danger" id="reject_btn">Reject</a>				
+
+ </div>
+
+ 
+	
+    </div> <!-- /container -->
+</div>
+<div class="cleaner h80"></div>
+	
+	<script>
+	
+
+$(document).ready(function(){
+			$(".Issuance-false-div").hide();
+            $(".Issuance-true-div").hide();
+    $('input[type="radio"]').click(function(){
+        if($(this).attr("value")=="Issuance-true"){
+            //$(".box").not(".red").hide();
+			$(".Issuance-false-div").hide();
+            $(".Issuance-true-div").show();
+        }
+        if($(this).attr("value")=="Issuance-false"){
+            //$(".box").not(".green").hide();
+           	$(".Issuance-true-div").hide();
+            $(".Issuance-false-div").show();
+        }
+
+    });
+});
+
+
+		$(document).ready(function(){
+		    $("#search").click(function(){
+				$("#avail").css("display", "block");
+			});
+			
+			$("#submit").click(function(){
+				window.location="MBC-reg-off-admin-conformation.html";
+			});
+	
+
+	});
+		function sendMail() {
+       var validator = $("#enquiry").validate({
+              rules: {
+ 
+              },
+             
+          });
+          if (validator.form()) {
+              alert('Thank you for contacting us. We will be in touch with you very soon.');
+          }
+
+    }
+	
+	$(document).ready(function(){
+	
+		$("#annual_payment").blur(function(){
+			if($(this).val() != "100"){
+				$(this).val("");
+			}
+		});
+		
+		$("#notice_fee").blur(function(){
+			if($(this).val() != "75"){
+				$(this).val("");
+			}
+		});
+	})
+
+</script>
+

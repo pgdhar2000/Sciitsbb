@@ -1,0 +1,71 @@
+<div ng-include="'app/components/common/templates/header.html'" ng-controller="headerController"></div>
+
+    <div class="container theme-showcase" role="main">
+
+		<div class="row">	
+			<div class="page-heading">
+				<h3 class="page-title fs28">Annual Returns</h3>
+			</div>
+		</div>
+
+		<p>Click on the  button to generate Annual returns Pdf <p>
+				
+		<a href="pdf/Annual-return.pdf" download >
+ <input value="Annual-return"  type="submit" class="primary-btn" id="annual_return_btn"></input>
+</a>
+
+    </div> <!-- /container -->
+
+	</div>
+			<div class="cleaner h80"></div>
+	
+	
+	<script>
+	
+
+$(document).ready(function(){
+			$(".Issuance-false-div").hide();
+            $(".Issuance-true-div").hide();
+    $('input[type="radio"]').click(function(){
+        if($(this).attr("value")=="Issuance-true"){
+            //$(".box").not(".red").hide();
+			$(".Issuance-false-div").hide();
+            $(".Issuance-true-div").show();
+        }
+        if($(this).attr("value")=="Issuance-false"){
+            //$(".box").not(".green").hide();
+           	$(".Issuance-true-div").hide();
+            $(".Issuance-false-div").show();
+        }
+
+    });
+});
+
+
+		$(document).ready(function(){
+		    $("#search").click(function(){
+				$("#avail").css("display", "block");
+			});
+			
+			$("#submit").click(function(){
+				window.location="MBC-shares-conformation.html";
+			});
+	
+
+	});
+		function sendMail() {
+       var validator = $("#enquiry").validate({
+              rules: {
+ 
+              },
+             
+          });
+          if (validator.form()) {
+              alert('Thank you for contacting us. We will be in touch with you very soon.');
+          }
+
+    }
+
+</script>
+
+    

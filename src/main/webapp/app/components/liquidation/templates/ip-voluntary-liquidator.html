@@ -1,0 +1,200 @@
+<div ng-include="'app/components/common/templates/header.html'" ng-controller="headerController"></div>
+
+    <div class="container theme-showcase" role="main">
+
+		<div class="row">	
+			<div class="page-heading">
+				<h3 class="page-title fs28">Voluntary liquidator appointment</h3>
+			</div>
+		</div>
+
+		
+	<div class="row">	
+		<div class="col-sm-12">
+				
+		<div class="panel panel-default form-div">
+		<div class="panel-heading"> 
+			<h3 class="panel-title"><i class="fa fa-arrow-right" aria-hidden="true"></i> Voluntary liquidator appointment Form</h3> 
+		</div> 
+	<div class="panel-body"> 
+	<form action="" id="enquiry">
+	
+	<div class="row">	
+		<div class="col-sm-6">
+		<label>MBC Name</label>
+						<div class="form-group">
+							<select class="form-control" id="mbc_name_dd">
+								<option value="">select</option>
+								<option value="mbcname1">MBC Name1</option>
+								<option value="mbcname2">MBC Name2</option>
+								<option value="mbcname3">MBC Name3</option>
+							</select>
+						</div>
+		</div>
+		
+		<div class="col-sm-6">
+		<label>RA employed voluntary liquidators </label>
+						<div class="form-group">
+							<select class="form-control" id="vol_liq_dd">
+								<option value="">select</option>
+								<option value="mbcname1">Voluntary Liquidators Name1</option>
+								<option value="mbcname2">Voluntary Liquidators Name2</option>
+								<option value="mbcname3">Voluntary Liquidators Name3</option>
+							</select>
+						</div>
+		</div>
+	</div>
+	
+	<div class="row">	
+		<div class="col-sm-6">
+		<label>Geographic Location</label>
+		<div class="form-group">
+			<input class="form-control" placeholder="Geographic Location" value = "Location 1" autofocus="" required="required" type="text" id="geo_loc_tb" />
+		</div>
+		</div>
+		
+		<div class="col-sm-6">
+		<label>Street Address</label>
+			<div class="form-group">
+				<input class="form-control" placeholder="Street Address" value = "Address" required="required" type="text" id="street_tb" />
+			</div>
+
+		</div>
+	</div>
+	
+	
+	<div class="row">	
+		<div class="col-sm-6">
+		<label>City</label>
+		<div class="form-group">
+			<input class="form-control" placeholder="City" value = "City" required="required" type="text" id="city_tb" />
+		</div>
+		</div>
+		
+		<div class="col-sm-6">
+		<label>Country</label>
+			<div class="form-group">
+				<input class="form-control" placeholder="Country" value = "Country" required="required" type="text" id="country_tb" />
+			</div>
+
+		</div>
+	</div>
+	
+	<div class="row">	
+		<div class="col-sm-6">
+		<label>Telephone Number</label>
+		<div class="form-group">
+			<input class="form-control" placeholder="Telephone Number" value = "1-999-999-999" required="required" type="text" id="tel_num_tb" />
+		</div>
+		</div>
+		
+		<div class="col-sm-6">
+		<label>Fax Number</label>
+			<div class="form-group">
+				<input class="form-control" placeholder="Fax Number" value = "1-999-999" required="required" type="text" id="fax_num_tb" />
+			</div>
+		</div>
+	</div>
+	
+		<div class="row">	
+		<div class="col-sm-6">
+		<label>E-Mail</label>
+			<div class="form-group">
+				<input class="form-control" placeholder="E-Mail" required="required" type="text" value = "mbc123@gmail.com" id="email_tb" />
+			</div>
+		</div>
+		</div>	
+	
+								
+		<div class="row">	
+			<div class="col-sm-6">
+				<label>Filing Fee</label>
+				<div class="form-group input-group">
+				<span class="input-group-addon"><i class="fa fa-usd" aria-hidden="true"></i></span>
+					<input class="form-control" id="annual_payment" placeholder="Annual Payment"  autofocus="" value = "50"required="required" type="text" />
+				</div>
+			</div>
+		</div>
+					
+					
+			<div class="cleaner h30"></div><div class="cleaner h10"></div>
+		<div class="form-group">
+				<div class="col-sm-3">
+					<div class="row">
+					<!--<input value="Submit" id="submit" type="submit" class="primary-btn" onclick="sendMail()"></input>-->
+					<a class="primary-btn" ui-sref="ip-liquidation-confirmation" id="submit_btn">Submit</a>
+					</div>	
+				</div>
+		</div>
+	</form>
+				
+					</div>
+				</div>
+			</div>
+		</div>
+    </div> <!-- /container -->
+	<div class="cleaner h80"></div>
+	
+	
+	<script>
+	
+
+$(document).ready(function(){
+			$(".Issuance-false-div").hide();
+            $(".Issuance-true-div").hide();
+    $('input[type="radio"]').click(function(){
+        if($(this).attr("value")=="Issuance-true"){
+            //$(".box").not(".red").hide();
+			$(".Issuance-false-div").hide();
+            $(".Issuance-true-div").show();
+        }
+        if($(this).attr("value")=="Issuance-false"){
+            //$(".box").not(".green").hide();
+           	$(".Issuance-true-div").hide();
+            $(".Issuance-false-div").show();
+        }
+
+    });
+});
+
+
+		$(document).ready(function(){
+		    $("#search").click(function(){
+				$("#avail").css("display", "block");
+			});
+			
+			$("#submit").click(function(){
+				window.location="MBC-reg-off-admin-conformation.html";
+			});
+	
+
+	});
+		function sendMail() {
+       var validator = $("#enquiry").validate({
+              rules: {
+ 
+              },
+             
+          });
+          if (validator.form()) {
+              alert('Thank you for contacting us. We will be in touch with you very soon.');
+          }
+
+    }
+	
+	$(document).ready(function(){
+	
+		$("#annual_payment").blur(function(){
+			if($(this).val() != "100"){
+				$(this).val("");
+			}
+		});
+		
+		$("#notice_fee").blur(function(){
+			if($(this).val() != "75"){
+				$(this).val("");
+			}
+		});
+	})
+
+</script>

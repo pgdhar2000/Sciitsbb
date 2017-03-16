@@ -1,0 +1,149 @@
+<div ng-include="'app/components/common/templates/header.html'" ng-controller="headerController"></div>
+
+
+    <div class="container theme-showcase" role="main">
+
+
+				<div class="row">	
+					<div class="page-heading">
+                        <h3 class="page-title">Capacity and Powers</h3>
+                    </div>
+				</div>
+				
+				<div class="row">
+					<div class="col-sm-4 col-sm-offset-4">
+						<label>MBC Name</label>
+						<div class="form-group">
+							<select class="form-control" id="mbc_name">
+								<option value="">select</option>
+								<option value="mbcname1">MBC Name1</option>
+								<option value="mbcname2">MBC Name2</option>
+								<option value="mbcname3">MBC Name3</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				
+			 <div class="row" id="mbc_details" style="display:none;">	
+				
+				 <div class="col-sm-8">
+				
+				
+				<div class="charter-content"> 
+				<ul>
+<li><span style="width:150px;"><i class="fa fa-check-circle" aria-hidden="true"></i> MBC Name :</span> <span id="mbc_name_value">MBC Name</span></li>
+
+
+				</ul>
+				</div> 
+				
+				
+			<div style="padding-left:20px;">	
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" ng-model="financialServices" id="fin_ser_legislation" checked="">Regulated Under a Financial Services Legislation
+					</label>
+				</div>	
+				
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" ng-model="grossAssets" id="gross_assets" checked="">Gross Assets greater than $2,000,001
+					</label>
+				</div>	
+				
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" ng-model="noEmployees" id="no_employees" checked="">Number of Employees greater than 10
+					</label>
+				</div>	
+			</div>	
+			
+			
+			<div class="cleaner h30"></div>
+			<br/><br/><br/><br/>
+			
+					
+			<div class="row">
+				<div class="col-sm-3">
+					<!--<input value="Submit" id="submit_button" type="submit" class="primary-btn"></input>-->
+					<button class="primary-btn" ng-click="submitButton()" id="submit_btn"><i class="fa fa-check-circle-o" aria-hidden="true"></i> Submit</button>
+				</div>	
+			</div>
+			<br/>	
+			<div class="row">
+				<div class="col-sm-3">
+					<input value="Constructive Notice" id="constructive_notice_button" type="submit" class="btn btn-success"></input>
+				</div>	
+			</div>
+			
+				
+				
+				
+
+ </div>
+
+ </div>
+
+    </div> <!-- /container -->
+	
+			<div class="cleaner h80"></div>
+	</div>
+	
+	
+
+
+   
+	
+	<script>
+
+$(document).ready(function(){
+    $("#search").click(function(){
+        $("#avail").css("display", "block");
+    });
+});
+
+$(document).ready(function(){
+    $('.sendButton').attr('disabled',true);
+    $('#message').keyup(function(){
+        if($(this).val().length !=0)
+            $('.sendButton').attr('disabled', false);   
+        else
+            $('.sendButton').attr('disabled',true);
+			$("#avail").css("display", "none");
+    });
+});
+
+$(document).ready(function(){
+
+	$( "#fin_ser_legislation" ).prop( "checked", false );
+	$( "#gross_assets" ).prop( "checked", false );
+	$( "#no_employees" ).prop( "checked", false );
+	$("#mbc_name").change(function(){
+		
+		$( "#fin_ser_legislation" ).prop( "checked", false );
+		$( "#gross_assets" ).prop( "checked", false );
+		$( "#no_employees" ).prop( "checked", false );
+		
+		if($("#mbc_name").val() == "mbcname1"){
+			$("#mbc_name_value").text("MBC Name1");
+		}else if($("#mbc_name").val() == "mbcname2"){
+			$("#mbc_name_value").text("MBC Name2");
+		}else if($("#mbc_name").val() == "mbcname3"){
+			$("#mbc_name_value").text("MBC Name3");
+		}
+
+		$("#mbc_details").css("display", "block");
+	});
+	
+	$("#submit_button").click(function(){
+		if(($("#fin_ser_legislation").is(":checked")) || ($("#gross_assets").is(":checked")) || ($("#no_employees").is(":checked"))){
+			window.location="request-for-transformation.html";			
+		}else{
+			window.location="MBC-names-confirmation.html";			
+		}
+	});
+});
+
+</script>
+
+    

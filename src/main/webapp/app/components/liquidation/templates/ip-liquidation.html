@@ -1,0 +1,112 @@
+<div ng-include="'app/components/common/templates/header.html'" ng-controller="headerController"></div>
+
+    	<div class="container theme-showcase" role="main">
+	<div class="row">	
+		<div class="page-heading">
+			<h3 class="page-title">Liquidation</h3>
+		</div>
+	</div>
+	
+	<div class="row">
+					<div class="col-sm-4 col-sm-offset-4">
+						<label>MBC Name</label>
+						<div class="form-group">
+							<select class="form-control" id="mbc_name">
+								<option value="">select</option>
+								<option value="mbcname1">MBC Name1</option>
+								<option value="mbcname2">MBC Name2</option>
+								<option value="mbcname3">MBC Name3</option>
+							</select>
+						</div>
+					</div>
+				</div>
+	
+	<div class="row">
+					<div class="col-sm-4 col-sm-offset-4">
+							<label>Assets</label>
+						<div class="form-group">
+							<input class="form-control" placeholder=""  id = "Assets"  name="" autofocus="" required="required" type="number" value="100">
+						</div>
+					</div>
+				</div>
+	
+	
+	<div class="row">
+					<div class="col-sm-4 col-sm-offset-4">
+							<label>Liabilites</label>
+						<div class="form-group">
+							<input class="form-control" placeholder=""  id = "Liabilites"  name="" autofocus="" required="required" type="number" value="50">
+						</div>
+						<input value="Check Liquidate" id="check_liquidate" type="submit" class="primary-btn" style="display:block;"></input>
+						
+						<h4 style="display:none;" id = "eligible"><i>MBC is eligible for liquidation </i></h4>
+					</div>
+				</div>
+
+				<div class="cleaner h20"></div>
+				
+				<div class="row" style="display:none;" id  = "voluntary_liquidators">
+					<div class="col-sm-4 col-sm-offset-4">
+						<label>RA employed voluntary liquidators </label>
+						<div class="form-group">
+							<select class="form-control" id="mbc_name">
+								<option value="">select</option>
+								<option value="mbcname1">Voluntary Liquidators Name1</option>
+								<option value="mbcname2">Voluntary Liquidators Name2</option>
+								<option value="mbcname3">Voluntary Liquidators Name3</option>
+							</select>
+						</div>
+						<!--<input value="Appointment voluntary liquidator" id="voluntary_liquidator" type="submit" class="primary-btn" ></input>-->
+						<a class="primary-btn" ui-sref="ip-voluntary-liquidator" id="appointment_vl_btn">Appointment voluntary liquidator</a>
+					</div>
+				</div>
+		
+	<div class="cleaner h80"></div>
+	</div>
+	
+			
+	<script>
+
+		$(document).ready(function(){
+		    $("#search").click(function(){
+				$("#avail").css("display", "block");
+			});
+		
+			$("#submit").click(function(){
+				window.location="confirmation.html";
+			});
+	});
+		function sendMail() {
+       var validator = $("#enquiry").validate({
+              rules: {
+ 
+              },
+             
+          });
+          if (validator.form()) {
+              alert('Thank you for contacting us. We will be in touch with you very soon.');
+          }
+
+    }
+
+	
+	
+	
+	
+	$(document).ready(function(){
+	
+		$("#check_liquidate").click(function(){
+		
+			$("#eligible").css("display", "block");	
+					
+			$("#voluntary_liquidators").css("display", "block");			
+					
+					
+					});
+		
+		});
+		
+	
+
+
+</script>

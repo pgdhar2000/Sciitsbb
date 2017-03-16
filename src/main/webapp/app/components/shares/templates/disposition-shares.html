@@ -1,0 +1,323 @@
+<div ng-include="'app/components/common/templates/header.html'" ng-controller="headerController"></div>
+
+    <div class="container theme-showcase" role="main">
+
+		<div class="row">	
+					<div class="page-heading">
+                        <h3 class="page-title fs28">Disposition of Shares</h3>
+                    </div>
+		</div>
+		
+		<div class="row">
+					<div class="col-sm-4 col-sm-offset-4">
+						<label>MBC Name</label>
+						<div class="form-group">
+							<select class="form-control" id="mbc_name">
+								<option value="">select</option>
+								<option value="mbcname1">MBC Name1</option>
+								<option value="mbcname2">MBC Name2</option>
+								<option value="mbcname3">MBC Name3</option>
+							</select>
+						</div>
+					</div>
+				</div>
+
+		
+				
+		<div class="row" id="disposition_data" style="display:none;">	
+				
+			<div class="col-sm-12">
+				
+			<div class="panel panel-default form-div"> <div class="panel-heading"> 
+				<h3 class="panel-title"><i class="fa fa-arrow-right" aria-hidden="true"></i> Disposition of Shares</h3> </div> 
+				<div class="panel-body"> 
+				
+				
+	<form action="" id="enquiry">
+												
+		<div class="row">	
+			<div class="col-sm-6">
+				<label>Name of the Person(s) who will receive a Share(s)</label>
+				<div class="form-group">
+					<input class="form-control" id="person1" placeholder="Person1 Name" name="" autofocus="" required="required" type="text">
+					<input class="form-control" style="display:none;" id="person2" placeholder="Person2 Name" name="" autofocus="" required="required" type="text">
+				</div>
+				<div class="form-group" id="button1">
+					<button class="primary-btn" id="add_button1">Add Person</button>
+				</div>
+			</div>
+     	</div>
+			
+			<hr/>
+			
+		<div class="row">	
+			<div class="col-sm-12">
+				<div class="form-group">
+					<label>Issuance of Share Certificates: </label>
+					<label class="radio-inline">
+						<input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="Issuance-true" >True
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="Issuance-false">False
+					</label>
+				</div>
+				
+				
+				
+				<div class="alert alert-success Issuance-true-div">
+                               
+                    <ul>
+						<li>Person1 Name : Received Share Certificates</li>
+						<li>Person2 Name : Received Share Certificates</li>
+						<li>Person3 Name : Received Share Certificates</li>
+					</ul>
+                </div>
+	
+				<div class="alert alert-success Issuance-false-div">
+				The System will Generate an e-Letter stating that the Person(s) identified <b>have not been issued</b> any share certificate(s).
+				</div>
+			</div>
+		</div>
+		
+		<hr/>
+								
+			<div class="row">	
+				<div class="col-sm-6">
+				<label> Name of the Person that own share in the MBC</label>
+				<div class="form-group">
+					<input class="form-control" id="person1_name" placeholder="Person1 Name that own share in the MBC" name="" autofocus="" required="required" type="text">
+				</div>
+				<div class="form-group">
+					<input class="form-control" style="display:none;" id="person2_name" placeholder="Person2 Name that own share in the MBC" name="" autofocus="" required="required" type="text">
+				</div>
+				<div class="form-group" id="button2">
+					<button class="primary-btn" id="add_button2">Add Person / Share</button>
+				</div>
+				</div>
+				
+				<div class="col-sm-6">
+				<label>Number of Shares for the Person </label>
+					<div class="form-group">
+						<input class="form-control" id="person1_share" placeholder="Number of shares for Person1" name="" autofocus="" required="required" type="text">
+					</div>
+					<div class="form-group">
+						<input class="form-control" style="display:none;" id="person2_share" placeholder="Number of shares for Person2" name="" autofocus="" required="required" type="text">
+					</div>
+				</div>
+			</div>
+			
+			<hr/>
+												
+												
+			<div class="row">	
+				<div class="col-sm-6">
+						<label>Evidence of Legal Title</label>
+						<div class="form-group">
+							<input class="form-control"  id="legal_title" placeholder="Evidence of Legal Title" name="" autofocus="" required="required" type="text">
+						</div>
+				</div>
+				</div>
+				
+					<a class="btn btn-success" id="estatement" data-toggle="modal" data-target="#myModal">Generate E-Holding statement</a>
+			
+			<div class="cleaner h30"></div>		
+			<div class="row" style="display:none;" id="legal_documentation_enable">
+				<div class="col-sm-2">
+					<input type="checkbox" id="legal_documentation">
+				</div>
+				
+				<div class="col-sm-10">
+					Legal documentation
+				</div>
+			</div>
+					
+					
+												
+			<div class="cleaner h30"></div>
+			<div class="cleaner h10"></div>
+					<div class="form-group" style="display:none;" id="submit_enable">
+							<div class="col-sm-3">
+								<div class="row">
+								<!--<input value="Submit" id="submit_button" type="submit" class="primary-btn"></input>-->
+								<a class="primary-btn" ui-sref="mbc-disposition-shares-confirmation" id="submit_btn">Submit</a>
+								</div>	
+							</div>
+					</div>
+																
+</form>
+
+				
+				</div>
+			</div>
+			
+
+		</div>
+
+		</div>
+		
+		<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content modal-conformation">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" id="modal_close_btn">&times;</button>
+          <h4 class="modal-title">E-Holding statement</h4>
+        </div>
+        <div class="modal-body">
+			
+			
+			<div class="row">
+				<div class="col-sm-6">
+					<label>Name of the Person that own share in the MBC</label>
+					<span> Name XXXX</span>
+					<div class="form-group">
+					<span id="popup_person1_name"></span><br/>
+					<span id="popup_person2_name"></span>
+					</div>
+				</div>
+				
+				<div class="col-sm-6">
+					<label>Number of Shares for the Person:</label>
+					<span> 2</span>
+					<div class="form-group">
+					<span id="popup_person1_share"></span><br/>
+					<span id="popup_person2_share"></span>
+					</div>
+				</div>
+				
+				
+			</div>
+		
+        </div>
+      </div>
+      
+    </div></div>
+
+    </div> <!-- /container -->
+
+	</div>
+			<div class="cleaner h80"></div>
+	
+
+    
+	
+	<script>
+	
+
+$(document).ready(function(){
+			$(".Issuance-false-div").hide();
+            $(".Issuance-true-div").hide();
+    $('input[type="radio"]').click(function(){
+        if($(this).attr("value")=="Issuance-true"){
+            //$(".box").not(".red").hide();
+			$(".Issuance-false-div").hide();
+            $(".Issuance-true-div").show();
+        }
+        if($(this).attr("value")=="Issuance-false"){
+            //$(".box").not(".green").hide();
+           	$(".Issuance-true-div").hide();
+            $(".Issuance-false-div").show();
+        }
+
+    });
+});
+
+
+		$(document).ready(function(){
+		    $("#search").click(function(){
+				$("#avail").css("display", "block");
+			});
+			
+			$("#submit").click(function(){
+				window.location="MBC-disposition-shares-conformation.html";
+			});
+
+	});
+		function sendMail() {
+       var validator = $("#enquiry").validate({
+              rules: {
+ 
+              },
+             
+          });
+          if (validator.form()) {
+              alert('Thank you for contacting us. We will be in touch with you very soon.');
+          }
+
+    }
+	
+	$(document).ready(function(){
+		
+		$("#mbc_name").change(function(){
+			$("#disposition_data").css("display", "block");
+		});
+		
+		$("#add_button1").click(function(){
+			$("#person2").css("display", "block");
+			$("#button1").css("display", "none");
+		});
+		
+		$("#add_button2").click(function(){
+			$("#person2_name").css("display", "block");
+			$("#person2_share").css("display", "block");
+			$("#button2").css("display", "none");
+		});
+		
+		$("#person1_share").keyup(function(){
+			if(($(this).val() != "1") && ($(this).val() != "2")){
+				$(this).val("");
+			}
+		});
+		
+		$("#person2_share").keyup(function(){
+			if(($(this).val() != "1") && ($(this).val() != "2")){
+				$(this).val("");
+			}
+		});
+		
+		$("#estatement").click(function(){
+			
+			$("#popup_person1").text($("#person1").val());
+			$("#popup_person2").text($("#person2").val());
+			
+			$("#popup_person1_name").text($("#person1_name").val());
+			$("#popup_person2_name").text($("#person2_name").val());
+			
+			$("#popup_person1_share").text($("#person1_share").val());
+			$("#popup_person2_share").text($("#person2_share").val());
+			
+			$("#popup_legal_title").text($("#legal_title").val());
+			
+			$("#person1").prop("readonly","true");
+			$("#person2").prop("readonly","true");
+			
+			$("#person1_name").prop("readonly","true");
+			$("#person2_name").prop("readonly","true");
+			
+			$("#person1_share").prop("readonly","true");
+			$("#person2_share").prop("readonly","true");
+			
+			$("#legal_title").prop("readonly","true");
+			
+			$("#legal_documentation_enable").css("display", "block");
+		});
+		
+		$("#legal_documentation" ).prop( "checked", false );
+		
+		$("#legal_documentation").click(function(){
+		
+			if($("#legal_documentation").is(":checked")){
+				$("#submit_enable").css("display", "block");
+			}
+		
+		});
+		
+		$("#submit_button").click(function(){
+			window.location="MBC-disposition-shares-conformation.html";
+		});
+	});
+
+</script>
+
+    

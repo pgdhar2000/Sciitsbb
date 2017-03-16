@@ -1,0 +1,125 @@
+<div ng-include="'app/components/common/templates/header.html'" ng-controller="headerController"></div>
+
+	<div class="container theme-showcase" role="main">
+
+		<div class="row">	
+					<div class="page-heading">
+                        <h3 class="page-title">Appeal to the Court</h3>
+                    </div>
+		</div>
+
+			<div class="row">
+									<div class="col-sm-4 col-sm-offset-4">
+										<label>Name of Registered Agent :</label>
+										<span>Agent xxyyzz</span>
+									</div>
+								</div>
+								</br>
+		
+		<div class="row">
+					<div class="col-sm-4 col-sm-offset-4">
+						<label>MBC Name</label>
+						<div class="form-group">
+							<select class="form-control" id="mbc_name">
+								<option value="">select</option>
+								<option value="mbcname1">MBC Name1</option>
+								<option value="mbcname2">MBC Name2</option>
+								<option value="mbcname3">MBC Name3</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				
+				
+				
+				<div class="row" >
+					<div class="col-sm-4 col-sm-offset-4">
+						<label>Notification of Strike Off Date</label>
+						<div class="form-group input-group">
+						<span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+							<input class="form-control" id="strike_off_date" placeholder="xx/xx/xxxx" name="" autofocus="" required="required" type="currency">
+						</div>
+						
+									</div>
+				</div>
+				
+				<div class="row" >
+					<div class="col-sm-4 col-sm-offset-4">
+						<label>Notice of Appeal to the Court Date</label>
+						<div class="form-group input-group">
+						<span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+							<input class="form-control" id="appeal_to_court_date" placeholder="xx/xx/xxxx" name="" autofocus="" required="required" type="currency">
+						</div>
+						
+						
+						
+						
+					</div>
+				</div>
+			<label class="col-sm-4 col-sm-offset-4">Sufficient information to the  Court </label>
+			`	<div class="row">	
+			
+		<div class="col-sm-4 col-sm-offset-4">
+		<div class="form-group">
+				<input type="file" id="upload_btn">
+            </div>
+		<!--<input value="Submit" id="registration_fee_button" type="submit" class="primary-btn"></input>-->
+		<a class="primary-btn" ui-sref="ra-appeal-to-the-court-success" id="submit_btn">Submit</a>
+		</div>
+	</div>
+		
+		
+		
+		
+		
+				
+	
+
+    </div> <!-- /container -->
+
+	
+			<div class="cleaner h80"></div>
+	
+    
+	<script>
+
+		$(document).ready(function(){
+		    $("#search").click(function(){
+				$("#avail").css("display", "block");
+			});
+		
+			$("#submit").click(function(){
+				window.location="ra-appeal-to-the-Court-sucess.html";
+			});
+	});
+	
+	$("#submit").click(function(){
+				window.location="ra-appeal-to-the-Court-sucess.html";
+			});
+	
+	
+		function sendMail() {
+       var validator = $("#enquiry").validate({
+              rules: {
+ 
+              },
+             
+          });
+          if (validator.form()) {
+              alert('Thank you for contacting us. We will be in touch with you very soon.');
+          }
+
+    }
+
+	
+	
+	
+	
+
+
+
+
+</script>
+
+
+

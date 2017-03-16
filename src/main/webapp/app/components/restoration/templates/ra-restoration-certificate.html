@@ -1,0 +1,149 @@
+<div ng-include="'app/components/common/templates/header.html'" ng-controller="headerController"></div>
+
+    <div class="container theme-showcase" role="main">
+
+		<div class="row">	
+					<div class="page-heading">
+                        <h3 class="page-title">Restoration certificate of MBC</h3>
+                    </div>
+		</div>
+
+		
+		
+				
+				
+				<div class="row">
+					<div class="col-sm-6 col-sm-offset-3" style="background-color:#dddee8;border-radius:5px;">
+						<br/>
+						<div class="row">
+							<div class="col-sm-6">
+								<label>MBC Name:</label>
+							</div>
+							<div class="col-sm-6">
+								<label>MBC Name</label>
+							</div>
+						</div>
+						<br/>
+						<div class="row">
+							<div class="col-sm-6">
+								<label>Registered Agent Name:</label>
+							</div>
+							<div class="col-sm-6">
+								<label>Registered Agent Name</label>
+							</div>
+						</div>
+						<br/>
+						<div class="row">
+							<div class="col-sm-6">
+								<label>Certificate Fee</label>
+							</div>
+							<div class="col-sm-6 form-group input-group">
+								<span class="input-group-addon"><i class="fa fa-usd" aria-hidden="true"></i></span>
+								<input type="number" class="form-control" style="width:80%;"  id = "strike_off_fee"  placeholder="50" required="required"></div>
+							</div>
+						<br/>
+						
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-sm-4 col-sm-offset-4" style="text-align: center;margin-top: 10px;">
+						<a class="primary-btn" ui-sref="ra-restoration-certificate-success" id="pay_btn">Pay</a>
+					</div>
+				</div>
+		
+
+    </div> <!-- /container -->
+
+	
+			<div class="cleaner h80"></div>
+	
+
+	<script>
+
+		$(document).ready(function(){
+		    $("#search").click(function(){
+				$("#avail").css("display", "block");
+			});
+		
+			$("#submit").click(function(){
+				window.location="confirmation.html";
+			});
+	});
+		function sendMail() {
+       var validator = $("#enquiry").validate({
+              rules: {
+ 
+              },
+             
+          });
+          if (validator.form()) {
+              alert('Thank you for contacting us. We will be in touch with you very soon.');
+          }
+
+    }
+
+	
+	
+
+
+
+</script>
+
+
+<style>
+
+.tooltip-one {
+    position: relative;
+    display: inline-block;
+    float:right;
+}
+
+.ul-tooltip{
+	margin: 0 0 0 0;
+	background-color: #555;
+}
+
+.p-tooltip{
+	margin: 0 0 0 5px;
+}
+
+.tooltip-one .tooltiptext {
+    visibility: hidden;
+    width: auto;
+    min-width: 200px;
+    background-color: lightslategrey;
+    color: #fff;
+    text-align: left;
+	font-size:12px;
+    border-radius: 6px;
+    padding: 0 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 50%;
+    margin-left: 0px;
+    opacity: 0;
+    transition: opacity 1s;
+	cursor: pointer;
+}
+
+.tooltip-one .tooltiptext::after {
+    position: absolute;
+    top: 90%;
+    right: 0%;
+    margin-left: 0px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip-one:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+</style>
+
+   
+
+

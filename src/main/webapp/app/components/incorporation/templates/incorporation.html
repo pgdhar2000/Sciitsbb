@@ -1,0 +1,317 @@
+<div ng-include="'app/components/common/templates/header.html'" ng-controller="headerController"></div>
+
+<div class="container theme-showcase" role="main">
+	<div class="row">
+		<div class="page-heading">
+			<h3 class="page-title">Incorporation</h3>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-12">
+
+			<div class="panel panel-default form-div">
+				<div class="panel-heading">
+					<h3 class="panel-title"><i class="fa fa-arrow-right" aria-hidden="true"></i> Incorporation Form</h3>
+				</div>
+				<div class="panel-body">
+
+					<form name="incorporationForm" id="enquiry" novalidate>
+						<div class="row">
+							<div class="col-sm-6">
+								<label>Full Legal Corporation Name<sup class="errMsg">*</sup></label>
+								<div class="form-group">
+									<!-- <span class="errMsg" ng-show="(incorporationForm.mbcLegalName.$touched)&&(incorporationForm.mbcLegalName.$invalid)" id="mbcLegalName_err_msg">Invalid</span> -->
+									<input class="form-control" type="text" placeholder="Full Legal Corporation Name"
+									name="mbcLegalName" ng-model="mbcDetails.mbcLegalName" ng-pattern="/^[a-zA-Z0-9 ]{1,45}$/"
+									autofocus="" required id="mbcLegalName_tb" />
+									<!-- <div ng-messages="incorporationForm.mbcLegalName.$error"
+									ng-if="incorporationForm.mbcLegalName.$touched">
+									<div ng-messages-include="app/validations.html"></div>
+								</div> -->
+							</div>
+						</div>
+
+						<div class="col-sm-6">
+							<label>Total shares of MBC<sup class="errMsg">*</sup></label>
+							<div class="form-group margin-tp10">
+								<span class="errMsg" ng-show="(incorporationForm.mbcTotalShares.$touched)&&(incorporationForm.mbcTotalShares.$invalid)" id="mbc_total_shares_err_msg">Invalid</span>
+								<label class="margin-rt30" style="font-size:20px;"><input type="radio" value="1" ng-model="mbcDetails.totalShares" name="mbcTotalShares" required id="mbc_total_first">1</label>
+								<label style="font-size:20px;"><input type="radio" value="2" ng-model="mbcDetails.mbcTotalShares" name="mbcTotalShares" required id="mbc_total_second">2</label>
+							</div>
+						</div>
+					</div>
+
+					<hr/>
+
+					<div class="row">
+						<div class="col-sm-6">
+							<label>Street Address<sup class="errMsg">*</sup></label>
+							<div class="form-group">
+								<span class="errMsg" ng-show="(incorporationForm.streetAddress.$touched)&&(incorporationForm.streetAddress.$invalid)" id="streetAddress_err_msg">Invalid</span>
+								<input class="form-control" type="text" placeholder="Street Address" name="streetAddress" ng-model="mbcDetails.addressDetailsTbl.streetAddress" ng-pattern="/^[a-zA-Z0-9 ]{1,45}$/" required id="street_addr_tb" />
+							</div>
+						</div>
+
+						<div class="col-sm-6">
+							<label>City<sup class="errMsg">*</sup></label>
+							<div class="form-group">
+								<span class="errMsg" ng-show="(incorporationForm.mbcCity.$touched)&&(incorporationForm.mbcCity.$invalid)" id="mbcCity_err_msg">Invalid</span>
+								<input class="form-control" type="text" placeholder="City" name="mbcCity" ng-model="mbcDetails.addressDetailsTbl.city" ng-pattern="/^[a-zA-Z0-9 ]{1,25}$/" required id="mbc_city_tb" />
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-sm-6">
+							<label>Country<sup class="errMsg">*</sup></label>
+							<div class="form-group">
+								<span class="errMsg" ng-show="(incorporationForm.countryName.$touched)&&(incorporationForm.countryName.$invalid)" id="countryName_err_msg">Invalid</span>
+								<select class="form-control" ng-options="country.countryId as country.countryName for country in countries" name="countryName"
+								ng-model="mbcDetails.addressDetailsTbl.countryTbl.countryId" required id="country_name_dd">
+									<option value="" label="Select" disabled selected="selected"></option>
+								</select>
+							</div>
+						</div>
+
+						<div class="col-sm-6">
+							<label>ZIP Code<sup class="errMsg">*</sup></label>
+							<div class="form-group">
+								<span class="errMsg" ng-show="(incorporationForm.zipCode.$touched)&&(incorporationForm.zipCode.$invalid)" id="zipCode_err_msg">Invalid</span>
+								<input class="form-control" type="text" placeholder="ZIP Code" name="zipCode"
+								ng-model="mbcDetails.addressDetailsTbl.zipcode" required id="zipCode_tb" />
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-sm-6">
+							<label>Telephone Number<sup class="errMsg">*</sup></label>
+							<div class="form-group">
+								<span class="errMsg" ng-show="(incorporationForm.mbcPhone.$touched)&&(incorporationForm.mbcPhone.$invalid)" id="mbcPhone_err_msg">Invalid</span>
+								<input class="form-control" type="text" placeholder="Telephone Number" name="mbcPhone" ng-model="mbcDetails.mbcPhone" ng-pattern="/^[0-9]{1,14}$/" required id="mbc_phone_tb" />
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<label>Fax Number</label>
+							<div class="form-group">
+								<span class="errMsg" ng-show="(incorporationForm.mbcFax.$touched)&&(incorporationForm.mbcFax.$invalid)" id="mbcFax_err_msg">Invalid</span>
+								<input class="form-control" type="text" placeholder="Fax Number" name="mbcFax" ng-model="mbcDetails.mbcFax" ng-pattern="/^[0-9]{1,14}$/" id="mbc_fax_tb" />
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-sm-6">
+							<label>Email<sup class="errMsg">*</sup></label>
+							<div class="form-group">
+								<span class="errMsg" ng-show="(incorporationForm.mbcPocEmail.$touched)&&(incorporationForm.mbcPocEmail.$invalid)" id="mbcPocEmail_err_msg">Invalid</span>
+								<span class="errMsg" ng-show="mbcDetails.pocEmail.length > 30" id="mbcPocEmailLength_err_msg">Length exceeds</span>
+								<input class="form-control" type="text" placeholder="Email" name="mbcPocEmail" ng-model="mbcDetails.mbcPocEmail" ng-pattern="/^[a-zA-Z0-9._-]+[@]([a-zA-Z.])+$/" required id="poc_email_tb" />
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<label>Website Address</label>
+							<div class="form-group">
+								<span class="errMsg" ng-show="(incorporationForm.website.$touched)&&(incorporationForm.website.$invalid)" id="website_err_msg">Invalid</span>
+								<input class="form-control" style="display: inline;width: 15%;" type="text" value="http://" readonly>
+								<input class="form-control" style="display: inline;width: 80%;" type="text" placeholder="Website Address" name="website" ng-model="mbcDetails.mbcWebUrl" ng-pattern="/^[a-zA-Z0-9.]{1,30}$/" id="website_addr_tb" />
+							</div>
+						</div>
+					</div>
+
+					<hr/>
+					<div class="row">
+						<div class="col-sm-6">
+							<label>Gross Assets<sup class="errMsg">*</sup></label>
+							<div class="form-group">
+								<span class="errMsg" ng-show="(incorporationForm.grossAssets.$touched)&&(incorporationForm.grossAssets.$invalid)" id="grossAssets_err_msg">Invalid</span>
+								<input class="form-control" type="number" placeholder="Gross Assets" name="grossAssets" ng-model="mbcDetails.mbcGrossAssets" required id="mbc_grossAssets_tb" />
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<label>Number of Employees<sup class="errMsg">*</sup></label>
+							<div class="form-group">
+								<span class="errMsg" ng-show="(incorporationForm.noOfEmployees.$touched)&&(incorporationForm.noOfEmployees.$invalid)" id="noOfEmployees_err_msg">Invalid</span>
+								<input class="form-control" type="number" placeholder="Number of Employees" name="noOfEmployees" ng-model="mbcDetails.mbcNumberEmployees" required id="mbc_noOfEmployees_tb" />
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6">
+							<label>Principal First Name<sup class="errMsg">*</sup></label>
+							<div class="form-group">
+								<span class="errMsg" ng-show="(incorporationForm.principalFirstName.$touched)&&(incorporationForm.principalFirstName.$invalid)" id="principalFirstName_err_msg">Invalid</span>
+								<input class="form-control" type="text" placeholder="Principal First Name" name="principalFirstName"
+								ng-model="mbcDetails.principalShareholderTbl.firstName" required id="mbc_principalFirstName_tb" />
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<label>Principal Last Name<sup class="errMsg">*</sup></label>
+							<div class="form-group">
+								<span class="errMsg" ng-show="(incorporationForm.principalLastName.$touched)&&(incorporationForm.principalLastName.$invalid)" id="principalLastName_err_msg">Invalid</span>
+								<input class="form-control" type="text" placeholder="Principal Last Name" name="principalLastName"
+								ng-model="mbcDetails.principalShareholderTbl.lastName" required id="mbc_principalLastName_tb" />
+							</div>
+						</div>
+
+					</div>
+					<div class="row">
+						<div class="col-sm-6">
+							<label>Principal Country<sup class="errMsg">*</sup></label>
+							<div class="form-group">
+								<span class="errMsg" ng-show="(incorporationForm.principalCountry.$touched)&&(incorporationForm.principalCountry.$invalid)" id="principalCountry_err_msg">Invalid</span>
+								<select class="form-control" ng-options="country.countryId as country.countryName for country in countries" name="principalCountry"
+								ng-model="mbcDetails.principalShareholderTbl.countryTbl.countryId" required id="principalCountry_dd">
+									<option value="" label="Select" disabled selected="selected"></option>
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<label>Principal Total Shares<sup class="errMsg">*</sup></label>
+							<div class="form-group">
+								<span class="errMsg" ng-show="(incorporationForm.principalTotalShares.$touched)&&(incorporationForm.principalTotalShares.$invalid)" id="principalTotalShares_err_msg">Invalid</span>
+								<input class="form-control" type="number" placeholder="Principal Total Shares" name="principalTotalShares"
+								ng-model="mbcDetails.principalShareholderTbl.totalShares" required id="principalTotalSharess_tb" />
+							</div>
+						</div>
+
+					</div>
+
+					<div class="row">
+						<div class="col-sm-6">
+							<label>Participant Total Shares<sup class="errMsg">*</sup></label>
+							<div class="form-group">
+								<span class="errMsg" ng-show="(incorporationForm.participantTotalShares.$touched)&&(incorporationForm.participantTotalShares.$invalid)" id="participantTotalShares_err_msg">Invalid</span>
+								<input class="form-control" type="number" placeholder="Participant Total Shares" name="participantTotalShares"
+								ng-model="mbcDetails.participantShareholderTbl.totalShares" required id="participantTotalShares_tb" />
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<label>Participant First Name<sup class="errMsg">*</sup></label>
+							<div class="form-group">
+								<span class="errMsg" ng-show="(incorporationForm.participantFirstName.$touched)&&(incorporationForm.participantFirstName.$invalid)" id="participantFirstName_err_msg">Invalid</span>
+								<input class="form-control" type="text" placeholder="Participant First Name" name="participantFirstName"
+								ng-model="mbcDetails.participantShareholderTbl.firstName" required id="participantFirstName_tb" />
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6">
+							<label>Participant Country<sup class="errMsg">*</sup></label>
+							<div class="form-group">
+								<span class="errMsg" ng-show="(incorporationForm.participantCountry.$touched)&&(incorporationForm.participantCountry.$invalid)" id="participantCountry_err_msg">Invalid</span>
+								<select class="form-control" ng-options="country.countryId as country.countryName for country in countries" name="participantCountry"
+								ng-model="mbcDetails.participantShareholderTbl.countryTbl.countryId" required id="participantCountryy_dd">
+									<option value="" label="Select" disabled selected="selected"></option>
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<label>Participant Last Name<sup class="errMsg">*</sup></label>
+							<div class="form-group">
+								<span class="errMsg" ng-show="(incorporationForm.participantLastName.$touched)&&(incorporationForm.participantLastName.$invalid)" id="participantLastName_err_msg">Invalid</span>
+								<input class="form-control" type="text" placeholder="Participant Last Name" name="participantLastName"
+								ng-model="mbcDetails.participantShareholderTbl.lastName" required id="participantLastName_tb" />
+							</div>
+						</div>
+					</div>
+					<hr/>
+					<div class="row">
+						<div class="col-sm-6">
+							<label>Business purpose<sup class="errMsg">*</sup></label>
+							<div class="form-group">
+								<span class="errMsg" ng-show="(incorporationForm.mbcBusinessPurpose.$touched)&&(incorporationForm.mbcBusinessPurpose.$invalid)" id="mbcBusinessPurpose_err_msg">Invalid</span>
+								<select class="form-control" ng-options="business.businessPurpose for business in businessPurpose" name="mbcBusinessPurpose"
+								ng-model="mbcDetails.businessPurposeTbl.businessPurposeId" required id="mbc_business_purpose_dd">
+									<option value="" label="Select" disabled selected="selected"></option>
+								</select>
+							</div>
+						</div>
+
+						<div class="col-sm-6">
+							<label>Name of Registered Agent<sup class="errMsg">*</sup></label>
+							<div class="form-group">
+								<span class="errMsg" ng-show="(incorporationForm.registeredAagentId.$touched)&&(incorporationForm.registeredAagentId.$invalid)" id="registeredAagentId_err_msg">Invalid</span>
+								<select class="form-control" ng-options="registeredAgent.registeredAgentName for registeredAgent in registeredAgents" name="registeredAagentId" ng-model="agentName" ng-change="changingRegisterAgentDetails(agentName)" required id="reg_agent_id_dd">
+									<option value="" label="Select" disabled selected="selected"></option>
+								</select>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-sm-12">
+							<label>Written confirmation<sup class="errMsg">*</sup></label>
+							<div class="form-group">
+								<span class="errMsg" ng-show="(incorporationForm.writtenConfirmation.$touched)&&(incorporationForm.writtenConfirmation.$invalid)" id="writtenConfirmation_err_msg">Invalid</span>
+								<textarea class="form-control" placeholder="Written confirmation" name="writtenConfirmation" ng-model="mbcDetails.writtenConfirmation" rows="3" id="written_confirmation_ta" required></textarea>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-sm-6">
+							<label><b>Consent</b><sup class="errMsg">*</sup></label>
+							<br/>
+							<p>We,</p>
+							<div class="form-group">
+								<input class="form-control" type="text" placeholder="Agent name" name="" ng-model="registerAgentName" readonly id="consent_ro_tb" />
+							</div>
+						</div>
+					</div>
+					<p>
+						apply to the Registrar of Corporate Affairs for the incorporation of the above named company and consent to
+						act  as registered agent on its incorporation under the Micro Business Companies Act.
+					</p>
+					<hr/>
+
+					<div class="row">
+						<div class="col-sm-6">
+							<label>Application Fee<sup class="errMsg">*</sup></label>
+							<div class="form-group input-group">
+								<span class="input-group-addon"><i class="fa fa-usd" aria-hidden="true"></i></span>
+								<input class="form-control" type="currency" placeholder="Application Fee"
+								ng-value="100" name="applicationFeeAmt" readonly id="app_fee_ro_tb" />
+							</div>
+						</div>
+					</div>
+					<div class="cleaner h20"></div>
+					<div class="form-group">
+						<div class="col-sm-3">
+							<div class="row">
+								<button class="primary-btn" ng-click="submit()"
+								ng-disabled="incorporationForm.$invalid" id="submit_btn">
+								<i class="fa fa-check-circle-o" aria-hidden="true"></i> Submit</button>
+							</div>
+						</div>
+					</div>
+
+				</form>
+
+			</div>
+
+
+
+
+
+			<!--<div class="row">
+			<div class="col-sm-6">
+			<label>MBC Number</label>
+			<div class="form-group">
+			<input type="text" class="form-control" name="fname" value="00548965588456" disabled="disabled" style="font-weight:bold;">
+		</div>
+	</div>
+</div>	-->
+
+
+
+
+</div>
+</div>
+
+<div class="cleaner h80"></div>
+</div>
+</div>
+</div>
+<!-- /container -->

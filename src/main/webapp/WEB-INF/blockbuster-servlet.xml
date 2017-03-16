@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+  http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd
+  http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+	<context:component-scan base-package="com.sciits.blockbuster.base" />
+	<context:component-scan base-package="com.sciits.blockbuster.*" />
+	<context:component-scan base-package="com.sciits.blockbuster.dao" />
+	<context:component-scan base-package="com.sciits.blockbuster.dao.impl" />
+	<context:component-scan base-package="com.sciits.blockbuster.dao.model" />
+	<context:component-scan base-package="com.sciits.blockbuster.controller" />
+	<context:component-scan base-package="com.sciits.blockbuster.services" />
+	<context:component-scan base-package="com.sciits.blockbuster.services.impl" />
+	<context:component-scan base-package="com.sciits.blockbuster.model" />
+	<context:component-scan base-package="com.sciits.blockbuster.web.model" />
+	<context:component-scan base-package="com.sciits.blockbuster.imp" />
+
+
+	<context:property-placeholder location="classpath:database.properties" />
+
+
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+
+	<mvc:annotation-driven />
+
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- max upload size in bytes -->
+		<property name="maxUploadSize" value="20971520" />
+
+		<!-- max size of file in memory (in bytes) -->
+		<property name="maxInMemorySize" value="1048576" />
+	</bean>
+	
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+		<property name="url" value="jdbc:sqlserver://182.74.133.92:1433;databaseName=BlockBuster" />
+ 		<property name="username" value="bbdevteam" /> 
+		<property name="password" value="scidev@123" /> 
+	</bean>
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="annotatedClasses">
+			<list>
+				<value>com.sciits.blockbuster.dao.model.RoleDetails</value>
+				<value>com.sciits.blockbuster.dao.model.UserDetails</value>
+				<value>com.sciits.blockbuster.dao.model.UserAuthCodeDetails</value>
+				<value>com.sciits.blockbuster.dao.model.SecondaryAuthorizationDetails</value>
+				<value>com.sciits.blockbuster.dao.model.UserSecondaryAuthorizationDetails</value>
+				<value>com.sciits.blockbuster.dao.model.AddressDetails</value>
+				<value>com.sciits.blockbuster.dao.model.AddressTypeDetails</value>
+				<value>com.sciits.blockbuster.dao.model.BusinessPurposeDetails</value>
+				<value>com.sciits.blockbuster.dao.model.CountryDetails</value>
+				<value>com.sciits.blockbuster.dao.model.MbcDetails</value>
+				<value>com.sciits.blockbuster.dao.model.RegisteredAgentDetails</value>
+				<value>com.sciits.blockbuster.dao.model.AddressDetailsTbl</value>
+				<value>com.sciits.blockbuster.dao.model.AddressTypeTbl</value>
+				<value>com.sciits.blockbuster.dao.model.BusinessPurposeTbl</value>
+				<value>com.sciits.blockbuster.dao.model.CountryTbl</value>
+				<value>com.sciits.blockbuster.dao.model.FscLegislationTbl</value>
+				<value>com.sciits.blockbuster.dao.model.MbcCharterTbl</value>
+				<value>com.sciits.blockbuster.dao.model.MbcTbl</value>
+				<value>com.sciits.blockbuster.dao.model.MbcTempTbl</value>
+				<value>com.sciits.blockbuster.dao.model.RoleTbl</value>
+				<value>com.sciits.blockbuster.dao.model.UserDetailsTbl</value>
+				<value>com.sciits.blockbuster.dao.model.UserLoginTbl</value>
+				<value>com.sciits.blockbuster.dao.model.UserRoleTbl</value>
+				<value>com.sciits.blockbuster.dao.model.UserSignupTbl</value>
+				<value>com.sciits.blockbuster.dao.model.UserTbl</value>
+				<value>com.sciits.blockbuster.dao.model.MbcRegistrtionTbl</value>
+				<value>com.sciits.blockbuster.dao.model.ParticipantShareholderTbl</value>
+				<value>com.sciits.blockbuster.dao.model.PrincipalShareholderTbl</value>
+				<value>com.sciits.blockbuster.dao.model.UserAuthCodeTbl</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<!-- <prop key="hibernate.hbm2ddl.auto">update</prop> -->
+				<prop key="hibernate.jdbc.batch_size">20</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="txManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="persistenceExceptionTranslationPostProcessor"
+		class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
+
+	<!-- <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"> 
+		<property name="prefix"> <value>/WEB-INF/views/jsp/</value> </property> <property 
+		name="suffix"> <value>.jsp</value> </property> </bean> -->
+
+</beans>
